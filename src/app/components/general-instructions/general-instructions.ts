@@ -1,4 +1,4 @@
-import { Component, ElementRef, ViewChild } from '@angular/core';
+import { Component, ElementRef, HostListener, ViewChild } from '@angular/core';
 import { NzTableModule } from 'ng-zorro-antd/table';
 
 @Component({
@@ -14,12 +14,25 @@ export class GeneralInstructions {
   @ViewChild('tableWrapper') tableWrapper!: ElementRef<HTMLDivElement>;
 
   ngAfterViewInit() {
-    setTimeout(() => {
-      this.tableHeight = this.tableWrapper.nativeElement.clientHeight - 950; 
-      console.log(this.tableHeight); 
-    });
+    this.calculateTableHeight();
   }
 
+  @HostListener('window:resize')
+  onResize() {
+    this.calculateTableHeight();
+  }
+
+  calculateTableHeight() {
+    if (!this.tableWrapper) return;
+
+    const rect = this.tableWrapper.nativeElement.getBoundingClientRect();
+    const offsetTop = rect.top;
+
+    const viewportHeight = window.innerHeight;
+
+    this.tableHeight = viewportHeight - offsetTop - 64; // minus header space;
+    console.log('Table height:', this.tableHeight);
+  }
 
   listOfData = [
     {
