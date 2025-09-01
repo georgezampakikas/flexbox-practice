@@ -10,14 +10,16 @@ import { NzTableModule } from 'ng-zorro-antd/table';
   styleUrl: './general-instructions.scss'
 })
 export class GeneralInstructions {
+  public tableHeight!: number;
   @ViewChild('tableWrapper') tableWrapper!: ElementRef<HTMLDivElement>;
-  tableHeight = 280;
 
-  // ngAfterViewInit() {
-  //   setTimeout(() => {
-  //     this.tableHeight = this.tableWrapper.nativeElement.clientHeight || 400; 
-  //   });
-  // }
+  ngAfterViewInit() {
+    setTimeout(() => {
+      this.tableHeight = this.tableWrapper.nativeElement.clientHeight - 950; 
+      console.log(this.tableHeight); 
+    });
+  }
+
 
   listOfData = [
     {

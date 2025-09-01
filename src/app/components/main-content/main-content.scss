@@ -1,5 +1,6 @@
 .app-layout {
   height: 100%;
+  min-height: 0;
   display: flex;
   min-width: 320px;
 }
@@ -45,7 +46,8 @@ h1 { color: #fff; }
 .app-main {
   display: flex;
   flex-direction: column;
-  flex: 1;
+  flex: 1 1 auto;
+  min-height: 0;
 }
 
 .app-header {
@@ -83,8 +85,9 @@ h1 { color: #fff; }
 
 .app-content {
   padding: 16px;
-  flex: 1;
-  overflow: hidden;
+  flex: 1 1 auto;
+  overflow-y: hidden;
   background: #fafafa;
+  min-height: 0;
 }
 
