@@ -1,12 +1,12 @@
 <div class="gi">
-  <div #tableWrapper class="gi__table-wrapper">
+  <div class="gi__table-wrapper">
     <nz-table
       class="gi__table"
+      [nsAutoHeightTable]=""
       nzSize="small"
       [nzPageSize]="30"
       [nzData]="listOfData"
       nzShowPagination="false"
-      [nzScroll]="{y: tableHeight + 'px'}"
     >
       <thead>
         <tr>
