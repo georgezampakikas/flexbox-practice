@@ -54,6 +54,8 @@
     gap: 12px;
 }
 
-.tag {
-    margin: 12px 2px 0 12px;
-}
+.tags-container {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 10px;
+}   
