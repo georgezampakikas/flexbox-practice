@@ -3,16 +3,19 @@
   flex-direction: column;
   flex: 1 1 auto;
   min-height: 0;
-  gap: 12px;
+  background: #F0F2F5;
+  // row-gap: 12px;
 }
 
 .page__header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 12px;
-  padding: 6px 0;
+  row-gap: 12px;
+  margin: 0;
+  padding: 0;
 }
+
 
 .page__title {
   flex: 1 1 0;
@@ -24,8 +27,17 @@
   gap: 8px;
 }
 
-.page__info {
+.page-info {
   padding: 8px 0;
+  background: #fff;
+  border-radius: 10px;
+}
+
+.page-descriptions {
+  display: grid;
+  padding: 8px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
 }
 
 .page__tabs {
@@ -45,4 +57,9 @@
   display: flex;
   flex-direction: column;
   min-height: 0;
+}
+
+.btn {
+  background: #177DDC;
+  border: none;
 }

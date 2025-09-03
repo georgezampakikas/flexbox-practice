@@ -11,10 +11,10 @@ import {
 import { NzTableComponent } from 'ng-zorro-antd/table';
 
 @Directive({
-  selector: '[nsAutoHeightTable]',
+  selector: '[appNsAutoHeightTable]',
 })
 export class NsAutoHeightTableDirective implements AfterViewInit {
-  @Input('nsAutoHeightTable')
+  @Input('appNsAutoHeightTable')
   offset?: number;
 
   private element = inject(ElementRef);

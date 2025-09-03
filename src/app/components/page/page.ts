@@ -11,6 +11,7 @@ import { NzTabsModule } from 'ng-zorro-antd/tabs';
 
 import { DrawerComponent } from '../drawer-component/drawer-component';
 import { GeneralInstructions } from "../general-instructions/general-instructions";
+import { LabeledText } from "../labeled-text/labeled-text";
 
 @Component({
   selector: 'app-page',
@@ -22,12 +23,22 @@ import { GeneralInstructions } from "../general-instructions/general-instruction
     NzButtonModule,
     NzDescriptionsModule,
     NzTabsModule,
-    GeneralInstructions
+    GeneralInstructions,
+    LabeledText
 ],
   templateUrl: './page.html',
   styleUrl: './page.scss'
 })
 export class Page {
+readonly userInfo = {
+    UserName: "Zhou Maomao",
+    Telephone: "181000000000",
+    Live: "Hangzhou, Zhejiang",
+    Remark: "Empty",
+    Address: "No. 18, Wantang Road, Xihu District, Hangzhou, Zhejiang, China"
+};
+
+
   private drawerService = inject(NzDrawerService);
 
   openDrawer(): void {
@@ -37,4 +48,6 @@ export class Page {
       nzContent: DrawerComponent,      
     });
   }
+
+  onBack(): void {}
 }

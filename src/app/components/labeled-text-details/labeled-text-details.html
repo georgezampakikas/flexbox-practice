@@ -1,0 +1,17 @@
+<div class="patient-data-container">
+    <div >
+        <nz-icon class="icon" nzType="{{ icon }}" nzTheme="outline" />
+    </div>
+    @if (['Οικίας:', 'Email:', 'Διεύθυνση:'].includes(label.trim())) {
+        <div class="label-text-container">
+            <div class="label">{{ label }}</div>
+            <a class="text">{{ text }}</a>
+        </div>  
+    } @else {
+        <div class="label-text-container">
+            <div class="label">{{ label }}</div>
+            <div class="text">{{ text }}</div>
+            <div class="phone-number"> {{phoneNumber }}</div>
+        </div>        
+    }
+</div>

@@ -1,25 +1,25 @@
 <div class="page">
   <div class="page__header">
     <div class="page__title">
-      <nz-page-header nzTitle="Page Header" nzSubtitle="Patient Name"></nz-page-header>
+      <nz-page-header (nzBack)="onBack()" nzBackIcon nzTitle="Page Header" nzSubtitle="Patient Name"></nz-page-header>
     </div>
 
     <div class="page__actions">
-      <button nz-button nzType="primary" (click)="openDrawer()">Πλήρες Ιστορικό</button>
-      <button nz-button nzType="primary">Επικοινωνία</button>
+      <button class="btn" nz-button nzType="primary" (click)="openDrawer()">Πλήρες Ιστορικό</button>
+      <button class="btn" nz-button nzType="primary">Επικοινωνία</button>
     </div>
   </div>
 
-  <div class="page__info">
-    <nz-descriptions nzTitle="User Info" class="page__descriptions">
-      <nz-descriptions-item nzTitle="UserName">Zhou Maomao</nz-descriptions-item>
-      <nz-descriptions-item nzTitle="Telephone">18100000000</nz-descriptions-item>
-      <nz-descriptions-item nzTitle="Live">Hangzhou, Zhejiang</nz-descriptions-item>
-      <nz-descriptions-item nzTitle="Remark">Empty</nz-descriptions-item>
-      <nz-descriptions-item nzTitle="Address" [nzSpan]="2">
-        No. 18, Wantang Road, Xihu District, Hangzhou, Zhejiang, China
-      </nz-descriptions-item>
-    </nz-descriptions>
+  <div class="page-info">    
+    <div class="custom-header">User Info</div>
+    <div class="page-descriptions">
+      <!-- <labeledText label="UserName" [text]="userinfo.UserName"></labeledText> -->
+      <app-labeled-text label="UserName" [text]="userInfo.UserName" />
+      <app-labeled-text [label]="'Telephone'" [text]="userInfo.Telephone" />
+      <app-labeled-text [label]="'Live'" [text]="userInfo.Live" />
+      <app-labeled-text [label]="'Remark'" [text]="userInfo.Remark" />
+      <app-labeled-text [label]="'Address'" [text]="userInfo.Address" />
+    </div>
   </div>
 
   <div class="page__tabs">

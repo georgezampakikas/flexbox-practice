@@ -6,11 +6,11 @@
 }
 
 .app-sidebar {
-  background: #001529;
+  background: #004D80;
   color: #fff;
   display: flex;
   flex-direction: column;
-  padding: 16px 12px;
+  // padding: 16px 12px;
 }
 
 .sidebar__title {
@@ -36,11 +36,13 @@ h1 { color: #fff; }
   display: flex;
   align-items: center;
   gap: 10px;
+  width: 100%;
+  margin: 0;
   padding: 10px;
   color: #fff;
   text-decoration: none;
   border-radius: 4px;
-  background: #1890ff;
+  background: #0077B3;
 }
 
 .app-main {
@@ -87,7 +89,7 @@ h1 { color: #fff; }
   padding: 16px;
   flex: 1 1 auto;
   overflow-y: hidden;
-  background: #fafafa;
+  background: #F0F2F5;
   min-height: 0;
 }
 

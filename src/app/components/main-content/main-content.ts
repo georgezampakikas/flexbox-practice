@@ -5,7 +5,7 @@ import { NzDropDownModule } from 'ng-zorro-antd/dropdown';
 import { NzIconModule } from 'ng-zorro-antd/icon';
 import { NzLayoutModule } from 'ng-zorro-antd/layout';
 import { Page } from "../page/page";
-
+import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-main-content',
@@ -16,7 +16,7 @@ import { Page } from "../page/page";
     NzLayoutModule,
     NzIconModule,
     NzDropDownModule,
-    Page
+    RouterOutlet
 ],
   templateUrl: './main-content.html',
   styleUrl: './main-content.scss',

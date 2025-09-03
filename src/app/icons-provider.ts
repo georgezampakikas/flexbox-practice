@@ -7,6 +7,14 @@ import {
   UserOutline,
   OrderedListOutline,
   ArrowLeftOutline,
+  LockOutline,
+  ManOutline,
+  StarOutline,
+  IdcardOutline,
+  PhoneOutline,
+  MailOutline,
+  EnvironmentFill,
+  EnvironmentOutline,
 } from '@ant-design/icons-angular/icons';
 
 export const icons = [
@@ -18,4 +26,11 @@ export const icons = [
   UserOutline,
   OrderedListOutline,
   ArrowLeftOutline,
+  LockOutline,
+  ManOutline,
+  StarOutline,
+  IdcardOutline,
+  PhoneOutline,
+  MailOutline,
+  EnvironmentOutline,
 ];

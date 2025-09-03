@@ -1,6 +1,13 @@
 import { Routes } from '@angular/router';
-import { Patients } from './components/patients/patients';
 
 export const routes: Routes = [
-    { path: 'patients', component: Patients },
+    { 
+        path: 'patients', 
+        loadComponent: () => import('./components/page/page').then(m => m.Page), 
+    },
+    {
+        path: 'patient-details',
+        loadComponent: () => import('./components/patient-details/patient-details').then(m => m.PatientDetails),
+    },
+    { path: '**', redirectTo: 'patients' }
 ];
