@@ -1,6 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { NzButtonModule } from "ng-zorro-antd/button";
 import { NzIconModule } from 'ng-zorro-antd/icon';
+import { LabeledTextInput } from './labeled-text-input.modal';
 
 @Component({
   selector: 'app-labeled-text-details',
@@ -11,8 +12,5 @@ import { NzIconModule } from 'ng-zorro-antd/icon';
   styleUrl: './labeled-text-details.scss'
 })
 export class LabeledTextDetails {
-  @Input() label!: string;
-  @Input() text!: string;
-  @Input() icon!: string;
-  @Input() phoneNumber!: string;
+  @Input() patientData!: LabeledTextInput;
 }

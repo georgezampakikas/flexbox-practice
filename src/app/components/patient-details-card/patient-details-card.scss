@@ -2,6 +2,12 @@
     background: #fff;
     border-radius: 6px;
     padding: 20px;
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    overflow-y: auto;
+    flex: 1 1 auto;
 }
 
 .profile {
@@ -56,6 +62,26 @@
 
 .tags-container {
     display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    // flex: 1 1 auto;
+}
+
+.tags-header {
+    // gap: 20px;
+    align-self: flex-start;
+    
+}
+
+.tags {
+    align-self: center;
+    display: flex;
     justify-content: space-evenly;
     margin-top: 10px;
+    // flex: 1 1 auto;
 }   
+
+.tag {
+    flex: 1 1 auto;
+}

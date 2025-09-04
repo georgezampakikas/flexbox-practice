@@ -31,20 +31,13 @@
         <div class="custom-header-2">Προσωπικά Στοιχεία</div>
 
         <app-labeled-text-details 
-            [icon]="userInfo.idcard" 
-            label="AMKA" 
-            [text]="userInfo.amka" 
+            [patientData]="personalInfo" 
         />
         <app-labeled-text-details 
-            [icon]="userInfo.user" 
-            label="Όνομα Πατρός:" 
-            [text]="userInfo.fathersName" 
+            [patientData]="fathersName" 
         />
         <app-labeled-text-details 
-            [icon]="userInfo.star" 
-            label=" Επαφή Άμεσης Ανάγκης:" 
-            [text]="userInfo.emergencyContact" 
-            [phoneNumber]="userInfo.number"
+            [patientData]="emergencyCall" 
         />        
     </div>
 
@@ -54,29 +47,26 @@
         <div class="custom-header-2">Στοιχεία Επικοινωνίας</div>
         
         <app-labeled-text-details 
-            [icon]="userInfo.phone" 
-            label="Οικίας:" 
-            [text]="userInfo.phoneCall" 
+            [patientData]="contact" 
         />
         <app-labeled-text-details 
-            [icon]="userInfo.user" 
-            label="Email:" 
-            [text]="userInfo.email" 
+            [patientData]="email" 
         />
         <app-labeled-text-details 
-            [icon]="userInfo.star" 
-            label=" Διεύθυνση:" 
-            [text]="userInfo.address" 
+            [patientData]="address" 
         />        
     </div>
 
     <nz-divider></nz-divider>
     
-    <div class="custom-header-2">Tags</div>
     <div class="tags-container">
-        <nz-tag class="tag">Tag-1</nz-tag>
-        <nz-tag class="tag">Tag-2</nz-tag>
-        <nz-tag class="tag">Tag-3</nz-tag>
-        <nz-tag class="tag">Tag-4</nz-tag>        
+        <div class="custom-header-2 tags-header" >Tags</div>
+        <div class="tags">
+            <nz-tag class="tag">Tag-1</nz-tag>
+            <nz-tag class="tag">Tag-2</nz-tag>
+            <nz-tag class="tag">Tag-3</nz-tag>
+            <nz-tag class="tag">Tag-4</nz-tag>        
+        </div>        
     </div>
+
 </div>
