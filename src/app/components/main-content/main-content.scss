@@ -6,7 +6,7 @@
 }
 
 .app-sidebar {
-  background: #004D80;
+  background: rgb(0, 21, 41);
   color: #fff;
   display: flex;
   flex-direction: column;
@@ -45,9 +45,9 @@ h1 { color: #fff; }
   background: transparent;
 }
 
-.sidebar__link.is-active {
-  background: #0077B3;
-}
+// .sidebar__link.is-active {
+//   background: #0077B3;
+// }
 
 
 .app-main {
@@ -97,4 +97,3 @@ h1 { color: #fff; }
   background: #F0F2F5;
   min-height: 0;
 }
-

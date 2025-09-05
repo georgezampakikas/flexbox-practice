@@ -6,6 +6,7 @@ import { NzEmptyModule } from 'ng-zorro-antd/empty';
 import { NzPageHeaderModule } from 'ng-zorro-antd/page-header';
 import { NzDescriptionsModule } from 'ng-zorro-antd/descriptions';
 import { NzTabsModule } from 'ng-zorro-antd/tabs';
+import { NzCardModule} from 'ng-zorro-antd/card';
 
 
 
@@ -23,8 +24,9 @@ import { LabeledText } from "../labeled-text/labeled-text";
     NzButtonModule,
     NzDescriptionsModule,
     NzTabsModule,
+    NzCardModule,
     GeneralInstructions,
-    LabeledText
+    LabeledText,
 ],
   templateUrl: './page.html',
   styleUrl: './page.scss'

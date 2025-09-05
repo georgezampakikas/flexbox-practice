@@ -10,17 +10,19 @@
     </div>
   </div>
 
-  <div class="page-info">    
-    <div class="custom-header">User Info</div>
-    <div class="page-descriptions">
-      <!-- <labeledText label="UserName" [text]="userinfo.UserName"></labeledText> -->
+  <nz-card class="page-info" [nzTitle]="userInfoTemplate">
+     <div class="page-descriptions">
       <app-labeled-text label="UserName" [text]="userInfo.UserName" />
-      <app-labeled-text [label]="'Telephone'" [text]="userInfo.Telephone" />
-      <app-labeled-text [label]="'Live'" [text]="userInfo.Live" />
-      <app-labeled-text [label]="'Remark'" [text]="userInfo.Remark" />
-      <app-labeled-text [label]="'Address'" [text]="userInfo.Address" />
-    </div>
-  </div>
+      <app-labeled-text label="Telephone" [text]="userInfo.Telephone" />
+      <app-labeled-text label="Live" [text]="userInfo.Live" />
+      <app-labeled-text label="Remark" [text]="userInfo.Remark" />
+      <app-labeled-text label="Address" [text]="userInfo.Address" />
+    </div>   
+  </nz-card>
+
+  <ng-template #userInfoTemplate>
+    <div class="custom-header">User Info</div>
+  </ng-template>
 
   <div class="page__tabs">
     <nz-tabs class="tabs">

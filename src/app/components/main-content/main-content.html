@@ -1,31 +1,41 @@
 <nz-layout class="app-layout">
-  <nz-sider class="app-sidebar" [nzWidth]="'220px'">
+  <nz-sider 
+    class="app-sidebar" 
+    [nzWidth]="'220px'"
+    nzCollapsible
+    [nzCollapsedWidth]="60"
+    [(nzCollapsed)]="isCollapsed"
+    [nzTrigger]="null"
+  >
     <div class="sidebar__title">
       <a href="#" class="sidebar__brand">
-        <h1>Medicalinfo</h1>
+          <h1>Medicalinfo</h1>
       </a>
     </div>
 
-    <nav class="sidebar__nav">
-      <a
-        routerLink="/patients"
-        routerLinkActive="is-active"
-        [routerLinkActiveOptions]="{ exact: true }"
-        class="sidebar__link"
-      >
-        <nz-icon nzType="ordered-list" nzTheme="outline"></nz-icon>
-        <span>Ασθενείς</span>
-      </a>
-
-      <a
-        routerLink="/patient-details"
-        routerLinkActive="is-active"
-        class="sidebar__link"
-      >
-        <nz-icon nzType="ordered-list" nzTheme="outline"></nz-icon>
-        <span>Στοιχεία Ασθενή</span>
-      </a>
-    </nav>
+    <ul nz-menu nzTheme="dark" nzMode="inline">
+      <li nz-menu-item>
+        <a
+          routerLink="/patients"
+          routerLinkActive="is-active"
+          [routerLinkActiveOptions]="{ exact: true }"
+          class="sidebar__link"
+        >
+          <nz-icon nzType="ordered-list" nzTheme="outline"></nz-icon>
+            <span>Ασθενείς</span>
+        </a>        
+      </li>
+      <li nz-menu-item>
+        <a
+          routerLink="/patient-details"
+          routerLinkActive="is-active"
+          class="sidebar__link"
+        >
+          <nz-icon nzType="ordered-list" nzTheme="outline"></nz-icon>
+            <span>Στοιχεία Ασθενή</span>
+        </a>        
+      </li>
+    </ul>
   </nz-sider>
 
   <nz-layout class="app-main">
