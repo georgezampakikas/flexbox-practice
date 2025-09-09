@@ -1,0 +1,89 @@
+[
+  {
+    "id": "0",
+    "patientIdentity": {
+      "code": "000001",
+      "amka": "2910300000",
+      "lastName": "Κωνσταντίνα Κωνσταντίνου",
+      "firstName": "Κωνσταντίνα Κωνσταντίνου",
+      "status": "Ενεργός"
+    },
+    "demographicInfo": {
+      "birthDate": "29/10/93 (27 ετων)",
+      "birthPlace": "Καρδίτσα",
+      "gender": "Θήλυ",
+      "maritalStatus": "Άγαμος/η",
+      "fatherName": "Αθανάσιος",
+      "motherName": "Κατερίνα",
+      "language": "Ελληνική",
+      "nationality": "Ελληνική",
+      "profession": "Μή διαθέσιμο",
+      "education": "Μή διαθέσιμο"
+    },
+    "contactInfo": {
+      "homePhone": "2410579060",
+      "mobilePhone": "6900000000",
+      "workPhone": "2410579061",
+      "address": "Φαρσάλων 15Α, Λάρισα, 41223",
+      "email": "info@info-domain.com"
+    }
+  },
+  {
+    "id": "1",
+    "patientIdentity": {
+      "code": "000002",
+      "amka": "1908851234",
+      "lastName": "Παπαδόπουλος Γεώργιος",
+      "firstName": "Γεώργιος Παπαδόπουλος",
+      "status": "Ενεργός"
+    },
+    "demographicInfo": {
+      "birthDate": "15/03/85 (38 ετων)",
+      "birthPlace": "Αθήνα",
+      "gender": "Άρρεν",
+      "maritalStatus": "Έγγαμος/η",
+      "fatherName": "Δημήτριος",
+      "motherName": "Μαρία",
+      "language": "Ελληνική",
+      "nationality": "Ελληνική",
+      "profession": "Μηχανικός",
+      "education": "Ανώτατη"
+    },
+    "contactInfo": {
+      "homePhone": "2101234567",
+      "mobilePhone": "6971234567",
+      "workPhone": "2101234568",
+      "address": "Πατησίων 123, Αθήνα, 10682",
+      "email": "g.papadopoulos@email.com"
+    }
+  },
+  {
+    "id": "2",
+    "patientIdentity": {
+      "code": "000003",
+      "amka": "0507925678",
+      "lastName": "Ιωάννου Ελένη",
+      "firstName": "Ελένη Ιωάννου",
+      "status": "Ενεργός"
+    },
+    "demographicInfo": {
+      "birthDate": "05/07/92 (31 ετων)",
+      "birthPlace": "Θεσσαλονίκη",
+      "gender": "Θήλυ",
+      "maritalStatus": "Άγαμος/η",
+      "fatherName": "Νικόλαος",
+      "motherName": "Σοφία",
+      "language": "Ελληνική",
+      "nationality": "Ελληνική",
+      "profession": "Νοσηλεύτρια",
+      "education": "Ανώτερη"
+    },
+    "contactInfo": {
+      "homePhone": "2310987654",
+      "mobilePhone": "6945678901",
+      "workPhone": "2310987655",
+      "address": "Εγνατία 45, Θεσσαλονίκη, 54630",
+      "email": "e.ioannou@hospital.gr"
+    }
+  }
+]

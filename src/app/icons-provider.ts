@@ -15,6 +15,7 @@ import {
   MailOutline,
   EnvironmentFill,
   EnvironmentOutline,
+  SearchOutline,
 } from '@ant-design/icons-angular/icons';
 
 export const icons = [
@@ -33,4 +34,5 @@ export const icons = [
   PhoneOutline,
   MailOutline,
   EnvironmentOutline,
+  SearchOutline,
 ];

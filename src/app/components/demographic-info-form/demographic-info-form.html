@@ -1,0 +1,115 @@
+<form nz-form [formGroup]="demographicInfoForm" (ngSubmit)="submitForm()">
+  <nz-form-item nzLayout="vertical">
+    <div class="grid-container">
+      <div class="grid-item">
+        <nz-form-label class="label" nzFor="birthDate">Ημερομηνία Γέννησης</nz-form-label>
+        <nz-form-control>
+          <nz-date-picker 
+            nzFormat="dd/MM/yyyy"
+            nzPlaceHolder="Επίλεξε Ημερομηνία"
+            formControlName="birthDate"
+          ></nz-date-picker>
+        </nz-form-control>
+      </div>
+
+      <div class="grid-item">
+        <nz-form-label class="label" nzFor="birthPlace">Τόπος Γέννησης</nz-form-label>
+        <nz-form-control>
+          <nz-input-group class="input-groups" [nzSuffix]="suffixSearchIcon">
+            <input 
+              class="inputs" 
+              nz-input 
+              id="birthPlace" 
+              name="birthPlace" 
+              type="text" 
+              formControlName="birthPlace" 
+            />
+          </nz-input-group>
+
+          <ng-template #suffixSearchIcon>
+            <nz-icon nzType="search" />
+          </ng-template>
+        </nz-form-control>
+      </div>
+    </div>
+  </nz-form-item>
+
+  <nz-form-item nzLayout="vertical">
+    <div class="grid-container">
+      <div class="grid-item">
+        <nz-form-label class="label" nzFor="firstName">Φύλο</nz-form-label>
+        <nz-form-control>
+          <input class="inputs" nz-input id="firstName" name="firstName" type="text" formControlName="firstName" />
+        </nz-form-control>
+      </div>
+
+      <div class="grid-item">
+        <nz-form-label class="label" nzFor="lastName">Οικογενειακή Κατάσταση</nz-form-label>
+        <nz-form-control>
+          <input class="inputs" nz-input id="lastName" name="lastName" type="text" formControlName="lastName" />
+        </nz-form-control>
+      </div>
+    </div>
+  </nz-form-item>
+
+    <nz-form-item nzLayout="vertical">
+      <div class="grid-container">
+        <div class="grid-item">
+          <nz-form-label class="label" nzFor="amka">Όνομα Πατρός</nz-form-label>
+          <nz-form-control>
+            <input class="inputs" nz-input id="amka" type="text" name="amka"  formControlName="amka" />
+          </nz-form-control>
+        </div>
+
+        <div class="grid-item">
+          <nz-form-label class="label" nzFor="code">Όνομα Μητρός</nz-form-label>
+          <nz-form-control>
+            <input class="inputs" nz-input id="code" name="code" type="text" formControlName="code" />
+          </nz-form-control>
+        </div>
+      </div>
+    </nz-form-item>
+
+    <nz-form-item nzLayout="vertical">
+      <div class="grid-container">
+        <div class="grid-item">
+          <nz-form-label class="label" nzFor="amka">Γλώσσα</nz-form-label>
+          <nz-form-control>
+            <input class="inputs" nz-input id="amka" type="text" name="amka"  formControlName="amka" />
+          </nz-form-control>
+        </div>
+
+        <div class="grid-item">
+          <nz-form-label class="label" nzFor="code">Εθνικότητα</nz-form-label>
+          <nz-form-control>
+            <input class="inputs" nz-input id="code" name="code" type="text" formControlName="code" />
+          </nz-form-control>
+        </div>
+      </div>
+    </nz-form-item>
+
+    <nz-form-item nzLayout="vertical">
+      <div class="grid-container">
+        <div class="grid-item">
+          <nz-form-label class="label" nzFor="amka">Επάγγελμα</nz-form-label>
+          <nz-form-control>
+            <input class="inputs" nz-input id="amka" type="text" name="amka"  formControlName="amka" />
+          </nz-form-control>
+        </div>
+
+        <div class="grid-item">
+          <nz-form-label class="label" nzFor="code">Επίπεδο Εκπαίδευσης</nz-form-label>
+          <nz-form-control>
+            <input class="inputs" nz-input id="code" name="code" type="text" formControlName="code" />
+          </nz-form-control>
+        </div>
+      </div>
+    </nz-form-item>
+
+    <nz-divider></nz-divider>
+
+    <div class="footer-btns">
+        <button class="button" nz-button nzType="default" type="button" (click)="closeDrawer()">Ακύρωση</button>
+        <button class="button" nz-button nzType="primary" type="submit">Καταχώρηση</button>
+    </div>
+</form>

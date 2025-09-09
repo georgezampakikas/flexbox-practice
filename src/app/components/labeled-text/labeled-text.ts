@@ -9,5 +9,4 @@ import { Component, Input } from '@angular/core';
 export class LabeledText {
   @Input() text!: string;
   @Input() label!: string;
-
 }

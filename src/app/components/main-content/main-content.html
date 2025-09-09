@@ -26,12 +26,23 @@
       </li>
       <li nz-menu-item>
         <a
-          routerLink="/patient-details"
+          [routerLink]="['/patient-details', 1]"
           routerLinkActive="is-active"
           class="sidebar__link"
         >
           <nz-icon nzType="ordered-list" nzTheme="outline"></nz-icon>
           <span>Στοιχεία Ασθενή</span>
+        </a>        
+      </li>
+      <li nz-menu-item>
+        <a
+          routerLink="/new-patients/3"
+          routerLinkActive="is-active"
+          [routerLinkActiveOptions]="{ exact: true }"
+          class="sidebar__link"
+        >
+          <nz-icon nzType="ordered-list" nzTheme="outline"></nz-icon>
+          <span>Νέοι Ασθενείς</span>
         </a>        
       </li>
     </ul>

@@ -1,0 +1,24 @@
+.label {
+    color: #333333;
+    opacity: 65%;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(2, 50%);
+    gap: 10px;
+}
+
+.inputs {
+    border: 1px solid #333333;
+}
+
+.footer-btns {
+    display: flex;
+    justify-content: flex-end;
+    gap: 6px;
+}
+
+.button {
+    border-radius: 6px;
+}

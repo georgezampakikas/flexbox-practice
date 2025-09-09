@@ -6,8 +6,12 @@ export const routes: Routes = [
         loadComponent: () => import('./components/page/page').then(m => m.Page), 
     },
     {
-        path: 'patient-details',
+        path: 'patient-details/:id',
         loadComponent: () => import('./components/patient-details/patient-details').then(m => m.PatientDetails),
+    },
+    { 
+        path: 'new-patients', 
+        loadComponent: () => import('./components/new-patients/new-patients').then(m => m.NewPatients), 
     },
     { path: '**', redirectTo: 'patients' }
 ];

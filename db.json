@@ -1,0 +1,398 @@
+{
+  "patients": [
+    {
+      "id": "1",
+      "patientIdentity": {
+        "code": "000001",
+        "amka": "2910300000",
+        "lastName": "Κωνσταντίνα Κωνσταντίνου",
+        "firstName": "Κωνσταντίνα Κωνσταντίνου",
+        "status": "Ενεργός"
+      },
+      "demographicInfo": {
+        "birthDate": "29/10/93 (27 ετων)",
+        "birthPlace": "Καρδίτσα",
+        "gender": {
+          "id": 2,
+          "name": "Θήλυ"
+        },
+        "maritalStatus": {
+          "id": 1,
+          "name": "Άγαμος/η"
+        },
+        "fatherName": "Αθανάσιος",
+        "motherName": "Κατερίνα",
+        "language": "Ελληνική",
+        "nationality": {
+          "id": 1,
+          "name": "Ελληνική"
+        },
+        "profession": {
+          "id": 999,
+          "name": "Μή διαθέσιμο"
+        },
+        "education": {
+          "id": 999,
+          "name": "Μή διαθέσιμο"
+        }
+      },
+      "contactInfo": {
+        "homePhone": "2410579060",
+        "mobilePhone": "6900000000",
+        "workPhone": "2410579061",
+        "address": "Φαρσάλων 15Α, Λάρισα, 41223",
+        "email": "info@info-domain.com"
+      }
+    },
+    {
+      "id": "2",
+      "patientIdentity": {
+        "code": "000002",
+        "amka": "1908851234",
+        "lastName": "Παπαδόπουλος Γεώργιος",
+        "firstName": "Γεώργιος Παπαδόπουλος",
+        "status": "Ενεργός"
+      },
+      "demographicInfo": {
+        "birthDate": "15/03/85 (38 ετων)",
+        "birthPlace": "Αθήνα",
+        "gender": {
+          "id": 1,
+          "name": "Άρρεν"
+        },
+        "maritalStatus": {
+          "id": 2,
+          "name": "Έγγαμος/η"
+        },
+        "fatherName": "Δημήτριος",
+        "motherName": "Μαρία",
+        "language": "Ελληνική",
+        "nationality": {
+          "id": 1,
+          "name": "Ελληνική"
+        },
+        "profession": {
+          "id": 3,
+          "name": "Μηχανικός"
+        },
+        "education": {
+          "id": 5,
+          "name": "Ανώτατη"
+        }
+      },
+      "contactInfo": {
+        "homePhone": "2101234567",
+        "mobilePhone": "6971234567",
+        "workPhone": "2101234568",
+        "address": "Πατησίων 123, Αθήνα, 10682",
+        "email": "g.papadopoulos@email.com"
+      }
+    },
+    {
+      "id": "3",
+      "patientIdentity": {
+        "code": "000003",
+        "amka": "0507925678",
+        "firstName": "Ιωάννου Ελένη",
+        "lastName": "Ιωάννου Ελένη",
+        "status": "Ενεργός"
+      },
+      "demographicInfo": {
+        "birthDate": "05/07/92 (31 ετων)",
+        "birthPlace": "Θεσσαλονίκη",
+        "gender": {
+          "id": 2,
+          "name": "Θήλυ"
+        },
+        "maritalStatus": {
+          "id": 1,
+          "name": "Άγαμος/η"
+        },
+        "fatherName": "Νικόλαος",
+        "motherName": "Σοφία",
+        "language": "Ελληνική",
+        "nationality": {
+          "id": 1,
+          "name": "Ελληνική"
+        },
+        "profession": {
+          "id": 7,
+          "name": "Νοσηλεύτρια"
+        },
+        "education": {
+          "id": 4,
+          "name": "Ανώτερη"
+        }
+      },
+      "contactInfo": {
+        "homePhone": "2310987654",
+        "mobilePhone": "6945678901",
+        "workPhone": "2310987655",
+        "address": "Εγνατία 45, Θεσσαλονίκη, 54630",
+        "email": "e.ioannou@hospital.gr"
+      }
+    }
+  ],
+  "genders": [
+    {
+      "id": "1",
+      "name": "Άρρεν",
+      "isActive": true
+    },
+    {
+      "id": "2",
+      "name": "Θήλυ",
+      "isActive": true
+    },
+    {
+      "id": "3",
+      "name": "Άλλο",
+      "isActive": true
+    }
+  ],
+  "maritalStatuses": [
+    {
+      "id": "1",
+      "name": "Άγαμος/η",
+      "isActive": true
+    },
+    {
+      "id": "2",
+      "name": "Έγγαμος/η",
+      "isActive": true
+    },
+    {
+      "id": "3",
+      "name": "Διαζευγμένος/η",
+      "isActive": true
+    },
+    {
+      "id": "4",
+      "name": "Χήρος/α",
+      "isActive": true
+    },
+    {
+      "id": "5",
+      "name": "Σε συμβίωση",
+      "isActive": true
+    }
+  ],
+  "nationalities": [
+    {
+      "id": "1",
+      "name": "Ελληνική",
+      "countryCode": "GR",
+      "isActive": true
+    },
+    {
+      "id": "2",
+      "name": "Αλβανική",
+      "countryCode": "AL",
+      "isActive": true
+    },
+    {
+      "id": "3",
+      "name": "Βουλγαρική",
+      "countryCode": "BG",
+      "isActive": true
+    },
+    {
+      "id": "4",
+      "name": "Γερμανική",
+      "countryCode": "DE",
+      "isActive": true
+    },
+    {
+      "id": "5",
+      "name": "Γαλλική",
+      "countryCode": "FR",
+      "isActive": true
+    },
+    {
+      "id": "6",
+      "name": "Ιταλική",
+      "countryCode": "IT",
+      "isActive": true
+    },
+    {
+      "id": "7",
+      "name": "Αγγλική",
+      "countryCode": "GB",
+      "isActive": true
+    },
+    {
+      "id": "8",
+      "name": "Αμερικανική",
+      "countryCode": "US",
+      "isActive": true
+    },
+    {
+      "id": "9",
+      "name": "Ρουμανική",
+      "countryCode": "RO",
+      "isActive": true
+    },
+    {
+      "id": "10",
+      "name": "Ρωσική",
+      "countryCode": "RU",
+      "isActive": true
+    }
+  ],
+  "professions": [
+    {
+      "id": "1",
+      "name": "Γιατρός",
+      "category": "Υγεία",
+      "isActive": true
+    },
+    {
+      "id": "2",
+      "name": "Δάσκαλος",
+      "category": "Εκπαίδευση",
+      "isActive": true
+    },
+    {
+      "id": "3",
+      "name": "Μηχανικός",
+      "category": "Τεχνικά",
+      "isActive": true
+    },
+    {
+      "id": "4",
+      "name": "Λογιστής",
+      "category": "Οικονομικά",
+      "isActive": true
+    },
+    {
+      "id": "5",
+      "name": "Δικηγόρος",
+      "category": "Νομικά",
+      "isActive": true
+    },
+    {
+      "id": "6",
+      "name": "Πωλητής",
+      "category": "Εμπόριο",
+      "isActive": true
+    },
+    {
+      "id": "7",
+      "name": "Νοσηλεύτρια",
+      "category": "Υγεία",
+      "isActive": true
+    },
+    {
+      "id": "8",
+      "name": "Φαρμακοποιός",
+      "category": "Υγεία",
+      "isActive": true
+    },
+    {
+      "id": "9",
+      "name": "Αρχιτέκτονας",
+      "category": "Τεχνικά",
+      "isActive": true
+    },
+    {
+      "id": "10",
+      "name": "Δημοσιογράφος",
+      "category": "ΜΜΕ",
+      "isActive": true
+    },
+    {
+      "id": "11",
+      "name": "Πολιτικός Μηχανικός",
+      "category": "Τεχνικά",
+      "isActive": true
+    },
+    {
+      "id": "12",
+      "name": "Ηλεκτρολόγος",
+      "category": "Τεχνικά",
+      "isActive": true
+    },
+    {
+      "id": "13",
+      "name": "Οδοντίατρος",
+      "category": "Υγεία",
+      "isActive": true
+    },
+    {
+      "id": "14",
+      "name": "Κτηνίατρος",
+      "category": "Υγεία",
+      "isActive": true
+    },
+    {
+      "id": "15",
+      "name": "Συνταξιούχος",
+      "category": "Άλλα",
+      "isActive": true
+    },
+    {
+      "id": "999",
+      "name": "Μή διαθέσιμο",
+      "category": "Άλλα",
+      "isActive": true
+    }
+  ],
+  "educationLevels": [
+    {
+      "id": "1",
+      "name": "Δημοτικό",
+      "order": 1,
+      "years": 6,
+      "isActive": true
+    },
+    {
+      "id": "2",
+      "name": "Γυμνάσιο",
+      "order": 2,
+      "years": 3,
+      "isActive": true
+    },
+    {
+      "id": "3",
+      "name": "Λύκειο",
+      "order": 3,
+      "years": 3,
+      "isActive": true
+    },
+    {
+      "id": "4",
+      "name": "Ανώτερη",
+      "order": 4,
+      "years": 2,
+      "isActive": true
+    },
+    {
+      "id": "5",
+      "name": "Ανώτατη",
+      "order": 5,
+      "years": 4,
+      "isActive": true
+    },
+    {
+      "id": "6",
+      "name": "Μεταπτυχιακό",
+      "order": 6,
+      "years": 2,
+      "isActive": true
+    },
+    {
+      "id": "7",
+      "name": "Διδακτορικό",
+      "order": 7,
+      "years": 3,
+      "isActive": true
+    },
+    {
+      "id": "999",
+      "name": "Μή διαθέσιμο",
+      "order": 999,
+      "years": 0,
+      "isActive": true
+    }
+  ]
+}
