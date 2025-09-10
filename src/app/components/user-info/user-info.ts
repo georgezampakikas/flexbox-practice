@@ -87,7 +87,8 @@ export class UserInfo implements OnInit {
       nzTitle: 'Επεξεργασία Δημογραφικών Στοιχείων',
       nzContent: DemographicInfoForm,
       nzContentParams: {
-        index: this.index
+        index: this.index,
+        patientData: this.patient,
       },
       nzMaskClosable: false,
       nzClosable: false,

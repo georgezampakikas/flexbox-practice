@@ -35,6 +35,7 @@ import { NzNotificationService } from 'ng-zorro-antd/notification';
 })
 export class DemographicInfoForm implements OnInit {
   @Input() index!: number;
+  @Input() patientData!: PatientDto | null;
 
   @ViewChild('suffixSearchIcon', { static: true }) suffixSearchIcon!: TemplateRef<any>;
 
@@ -44,16 +45,12 @@ export class DemographicInfoForm implements OnInit {
   nationalities: NationalityDto[] = [];
   professions: ProfessionDto[] = [];
 
-  patientData!: PatientDto;
-
   private formBuilder = inject(FormBuilder);
   private drawerRef = inject(NzDrawerRef);
   private notification = inject(NzNotificationService);
   private userService = inject(UserService);
 
   ngOnInit(): void {
-
-
     // fetch nationalities
     this.userService.getNationalities()
     .pipe(take(1))
@@ -82,7 +79,10 @@ export class DemographicInfoForm implements OnInit {
     .pipe(take(1))
     .subscribe({
       next: (res: GenderDto[]) => {
-        this.genders = res
+        this.genders = res;
+        this.demographicInfoForm.patchValue({
+          genderId: this.patientData?.demographicInfo.gender.id,
+        });
       },
 
       error: err => this.notification.error('Error: ', 'Genders not fetched'),
@@ -110,29 +110,19 @@ export class DemographicInfoForm implements OnInit {
       error: err => this.notification.error('Error: ', 'education levels not fetched'),
     });
 
-    this.userService.getPatientData(this.index)
-    .pipe(take(1))
-    .subscribe({
-      next: (res: PatientDto) => {
-        this.patientData = res;
-
-        this.demographicInfoForm.patchValue({
-          birthDate: this.patientData.demographicInfo.birthDate,
-          birthPlace: this.patientData.demographicInfo.birthPlace,
-          genderId: this.patientData.demographicInfo.gender.id,
-          maritalStatusId: this.patientData.demographicInfo.maritalStatus.id,
-          fatherName: this.patientData.demographicInfo.fatherName,
-          motherName: this.patientData.demographicInfo.motherName,
-          language: this.patientData.demographicInfo.language,
-          nationalityId: this.patientData.demographicInfo.nationality.id,
-          professionId: this.patientData.demographicInfo.profession.id,
-          educationId: this.patientData.demographicInfo.education.id,          
-        });
-      },
-
-      error: err => this.notification.error('Error:', 'Patient Data fetched'),
-    });    
-  }
+    this.demographicInfoForm.patchValue({
+      birthDate: this.patientData?.demographicInfo.birthDate,
+      birthPlace: this.patientData?.demographicInfo.birthPlace,
+      // genderId: this.patientData?.demographicInfo.gender.id,
+      maritalStatusId: this.patientData?.demographicInfo.maritalStatus.id,
+      fatherName: this.patientData?.demographicInfo.fatherName,
+      motherName: this.patientData?.demographicInfo.motherName,
+      language: this.patientData?.demographicInfo.language,
+      nationalityId: this.patientData?.demographicInfo.nationality.id,
+      professionId: this.patientData?.demographicInfo.profession.id,
+      educationId: this.patientData?.demographicInfo.education.id,          
+    });
+}  
 
   demographicInfoForm = this.formBuilder.group({
     birthDate: this.formBuilder.control<string | null>(null),
@@ -192,7 +182,7 @@ export class DemographicInfoForm implements OnInit {
       };
 
       const updatedPatient: PatientDto = {
-        ...this.patientData,          
+        ...this.patientData!,          
         demographicInfo: updatedDemographicInfo
       };
 
