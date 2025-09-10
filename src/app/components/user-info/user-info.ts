@@ -9,7 +9,7 @@ import { NzDrawerModule, NzDrawerService } from 'ng-zorro-antd/drawer';
 import { take } from 'rxjs';
 
 import { UserService } from '../../shared/user-service';
-import { PatientsDto } from '../../shared/patient-modal';
+import { PatientDto } from '../../shared/patient-modal';
 import { LabeledTextUserInfo } from "../labeled-text-user-info/labeled-text-user-info";
 import { PatientIdentityForm } from '../patient-identity-form/patient-identity-form';
 import { DemographicInfoForm } from '../demographic-info-form/demographic-info-form';
@@ -32,7 +32,7 @@ import { ActivatedRoute } from '@angular/router';
 export class UserInfo implements OnInit {
   @ViewChild('drawerTitle', { static: true }) drawerTitle!: TemplateRef<any>;
 
-  patient: PatientsDto | null = null;
+  patient: PatientDto | null = null;
 
   private userService = inject(UserService);
   private drawerService = inject(NzDrawerService);
@@ -48,10 +48,10 @@ export class UserInfo implements OnInit {
   }
 
   loadLabeledText(): void {
-      this.userService.getUserData(this.index)
+      this.userService.getPatientData(this.index)
       .pipe(take(1))
       .subscribe({
-        next: (res: PatientsDto) => {
+        next: (res: PatientDto) => {
           this.patient = res;
         },
         error: err => {
@@ -74,14 +74,11 @@ export class UserInfo implements OnInit {
 
     drawerRef.afterClose.subscribe((updatedPatient) => {
       if (updatedPatient) {
-        this.userService.updatePatient(updatedPatient).pipe(take(1)).subscribe({
-          next: (res: PatientsDto | null) => {console.log(res);},
-          error: err => console.log(err),
-        });   
-        
-        this.loadLabeledText();
+        this.userService.putPatient(updatedPatient).pipe(take(1)).subscribe({
+          next: (res: PatientDto | null) => {this.loadLabeledText();},
+          error: err => this.notification.error('Error:', 'put Patient error'),
+        });     
       }
-
     });
   }
 
@@ -94,6 +91,17 @@ export class UserInfo implements OnInit {
       },
       nzMaskClosable: false,
       nzClosable: false,
+    });
+
+    drawerRef.afterClose.subscribe((updatedDemographicInfo) => {
+      if (updatedDemographicInfo) {
+
+        this.userService.putPatient(updatedDemographicInfo).pipe(take(1)).subscribe({
+          next: (res: PatientDto | null) => {this.loadLabeledText();
+          },
+          error: err => this.notification.error('Error:', 'put Patient error'),
+        });   
+      }
     });
   }
 }

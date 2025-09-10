@@ -32,172 +32,106 @@ export class GeneralInstructions {
       address: 'Sidney No. 1 Lake Park'
     },
         {
-      key: '1',
+      key: '4',
       name: 'John Brown',
       age: 32,
       address: 'New York No. 1 Lake Park'
     },
     {
-      key: '2',
+      key: '5',
       name: 'Jim Green',
       age: 42,
       address: 'London No. 1 Lake Park'
     },
     {
-      key: '3',
+      key: '6',
       name: 'Joe Black',
       age: 32,
       address: 'Sidney No. 1 Lake Park'
     },
         {
-      key: '1',
+      key: '7',
       name: 'John Brown',
       age: 32,
       address: 'New York No. 1 Lake Park'
     },
     {
-      key: '2',
+      key: '8',
       name: 'Jim Green',
       age: 42,
       address: 'London No. 1 Lake Park'
     },
     {
-      key: '3',
+      key: '9',
       name: 'Joe Black',
       age: 32,
       address: 'Sidney No. 1 Lake Park'
     },
         {
-      key: '1',
+      key: '10',
       name: 'John Brown',
       age: 32,
       address: 'New York No. 1 Lake Park'
     },
     {
-      key: '2',
+      key: '11',
       name: 'Jim Green',
       age: 42,
       address: 'London No. 1 Lake Park'
     },
     {
-      key: '3',
+      key: '12',
       name: 'Joe Black',
       age: 32,
       address: 'Sidney No. 1 Lake Park'
     },
     {
-      key: '1',
+      key: '13',
       name: 'John Brown',
       age: 32,
       address: 'New York No. 1 Lake Park'
     },
     {
-      key: '2',
+      key: '14',
       name: 'Jim Green',
       age: 42,
       address: 'London No. 1 Lake Park'
     },
     {
-      key: '3',
+      key: '15',
       name: 'Joe Black',
       age: 32,
       address: 'Sidney No. 1 Lake Park'
     },
         {
-      key: '1',
+      key: '16',
       name: 'John Brown',
       age: 32,
       address: 'New York No. 1 Lake Park'
     },
     {
-      key: '2',
+      key: '17',
       name: 'Jim Green',
       age: 42,
       address: 'London No. 1 Lake Park'
     },
         {
-      key: '1',
+      key: '18',
       name: 'John Brown',
       age: 32,
       address: 'New York No. 1 Lake Park'
     },
     {
-      key: '2',
+      key: '19',
       name: 'Jim Green',
       age: 42,
       address: 'London No. 1 Lake Park'
     },
     {
-      key: '3',
+      key: '20',
       name: 'Joe Black',
       age: 32,
       address: 'Sidney No. 1 Lake Park'
-    },
-        {
-      key: '1',
-      name: 'John Brown',
-      age: 32,
-      address: 'New York No. 1 Lake Park'
-    },
-    {
-      key: '2',
-      name: 'Jim Green',
-      age: 42,
-      address: 'London No. 1 Lake Park'
-    },
-        {
-      key: '1',
-      name: 'John Brown',
-      age: 32,
-      address: 'New York No. 1 Lake Park'
-    },
-    {
-      key: '2',
-      name: 'Jim Green',
-      age: 42,
-      address: 'London No. 1 Lake Park'
-    },
-    {
-      key: '3',
-      name: 'Joe Black',
-      age: 32,
-      address: 'Sidney No. 1 Lake Park'
-    },
-        {
-      key: '1',
-      name: 'John Brown',
-      age: 32,
-      address: 'New York No. 1 Lake Park'
-    },
-    {
-      key: '2',
-      name: 'Jim Green',
-      age: 42,
-      address: 'London No. 1 Lake Park'
-    },
-        {
-      key: '1',
-      name: 'John Brown',
-      age: 32,
-      address: 'New York No. 1 Lake Park'
-    },
-    {
-      key: '2',
-      name: 'Jim Green',
-      age: 42,
-      address: 'London No. 1 Lake Park'
-    },
-    {
-      key: '3',
-      name: 'Joe Black',
-      age: 32,
-      address: 'Sidney No. 1 Lake Park'
-    },
-        {
-      key: '1',
-      name: 'John Brown',
-      age: 32,
-      address: 'New York No. 1 Lake Park'
     },
   ];
 }

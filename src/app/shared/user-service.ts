@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { PatientsDto } from './patient-modal';
+import { EducationLevelDto, GenderDto, MaritalStatusDto, NationalityDto, PatientDto, ProfessionDto } from './patient-modal';
 
 @Injectable({
   providedIn: 'root'
@@ -11,11 +11,31 @@ export class UserService {
 
   private httpClient = inject(HttpClient);
 
-  getUserData(id: number): Observable<PatientsDto> {
-    return this.httpClient.get<PatientsDto>(`${this.url}/patients/${id}`);
+  getPatientData(id: number): Observable<PatientDto> {
+    return this.httpClient.get<PatientDto>(`${this.url}/patients/${id}`);
   }
 
-  updatePatient(updatedPatient: PatientsDto | null): Observable<PatientsDto | null> {
-    return this.httpClient.put<PatientsDto | null>(`${this.url}/patients/${updatedPatient?.id}`, updatedPatient);
+  putPatient(updatedPatient: PatientDto | null): Observable<PatientDto | null> {
+    return this.httpClient.put<PatientDto | null>(`${this.url}/patients/${updatedPatient?.id}`, updatedPatient);
+  }
+
+  getGenders(): Observable<GenderDto[]> {
+    return this.httpClient.get<GenderDto[]>(`${this.url}/genders`);
+  }
+
+  getMaritalStatuses(): Observable<MaritalStatusDto[]> {
+    return this.httpClient.get<MaritalStatusDto[]>(`${this.url}/maritalStatuses`);
+  }
+
+  getEducationLevels(): Observable<EducationLevelDto[]> {
+    return this.httpClient.get<EducationLevelDto[]>(`${this.url}/educationLevels`);
+  }
+
+  getNationalities(): Observable<NationalityDto[]> {
+    return this.httpClient.get<NationalityDto[]>(`${this.url}/nationalities`);
+  }
+
+  getProfessions(): Observable<ProfessionDto[]> {
+    return this.httpClient.get<ProfessionDto[]>(`${this.url}/professions`);
   }
 }

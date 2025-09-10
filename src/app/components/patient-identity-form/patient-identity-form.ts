@@ -6,10 +6,11 @@ import { NzButtonModule } from 'ng-zorro-antd/button';
 import { NzDividerModule } from 'ng-zorro-antd/divider';
 import { NzDrawerRef } from 'ng-zorro-antd/drawer';
 import { NzFormModule } from 'ng-zorro-antd/form';
-import { PatientsDto } from '../../shared/patient-modal';
+import { PatientDto } from '../../shared/patient-modal';
 import { UserService } from '../../shared/user-service';
 import { take } from 'rxjs';
 import { NzNotificationService } from 'ng-zorro-antd/notification';
+import { NzInputModule } from 'ng-zorro-antd/input';
 
 @Component({
   selector: 'app-patient-identity-form',
@@ -20,6 +21,7 @@ import { NzNotificationService } from 'ng-zorro-antd/notification';
     CommonModule,  
     NzButtonModule,
     NzDividerModule,
+    NzInputModule,
     NzFormModule,
   ],
   templateUrl: './patient-identity-form.html',
@@ -28,7 +30,7 @@ import { NzNotificationService } from 'ng-zorro-antd/notification';
 export class PatientIdentityForm implements OnInit {
   @Input() index!: number;
 
-  initialUserInfoValues!: PatientsDto;
+  initialUserInfoValues!: PatientDto;
 
   private drawerRef = inject(NzDrawerRef);
   private formBuilder = inject(FormBuilder);
@@ -36,8 +38,8 @@ export class PatientIdentityForm implements OnInit {
   private notification = inject(NzNotificationService);
 
   ngOnInit(): void {
-    this.userService.getUserData(this.index).pipe(take(1)).subscribe({
-      next: (res: PatientsDto) => {
+    this.userService.getPatientData(this.index).pipe(take(1)).subscribe({
+      next: (res: PatientDto) => {
         this.initialUserInfoValues = res;
 
         this.patientIdentityForm.patchValue({
@@ -75,7 +77,7 @@ export class PatientIdentityForm implements OnInit {
         status: this.initialUserInfoValues.patientIdentity.status, 
       };
 
-      const updatedPatient: PatientsDto = {
+      const updatedPatient: PatientDto = {
         ...this.initialUserInfoValues,          
         patientIdentity: updatedPatientIdentity
       };
