@@ -1,4 +1,6 @@
 import { Component, inject, OnInit, TemplateRef, ViewChild } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+
 import { NzCardModule } from "ng-zorro-antd/card";
 import { NzDescriptionsModule } from "ng-zorro-antd/descriptions";
 import { NzNotificationService } from 'ng-zorro-antd/notification';
@@ -13,7 +15,6 @@ import { PatientDto } from '../../shared/patient-modal';
 import { LabeledTextUserInfo } from "../labeled-text-user-info/labeled-text-user-info";
 import { PatientIdentityForm } from '../patient-identity-form/patient-identity-form';
 import { DemographicInfoForm } from '../demographic-info-form/demographic-info-form';
-import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-user-info',
@@ -32,7 +33,7 @@ import { ActivatedRoute } from '@angular/router';
 export class UserInfo implements OnInit {
   @ViewChild('drawerTitle', { static: true }) drawerTitle!: TemplateRef<any>;
 
-  patient: PatientDto | null = null;
+  patient?: PatientDto | null;
 
   private userService = inject(UserService);
   private drawerService = inject(NzDrawerService);
@@ -55,7 +56,8 @@ export class UserInfo implements OnInit {
           this.patient = res;
         },
         error: err => {
-          this.notification.error('Error', 'something went wrong');
+          this.notification.error('Error', 'loadLabeledData error');
+          console.log(err);
         },
         
       });
@@ -86,22 +88,21 @@ export class UserInfo implements OnInit {
     const drawerRef = this.drawerService.create({
       nzTitle: 'Επεξεργασία Δημογραφικών Στοιχείων',
       nzContent: DemographicInfoForm,
-      nzContentParams: {
-        index: this.index,
-        patientData: this.patient,
-      },
+      nzData: {patientData: this.patient},
       nzMaskClosable: false,
       nzClosable: false,
+      nzWidth: 530,
     });
 
     drawerRef.afterClose.subscribe((updatedDemographicInfo) => {
       if (updatedDemographicInfo) {
 
-        this.userService.putPatient(updatedDemographicInfo).pipe(take(1)).subscribe({
-          next: (res: PatientDto | null) => {this.loadLabeledText();
-          },
-          error: err => this.notification.error('Error:', 'put Patient error'),
-        });   
+        // this.userService.putPatient(updatedDemographicInfo).pipe(take(1)).subscribe({
+        //   next: (res: PatientDto | null) => {
+        //     this.loadLabeledText();
+        //   },
+        //   error: err => this.notification.error('Error:', 'put Patient error'),
+        // });   
       }
     });
   }

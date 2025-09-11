@@ -15,8 +15,8 @@ export class UserService {
     return this.httpClient.get<PatientDto>(`${this.url}/patients/${id}`);
   }
 
-  putPatient(updatedPatient: PatientDto | null): Observable<PatientDto | null> {
-    return this.httpClient.put<PatientDto | null>(`${this.url}/patients/${updatedPatient?.id}`, updatedPatient);
+  putPatient(updatedPatient: PatientDto): Observable<PatientDto> {
+    return this.httpClient.put<PatientDto>(`${this.url}/patients/${updatedPatient.id}`, updatedPatient);
   }
 
   getGenders(): Observable<GenderDto[]> {

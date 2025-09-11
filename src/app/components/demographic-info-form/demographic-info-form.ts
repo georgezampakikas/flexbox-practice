@@ -4,15 +4,14 @@ import { ReactiveFormsModule, FormsModule, FormBuilder } from '@angular/forms';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { NzDatePickerModule } from 'ng-zorro-antd/date-picker';
 import { NzDividerModule } from 'ng-zorro-antd/divider';
-import { NzDrawerRef, NzDrawerContentDirective } from 'ng-zorro-antd/drawer';
+import { NzDrawerRef, NzDrawerContentDirective, NZ_DRAWER_DATA } from 'ng-zorro-antd/drawer';
 import { NzFormModule } from 'ng-zorro-antd/form';
 import { NzIconModule } from 'ng-zorro-antd/icon';
 import { NzInputModule } from 'ng-zorro-antd/input';
 import { NzSelectModule, NzSelectOptionInterface } from 'ng-zorro-antd/select';
 import { UserService } from '../../shared/user-service';
-import { take } from 'rxjs';
-import { Patients } from '../patients/patients';
-import { EducationLevelDto, GenderDto, MaritalStatusDto, NamedEntity, NationalityDto, PatientDto, ProfessionDto } from '../../shared/patient-modal';
+import { take, forkJoin } from 'rxjs';
+import { EducationLevelDto, GenderDto, MaritalStatusDto, NationalityDto, PatientDto, ProfessionDto } from '../../shared/patient-modal';
 import { NzNotificationService } from 'ng-zorro-antd/notification';
 
 @Component({
@@ -34,16 +33,13 @@ import { NzNotificationService } from 'ng-zorro-antd/notification';
   styleUrl: './demographic-info-form.scss'
 })
 export class DemographicInfoForm implements OnInit {
-  @Input() index!: number;
-  @Input() patientData!: PatientDto | null;
-
-  @ViewChild('suffixSearchIcon', { static: true }) suffixSearchIcon!: TemplateRef<any>;
-
   genders: GenderDto[] = [];
   maritalStatuses: MaritalStatusDto[] = [];
   educationLevels: EducationLevelDto[] = [];
   nationalities: NationalityDto[] = [];
   professions: ProfessionDto[] = [];
+
+  nzData: { patientData: PatientDto } = inject(NZ_DRAWER_DATA);
 
   private formBuilder = inject(FormBuilder);
   private drawerRef = inject(NzDrawerRef);
@@ -51,78 +47,40 @@ export class DemographicInfoForm implements OnInit {
   private userService = inject(UserService);
 
   ngOnInit(): void {
-    // fetch nationalities
-    this.userService.getNationalities()
-    .pipe(take(1))
-    .subscribe({
-      next: (res: NationalityDto[]) => {
-        this.nationalities = res
-      },
+    forkJoin({
+    genders: this.userService.getGenders().pipe(take(1)),
+    maritalStatuses: this.userService.getMaritalStatuses().pipe(take(1)),
+    nationalities: this.userService.getNationalities().pipe(take(1)),
+    professions: this.userService.getProfessions().pipe(take(1)),
+    educationLevels: this.userService.getEducationLevels().pipe(take(1)),
+  }).subscribe({
+    next: ({ genders, maritalStatuses, nationalities, professions, educationLevels }) => {
+      this.genders = genders;
+      this.maritalStatuses = maritalStatuses;
+      this.nationalities = nationalities;
+      this.professions = professions;
+      this.educationLevels = educationLevels;
 
-      error: err => this.notification.error('Error: ', 'nationalities not fetched'),      
-    });
-
-    // fetch professions
-    this.userService.getProfessions()
-    .pipe(take(1))
-    .subscribe({
-      next: (res: ProfessionDto[]) => {
-        this.professions = res
-      },
-
-      error: err => this.notification.error('Error: ', 'professions not fetched'),      
-    });
-
-
-    // fetch genders
-    this.userService.getGenders()
-    .pipe(take(1))
-    .subscribe({
-      next: (res: GenderDto[]) => {
-        this.genders = res;
-        this.demographicInfoForm.patchValue({
-          genderId: this.patientData?.demographicInfo.gender.id,
-        });
-      },
-
-      error: err => this.notification.error('Error: ', 'Genders not fetched'),
-    });
-
-    // fetch marital status
-    this.userService.getMaritalStatuses()
-    .pipe(take(1))
-    .subscribe({
-      next: (res: MaritalStatusDto[]) => {
-        this.maritalStatuses = res
-      },
-
-      error: err => this.notification.error('Error: ', 'marital statuses not fetched'),
-    });
-
-    // fetch educational levels
-    this.userService.getEducationLevels()
-    .pipe(take(1))
-    .subscribe({
-      next: (res: EducationLevelDto[]) => {
-        this.educationLevels = res
-      },
-
-      error: err => this.notification.error('Error: ', 'education levels not fetched'),
-    });
-
-    this.demographicInfoForm.patchValue({
-      birthDate: this.patientData?.demographicInfo.birthDate,
-      birthPlace: this.patientData?.demographicInfo.birthPlace,
-      // genderId: this.patientData?.demographicInfo.gender.id,
-      maritalStatusId: this.patientData?.demographicInfo.maritalStatus.id,
-      fatherName: this.patientData?.demographicInfo.fatherName,
-      motherName: this.patientData?.demographicInfo.motherName,
-      language: this.patientData?.demographicInfo.language,
-      nationalityId: this.patientData?.demographicInfo.nationality.id,
-      professionId: this.patientData?.demographicInfo.profession.id,
-      educationId: this.patientData?.demographicInfo.education.id,          
-    });
+      const data = this.nzData.patientData.demographicInfo;
+      this.demographicInfoForm.patchValue({
+        birthDate: data.birthDate,
+        birthPlace: data.birthPlace,
+        genderId: data.gender.id,
+        maritalStatusId: data.maritalStatus.id,
+        fatherName: data.fatherName,
+        motherName: data.motherName,
+        language: data.language,
+        nationalityId: data.nationality.id,
+        professionId: data.profession.id,
+        educationId: data.education.id,
+      });
+    },
+    error: (err: Error) => {
+      this.notification.error('Error', 'Failed to load dropdown data');
+    }
+  });
 }  
+
 
   demographicInfoForm = this.formBuilder.group({
     birthDate: this.formBuilder.control<string | null>(null),
@@ -146,9 +104,7 @@ export class DemographicInfoForm implements OnInit {
     if (this.demographicInfoForm.valid) {
       const formValues = this.demographicInfoForm.value;
 
-      const selectedGender = this.genders.find(g => {
-        g.id === formValues.genderId;
-      })!;
+      const selectedGender = this.genders.find(g => {return g.id === formValues.genderId})!;
 
 
       const selectedMaritalStatus = this.maritalStatuses.find(g => {
@@ -182,7 +138,7 @@ export class DemographicInfoForm implements OnInit {
       };
 
       const updatedPatient: PatientDto = {
-        ...this.patientData!,          
+        ...this.nzData.patientData!,          
         demographicInfo: updatedDemographicInfo
       };
 

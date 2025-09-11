@@ -1,41 +1,30 @@
-<form nz-form [formGroup]="demographicInfoForm" (ngSubmit)="submitForm()">
+<form class="class-form" nz-form [formGroup]="demographicInfoForm" (ngSubmit)="submitForm()">
   <nz-form-item nzLayout="vertical">
-    <div class="grid-container">
-      <div class="grid-item">
-        <nz-form-label class="label" nzFor="birthDate">Ημερομηνία Γέννησης</nz-form-label>
-        <nz-form-control>
-          <nz-date-picker 
-            nzFormat="dd/MM/yyyy"
-            nzPlaceHolder="Επίλεξε Ημερομηνία"
-            formControlName="birthDate"
-          ></nz-date-picker>
-        </nz-form-control>
-      </div>
+      <div class="grid-container">
+        <div class="grid-item">
+          <nz-form-label class="label" nzFor="language">Ημερομηνία Γέννησης</nz-form-label>
+          <nz-form-control>
+            <nz-date-picker class="inputs"></nz-date-picker>
+         </nz-form-control>
+        </div>
 
-      <div class="grid-item">
-        <nz-form-label class="label" nzFor="birthPlace">Τόπος Γέννησης</nz-form-label>
-        <nz-form-control>
-          <nz-input-group class="input-groups" [nzSuffix]="suffixSearchIcon">
-            <input 
-              class="inputs" 
-              nz-input 
-              id="birthPlace" 
-              name="birthPlace" 
-              type="text" 
-              formControlName="birthPlace" 
-            />
-          </nz-input-group>
-        </nz-form-control>
+        <div class="grid-item">
+          <nz-form-label class="label" nzFor="birthPlace">Τόπος Γέννησης</nz-form-label>
+          <nz-form-control>
+            <nz-input-group class="input-groups">
+              <input class="inputs" nz-input id="birthPlace" name="birthPlace" type="text" formControlName="birthPlace" />
+            </nz-input-group>
+          </nz-form-control>
+        </div>
       </div>
-    </div>
-  </nz-form-item>
+    </nz-form-item>
 
   <nz-form-item nzLayout="vertical">
     <div class="grid-container">
       <div class="grid-item">
         <nz-form-label class="label" nzFor="firstName">Φύλο</nz-form-label>
         <nz-form-control>
-          <nz-select formControlName="genderId">
+          <nz-select class="inputs" formControlName="genderId">
             @for (gender of genders; track gender.id) {
               <nz-option [nzLabel]="gender.name" [nzValue]="gender.id"></nz-option>
             }
@@ -46,7 +35,7 @@
       <div class="grid-item">
         <nz-form-label class="label" nzFor="lastName">Οικογενειακή Κατάσταση</nz-form-label>
         <nz-form-control>
-          <nz-select formControlName="maritalStatusId">
+          <nz-select class="inputs" formControlName="maritalStatusId">
             @for (maritalStatus of maritalStatuses; track maritalStatus.id) {
               <nz-option [nzLabel]="maritalStatus.name" [nzValue]="maritalStatus.id"></nz-option>
             }
@@ -79,7 +68,7 @@
         <div class="grid-item">
           <nz-form-label class="label" nzFor="language">Γλώσσα</nz-form-label>
           <nz-form-control>
-            <nz-input-group class="input-groups" [nzSuffix]="suffixSearchIcon">
+            <nz-input-group class="input-groups">
               <input 
                 class="inputs" 
                 nz-input 
@@ -95,7 +84,7 @@
         <div class="grid-item">
           <nz-form-label class="label" nzFor="nationality">Εθνικότητα</nz-form-label>
           <nz-form-control>
-            <nz-input-group class="input-groups" [nzSuffix]="suffixSearchIcon">
+            <nz-input-group class="input-groups">
               <input class="inputs" nz-input id="nationality" name="nationality" type="text" formControlName="nationalityId" />
             </nz-input-group>
           </nz-form-control>
@@ -108,7 +97,7 @@
         <div class="grid-item">
           <nz-form-label class="label" nzFor="profession">Επάγγελμα</nz-form-label>
           <nz-form-control>
-            <nz-input-group class="input-groups" [nzSuffix]="suffixSearchIcon">
+            <nz-input-group class="input-groups">
               <input class="inputs" nz-input id="profession" type="text" name="profession"  formControlName="professionId" />      
             </nz-input-group>
           </nz-form-control>
@@ -117,7 +106,7 @@
         <div class="grid-item">
           <nz-form-label class="label" nzFor="education">Επίπεδο Εκπαίδευσης</nz-form-label>
           <nz-form-control>
-            <nz-select formControlName="educationId">
+            <nz-select class="inputs" formControlName="educationId">
               @for (educationLevel of educationLevels; track educationLevel.id) {
                 <nz-option [nzLabel]="educationLevel.name" [nzValue]="educationLevel.id"></nz-option>
               }
@@ -134,7 +123,3 @@
         <button class="button" nz-button nzType="primary" type="submit">Καταχώρηση</button>
     </div>   
 </form>
-
-<ng-template #suffixSearchIcon>
-  <nz-icon nzType="search" />
-</ng-template> 
