@@ -9,7 +9,7 @@ import { NZ_DRAWER_DATA, NzDrawerRef } from 'ng-zorro-antd/drawer';
 import { NzFormModule } from 'ng-zorro-antd/form';
 import { NzNotificationService } from 'ng-zorro-antd/notification';
 
-import { DemographicInfo, PatientIdentity } from '../../shared/patient-modal';
+import { DemographicInfo, PatientDto, PatientIdentity } from '../../shared/patient-modal';
 import { UserService } from '../../shared/user-service';
 
 @Component({
@@ -62,7 +62,7 @@ export class PatientIdentityForm implements OnInit {
     if (this.patientIdentityForm.valid) {
       const formValues = this.patientIdentityForm.value;
 
-      const updatedPatientIdentity = {
+      const updatedPatientIdentity: PatientIdentity = {
         code: formValues.code ?? '',
         amka: formValues.amka ?? '',
         firstName: formValues.firstName ?? '',
@@ -70,9 +70,7 @@ export class PatientIdentityForm implements OnInit {
         status: this.nzData.patientIdentityData.status, 
       };
 
-      const updatedPatient: PatientIdentity = updatedPatientIdentity;
-
-      this.drawerRef.close(updatedPatient);
+      this.drawerRef.close(updatedPatientIdentity);
     }
   }
 

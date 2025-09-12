@@ -1,7 +1,7 @@
 {
   "patients": [
     {
-      "id": 1,
+      "id": "1",
       "patientIdentity": {
         "code": "000001",
         "amka": "2910300000",
@@ -13,27 +13,27 @@
         "birthDate": "29/10/93 (27 ετων)",
         "birthPlace": "Καρδίτσα",
         "gender": {
-          "id": 2,
-          "name": "Θήλυ"
+          "id": 1,
+          "name": "Άρρεν"
         },
         "maritalStatus": {
-          "id": 1,
-          "name": "Άγαμος/η"
+          "id": 5,
+          "name": "Σε συμβίωση"
         },
         "fatherName": "Αθανάσιος",
         "motherName": "Κατερίνα",
         "language": "Ελληνική",
         "nationality": {
           "id": 1,
-          "name": "Ελληνική"
+          "name": "Γερμανική"
         },
         "profession": {
           "id": 999,
           "name": "Μή διαθέσιμο"
         },
         "education": {
-          "id": 999,
-          "name": "Μή διαθέσιμο"
+          "id": 4,
+          "name": "Ανώτερη"
         }
       },
       "contactInfo": {
@@ -45,7 +45,7 @@
       }
     },
     {
-      "id": 2,
+      "id": "2",
       "patientIdentity": {
         "code": "000002",
         "amka": "1908851234",
@@ -89,7 +89,7 @@
       }
     },
     {
-      "id": 3,
+      "id": "3",
       "patientIdentity": {
         "code": "000003",
         "amka": "0507925678",
@@ -134,55 +134,265 @@
     }
   ],
   "genders": [
-    { "id": 1, "name": "Άρρεν", "isActive": true },
-    { "id": 2, "name": "Θήλυ", "isActive": true },
-    { "id": 3, "name": "Άλλο", "isActive": true }
+    {
+      "id": "1",
+      "name": "Άρρεν",
+      "isActive": true
+    },
+    {
+      "id": "2",
+      "name": "Θήλυ",
+      "isActive": true
+    },
+    {
+      "id": "3",
+      "name": "Άλλο",
+      "isActive": true
+    }
   ],
   "maritalStatuses": [
-    { "id": 1, "name": "Άγαμος/η", "isActive": true },
-    { "id": 2, "name": "Έγγαμος/η", "isActive": true },
-    { "id": 3, "name": "Διαζευγμένος/η", "isActive": true },
-    { "id": 4, "name": "Χήρος/α", "isActive": true },
-    { "id": 5, "name": "Σε συμβίωση", "isActive": true }
+    {
+      "id": "1",
+      "name": "Άγαμος/η",
+      "isActive": true
+    },
+    {
+      "id": "2",
+      "name": "Έγγαμος/η",
+      "isActive": true
+    },
+    {
+      "id": "3",
+      "name": "Διαζευγμένος/η",
+      "isActive": true
+    },
+    {
+      "id": "4",
+      "name": "Χήρος/α",
+      "isActive": true
+    },
+    {
+      "id": "5",
+      "name": "Σε συμβίωση",
+      "isActive": true
+    }
   ],
   "nationalities": [
-    { "id": 1, "name": "Ελληνική", "countryCode": "GR", "isActive": true },
-    { "id": 2, "name": "Αλβανική", "countryCode": "AL", "isActive": true },
-    { "id": 3, "name": "Βουλγαρική", "countryCode": "BG", "isActive": true },
-    { "id": 4, "name": "Γερμανική", "countryCode": "DE", "isActive": true },
-    { "id": 5, "name": "Γαλλική", "countryCode": "FR", "isActive": true },
-    { "id": 6, "name": "Ιταλική", "countryCode": "IT", "isActive": true },
-    { "id": 7, "name": "Αγγλική", "countryCode": "GB", "isActive": true },
-    { "id": 8, "name": "Αμερικανική", "countryCode": "US", "isActive": true },
-    { "id": 9, "name": "Ρουμανική", "countryCode": "RO", "isActive": true },
-    { "id": 10, "name": "Ρωσική", "countryCode": "RU", "isActive": true }
+    {
+      "id": "1",
+      "name": "Ελληνική",
+      "countryCode": "GR",
+      "isActive": true
+    },
+    {
+      "id": "2",
+      "name": "Αλβανική",
+      "countryCode": "AL",
+      "isActive": true
+    },
+    {
+      "id": "3",
+      "name": "Βουλγαρική",
+      "countryCode": "BG",
+      "isActive": true
+    },
+    {
+      "id": "4",
+      "name": "Γερμανική",
+      "countryCode": "DE",
+      "isActive": true
+    },
+    {
+      "id": "5",
+      "name": "Γαλλική",
+      "countryCode": "FR",
+      "isActive": true
+    },
+    {
+      "id": "6",
+      "name": "Ιταλική",
+      "countryCode": "IT",
+      "isActive": true
+    },
+    {
+      "id": "7",
+      "name": "Αγγλική",
+      "countryCode": "GB",
+      "isActive": true
+    },
+    {
+      "id": "8",
+      "name": "Αμερικανική",
+      "countryCode": "US",
+      "isActive": true
+    },
+    {
+      "id": "9",
+      "name": "Ρουμανική",
+      "countryCode": "RO",
+      "isActive": true
+    },
+    {
+      "id": "10",
+      "name": "Ρωσική",
+      "countryCode": "RU",
+      "isActive": true
+    }
   ],
   "professions": [
-    { "id": 1, "name": "Γιατρός", "category": "Υγεία", "isActive": true },
-    { "id": 2, "name": "Δάσκαλος", "category": "Εκπαίδευση", "isActive": true },
-    { "id": 3, "name": "Μηχανικός", "category": "Τεχνικά", "isActive": true },
-    { "id": 4, "name": "Λογιστής", "category": "Οικονομικά", "isActive": true },
-    { "id": 5, "name": "Δικηγόρος", "category": "Νομικά", "isActive": true },
-    { "id": 6, "name": "Πωλητής", "category": "Εμπόριο", "isActive": true },
-    { "id": 7, "name": "Νοσηλεύτρια", "category": "Υγεία", "isActive": true },
-    { "id": 8, "name": "Φαρμακοποιός", "category": "Υγεία", "isActive": true },
-    { "id": 9, "name": "Αρχιτέκτονας", "category": "Τεχνικά", "isActive": true },
-    { "id": 10, "name": "Δημοσιογράφος", "category": "ΜΜΕ", "isActive": true },
-    { "id": 11, "name": "Πολιτικός Μηχανικός", "category": "Τεχνικά", "isActive": true },
-    { "id": 12, "name": "Ηλεκτρολόγος", "category": "Τεχνικά", "isActive": true },
-    { "id": 13, "name": "Οδοντίατρος", "category": "Υγεία", "isActive": true },
-    { "id": 14, "name": "Κτηνίατρος", "category": "Υγεία", "isActive": true },
-    { "id": 15, "name": "Συνταξιούχος", "category": "Άλλα", "isActive": true },
-    { "id": 999, "name": "Μή διαθέσιμο", "category": "Άλλα", "isActive": true }
+    {
+      "id": "1",
+      "name": "Γιατρός",
+      "category": "Υγεία",
+      "isActive": true
+    },
+    {
+      "id": "2",
+      "name": "Δάσκαλος",
+      "category": "Εκπαίδευση",
+      "isActive": true
+    },
+    {
+      "id": "3",
+      "name": "Μηχανικός",
+      "category": "Τεχνικά",
+      "isActive": true
+    },
+    {
+      "id": "4",
+      "name": "Λογιστής",
+      "category": "Οικονομικά",
+      "isActive": true
+    },
+    {
+      "id": "5",
+      "name": "Δικηγόρος",
+      "category": "Νομικά",
+      "isActive": true
+    },
+    {
+      "id": "6",
+      "name": "Πωλητής",
+      "category": "Εμπόριο",
+      "isActive": true
+    },
+    {
+      "id": "7",
+      "name": "Νοσηλεύτρια",
+      "category": "Υγεία",
+      "isActive": true
+    },
+    {
+      "id": "8",
+      "name": "Φαρμακοποιός",
+      "category": "Υγεία",
+      "isActive": true
+    },
+    {
+      "id": "9",
+      "name": "Αρχιτέκτονας",
+      "category": "Τεχνικά",
+      "isActive": true
+    },
+    {
+      "id": "10",
+      "name": "Δημοσιογράφος",
+      "category": "ΜΜΕ",
+      "isActive": true
+    },
+    {
+      "id": "11",
+      "name": "Πολιτικός Μηχανικός",
+      "category": "Τεχνικά",
+      "isActive": true
+    },
+    {
+      "id": "12",
+      "name": "Ηλεκτρολόγος",
+      "category": "Τεχνικά",
+      "isActive": true
+    },
+    {
+      "id": "13",
+      "name": "Οδοντίατρος",
+      "category": "Υγεία",
+      "isActive": true
+    },
+    {
+      "id": "14",
+      "name": "Κτηνίατρος",
+      "category": "Υγεία",
+      "isActive": true
+    },
+    {
+      "id": "15",
+      "name": "Συνταξιούχος",
+      "category": "Άλλα",
+      "isActive": true
+    },
+    {
+      "id": "999",
+      "name": "Μή διαθέσιμο",
+      "category": "Άλλα",
+      "isActive": true
+    }
   ],
   "educationLevels": [
-    { "id": 1, "name": "Δημοτικό", "order": 1, "years": 6, "isActive": true },
-    { "id": 2, "name": "Γυμνάσιο", "order": 2, "years": 3, "isActive": true },
-    { "id": 3, "name": "Λύκειο", "order": 3, "years": 3, "isActive": true },
-    { "id": 4, "name": "Ανώτερη", "order": 4, "years": 2, "isActive": true },
-    { "id": 5, "name": "Ανώτατη", "order": 5, "years": 4, "isActive": true },
-    { "id": 6, "name": "Μεταπτυχιακό", "order": 6, "years": 2, "isActive": true },
-    { "id": 7, "name": "Διδακτορικό", "order": 7, "years": 3, "isActive": true },
-    { "id": 999, "name": "Μή διαθέσιμο", "order": 999, "years": 0, "isActive": true }
+    {
+      "id": "1",
+      "name": "Δημοτικό",
+      "order": 1,
+      "years": 6,
+      "isActive": true
+    },
+    {
+      "id": "2",
+      "name": "Γυμνάσιο",
+      "order": 2,
+      "years": 3,
+      "isActive": true
+    },
+    {
+      "id": "3",
+      "name": "Λύκειο",
+      "order": 3,
+      "years": 3,
+      "isActive": true
+    },
+    {
+      "id": "4",
+      "name": "Ανώτερη",
+      "order": 4,
+      "years": 2,
+      "isActive": true
+    },
+    {
+      "id": "5",
+      "name": "Ανώτατη",
+      "order": 5,
+      "years": 4,
+      "isActive": true
+    },
+    {
+      "id": "6",
+      "name": "Μεταπτυχιακό",
+      "order": 6,
+      "years": 2,
+      "isActive": true
+    },
+    {
+      "id": "7",
+      "name": "Διδακτορικό",
+      "order": 7,
+      "years": 3,
+      "isActive": true
+    },
+    {
+      "id": "999",
+      "name": "Μή διαθέσιμο",
+      "order": 999,
+      "years": 0,
+      "isActive": true
+    }
   ]
 }

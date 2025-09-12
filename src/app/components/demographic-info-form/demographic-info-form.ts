@@ -11,7 +11,7 @@ import { NzInputModule } from 'ng-zorro-antd/input';
 import { NzSelectModule, NzSelectOptionInterface } from 'ng-zorro-antd/select';
 import { UserService } from '../../shared/user-service';
 import { take, forkJoin } from 'rxjs';
-import { EducationLevelDto, GenderDto, MaritalStatusDto, NationalityDto, PatientDto, ProfessionDto } from '../../shared/patient-modal';
+import { DemographicInfo, EducationLevelDto, GenderDto, MaritalStatusDto, NationalityDto, PatientDto, ProfessionDto } from '../../shared/patient-modal';
 import { NzNotificationService } from 'ng-zorro-antd/notification';
 
 @Component({
@@ -39,7 +39,7 @@ export class DemographicInfoForm implements OnInit {
   nationalities: NationalityDto[] = [];
   professions: ProfessionDto[] = [];
 
-  nzData: { patientData: PatientDto } = inject(NZ_DRAWER_DATA);
+  nzData: { demographicInfo: DemographicInfo } = inject(NZ_DRAWER_DATA);
 
   private formBuilder = inject(FormBuilder);
   private drawerRef = inject(NzDrawerRef);
@@ -48,37 +48,37 @@ export class DemographicInfoForm implements OnInit {
 
   ngOnInit(): void {
     forkJoin({
-    genders: this.userService.getGenders().pipe(take(1)),
-    maritalStatuses: this.userService.getMaritalStatuses().pipe(take(1)),
-    nationalities: this.userService.getNationalities().pipe(take(1)),
-    professions: this.userService.getProfessions().pipe(take(1)),
-    educationLevels: this.userService.getEducationLevels().pipe(take(1)),
-  }).subscribe({
-    next: ({ genders, maritalStatuses, nationalities, professions, educationLevels }) => {
-      this.genders = genders;
-      this.maritalStatuses = maritalStatuses;
-      this.nationalities = nationalities;
-      this.professions = professions;
-      this.educationLevels = educationLevels;
+      genders: this.userService.getGenders().pipe(take(1)),
+      maritalStatuses: this.userService.getMaritalStatuses().pipe(take(1)),
+      nationalities: this.userService.getNationalities().pipe(take(1)),
+      professions: this.userService.getProfessions().pipe(take(1)),
+      educationLevels: this.userService.getEducationLevels().pipe(take(1)),
+    }).subscribe({
+      next: ({ genders, maritalStatuses, nationalities, professions, educationLevels }) => {
+        this.genders = genders;
+        this.maritalStatuses = maritalStatuses;
+        this.nationalities = nationalities;
+        this.professions = professions;
+        this.educationLevels = educationLevels;
 
-      const data = this.nzData.patientData.demographicInfo;
-      this.demographicInfoForm.patchValue({
-        birthDate: data.birthDate,
-        birthPlace: data.birthPlace,
-        genderId: data.gender.id,
-        maritalStatusId: data.maritalStatus.id,
-        fatherName: data.fatherName,
-        motherName: data.motherName,
-        language: data.language,
-        nationalityId: data.nationality.id,
-        professionId: data.profession.id,
-        educationId: data.education.id,
-      });
-    },
-    error: (err: Error) => {
-      this.notification.error('Error', 'Failed to load dropdown data');
-    }
-  });
+        const data = this.nzData.demographicInfo;
+        this.demographicInfoForm.patchValue({
+          birthDate: data.birthDate,
+          birthPlace: data.birthPlace,
+          genderId: data.gender.id,
+          maritalStatusId: data.maritalStatus.id,
+          fatherName: data.fatherName,
+          motherName: data.motherName,
+          language: data.language,
+          nationality: data.nationality.name,
+          profession: data.profession.name,
+          educationId: data.education.id,
+        });
+      },
+      error: (err) => {
+        this.notification.error('Error', 'Failed to load dropdown data');
+      }
+    });
 }  
 
 
@@ -90,8 +90,8 @@ export class DemographicInfoForm implements OnInit {
     fatherName: this.formBuilder.control<string | null>(null),
     motherName: this.formBuilder.control<string | null>(null),
     language: this.formBuilder.control<string | null>(null),
-    nationalityId: this.formBuilder.control<number | null>(null),
-    professionId: this.formBuilder.control<number | null>(null),
+    nationality: this.formBuilder.control<string | null>(null),
+    profession: this.formBuilder.control<string | null>(null),
     educationId: this.formBuilder.control<number | null>(null),
   });
 
@@ -104,47 +104,24 @@ export class DemographicInfoForm implements OnInit {
     if (this.demographicInfoForm.valid) {
       const formValues = this.demographicInfoForm.value;
 
-      const selectedGender = this.genders.find(g => {return g.id === formValues.genderId})!;
-
-
-      const selectedMaritalStatus = this.maritalStatuses.find(g => {
-        g.id === formValues.maritalStatusId;
-      })!;
-
-      const selectedNationality = this.nationalities.find(g => {
-        g.id === formValues.nationalityId;
-      })!;
-
-      const selectedProfesion = this.professions.find(g => {
-        g.id === formValues.professionId;
-      })!;
-
-      const selectedEducation = this.educationLevels.find(g => {
-        g.id === formValues.educationId;
-      })!;
-
+      const selectedGender = this.genders.find(g =>  g.id === +formValues.genderId!)!;
+      const selectedMaritalStatus = this.maritalStatuses.find(g => g.id === +formValues.maritalStatusId!)!;
+      const selectedEducation = this.educationLevels.find(g => g.id === +formValues.educationId!)!;
 
       const updatedDemographicInfo = {
           birthDate: formValues.birthDate!,
           birthPlace: formValues.birthPlace!,
-          gender: selectedGender,
-          maritalStatus: selectedMaritalStatus,
+          gender: { id: selectedGender.id, name: selectedGender.name },
+          maritalStatus: { id: selectedMaritalStatus.id, name: selectedMaritalStatus.name},
           fatherName: formValues.fatherName!,
           motherName: formValues.motherName!,
           language: formValues.language!,
-          nationality: selectedNationality,
-          profession: selectedProfesion,
-          education: selectedEducation,   
+          nationality: { id: this.nzData.demographicInfo.nationality.id, name:  formValues.nationality },
+          profession: { id: this.nzData.demographicInfo.profession.id, name: formValues.profession },
+          education: { id: selectedEducation.id, name: selectedEducation.name},
       };
 
-      const updatedPatient: PatientDto = {
-        ...this.nzData.patientData!,          
-        demographicInfo: updatedDemographicInfo
-      };
-
-      this.drawerRef.close(updatedPatient);
-    } else {
-      this.demographicInfoForm.markAllAsTouched();
+      this.drawerRef.close(updatedDemographicInfo);
     }
   }
 }

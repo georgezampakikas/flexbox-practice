@@ -56,6 +56,7 @@ export class UserInfo implements OnInit {
         },
         error: err => {
           this.notification.error('Error', 'loadLabeledData error');
+          console.log(err);
         },
         
       });
@@ -70,9 +71,16 @@ export class UserInfo implements OnInit {
       nzClosable: false,
     });
 
-    drawerRef.afterClose.subscribe((updatedPatient) => {
-      if (updatedPatient) {
-        this.userService.putPatientIdentity(this.patientId, updatedPatient, this.patient!).pipe(take(1)).subscribe({
+    drawerRef.afterClose.subscribe((updatedPatientIdentity) => {
+      if (updatedPatientIdentity) {
+        const updatedPatient: PatientDto = {
+          id: this.patient!.id,
+          patientIdentity: updatedPatientIdentity,
+          demographicInfo: this.patient!.demographicInfo,
+          contactInfo: this.patient!.contactInfo
+        };
+
+        this.userService.putPatient(this.patientId, updatedPatient).pipe(take(1)).subscribe({
           next: (res: PatientDto) => {this.loadLabeledText();},
           error: err => this.notification.error('Error:', 'put Patient error'),
         });     
@@ -80,27 +88,33 @@ export class UserInfo implements OnInit {
     });
   }
 
-  // openDemographicInfoDrawer(): void {
-  //   const drawerRef = this.drawerService.create({
-  //     nzTitle: 'Επεξεργασία Δημογραφικών Στοιχείων',
-  //     nzContent: DemographicInfoForm,
-  //     nzData: {patientData: this.patient},
-  //     nzMaskClosable: false,
-  //     nzClosable: false,
-  //     nzWidth: 530,
-  //   });
+  openDemographicInfoDrawer(): void {
+    const drawerRef = this.drawerService.create({
+      nzTitle: 'Επεξεργασία Δημογραφικών Στοιχείων',
+      nzContent: DemographicInfoForm,
+      nzData: {demographicInfo: this.patient?.demographicInfo},
+      nzMaskClosable: false,
+      nzClosable: false,
+      nzWidth: 530,
+    });
 
-  //   drawerRef.afterClose.subscribe((updatedDemographicInfo) => {
-  //     if (updatedDemographicInfo) {
+    drawerRef.afterClose.subscribe((updatedDemographicInfo) => {
+      if (updatedDemographicInfo) {
+        const updatedPatient: PatientDto = {
+          id: this.patient!.id,
+          patientIdentity: this.patient!.patientIdentity,
+          demographicInfo: updatedDemographicInfo,
+          contactInfo: this.patient!.contactInfo
+        };
 
-  //       // this.userService.putPatient(updatedDemographicInfo).pipe(take(1)).subscribe({
-  //       //   next: (res: PatientDto | null) => {
-  //       //     this.loadLabeledText();
-  //       //   },
-  //       //   error: err => this.notification.error('Error:', 'put Patient error'),
-  //       // });   
-  //     }
-  //   });
-  // }
+        this.userService.putPatient(this.patientId, updatedPatient).pipe(take(1)).subscribe({
+          next: (res: PatientDto | null) => {
+            this.loadLabeledText();
+          },
+          error: err => this.notification.error('Error:', 'put Patient error'),
+        });   
+      }
+    });
+  }
 }
 
