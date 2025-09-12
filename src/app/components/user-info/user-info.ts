@@ -11,7 +11,7 @@ import { NzDrawerModule, NzDrawerService } from 'ng-zorro-antd/drawer';
 import { take } from 'rxjs';
 
 import { UserService } from '../../shared/user-service';
-import { PatientDto } from '../../shared/patient-modal';
+import { PatientDto, PatientIdentity } from '../../shared/patient-modal';
 import { LabeledTextUserInfo } from "../labeled-text-user-info/labeled-text-user-info";
 import { PatientIdentityForm } from '../patient-identity-form/patient-identity-form';
 import { DemographicInfoForm } from '../demographic-info-form/demographic-info-form';
@@ -40,8 +40,7 @@ export class UserInfo implements OnInit {
   private notification = inject(NzNotificationService);
   private route = inject(ActivatedRoute);
   
-  patientId = this.route.snapshot.paramMap.get('id');
-  index = Number(this.patientId);
+  readonly patientId = Number(this.route.snapshot.paramMap.get('id'));
 
 
   ngOnInit(): void {
@@ -49,7 +48,7 @@ export class UserInfo implements OnInit {
   }
 
   loadLabeledText(): void {
-      this.userService.getPatientData(this.index)
+      this.userService.getPatientData(this.patientId)
       .pipe(take(1))
       .subscribe({
         next: (res: PatientDto) => {
@@ -57,7 +56,6 @@ export class UserInfo implements OnInit {
         },
         error: err => {
           this.notification.error('Error', 'loadLabeledData error');
-          console.log(err);
         },
         
       });
@@ -67,44 +65,42 @@ export class UserInfo implements OnInit {
     const drawerRef = this.drawerService.create({
       nzTitle: this.drawerTitle,
       nzContent: PatientIdentityForm,
-      nzContentParams: {
-        index: this.index
-      },
+      nzData: { patientIdentityData: this.patient?.patientIdentity },
       nzMaskClosable: false,
       nzClosable: false,
     });
 
     drawerRef.afterClose.subscribe((updatedPatient) => {
       if (updatedPatient) {
-        this.userService.putPatient(updatedPatient).pipe(take(1)).subscribe({
-          next: (res: PatientDto | null) => {this.loadLabeledText();},
+        this.userService.putPatientIdentity(this.patientId, updatedPatient, this.patient!).pipe(take(1)).subscribe({
+          next: (res: PatientDto) => {this.loadLabeledText();},
           error: err => this.notification.error('Error:', 'put Patient error'),
         });     
       }
     });
   }
 
-  openDemographicInfoDrawer(): void {
-    const drawerRef = this.drawerService.create({
-      nzTitle: 'Επεξεργασία Δημογραφικών Στοιχείων',
-      nzContent: DemographicInfoForm,
-      nzData: {patientData: this.patient},
-      nzMaskClosable: false,
-      nzClosable: false,
-      nzWidth: 530,
-    });
+  // openDemographicInfoDrawer(): void {
+  //   const drawerRef = this.drawerService.create({
+  //     nzTitle: 'Επεξεργασία Δημογραφικών Στοιχείων',
+  //     nzContent: DemographicInfoForm,
+  //     nzData: {patientData: this.patient},
+  //     nzMaskClosable: false,
+  //     nzClosable: false,
+  //     nzWidth: 530,
+  //   });
 
-    drawerRef.afterClose.subscribe((updatedDemographicInfo) => {
-      if (updatedDemographicInfo) {
+  //   drawerRef.afterClose.subscribe((updatedDemographicInfo) => {
+  //     if (updatedDemographicInfo) {
 
-        // this.userService.putPatient(updatedDemographicInfo).pipe(take(1)).subscribe({
-        //   next: (res: PatientDto | null) => {
-        //     this.loadLabeledText();
-        //   },
-        //   error: err => this.notification.error('Error:', 'put Patient error'),
-        // });   
-      }
-    });
-  }
+  //       // this.userService.putPatient(updatedDemographicInfo).pipe(take(1)).subscribe({
+  //       //   next: (res: PatientDto | null) => {
+  //       //     this.loadLabeledText();
+  //       //   },
+  //       //   error: err => this.notification.error('Error:', 'put Patient error'),
+  //       // });   
+  //     }
+  //   });
+  // }
 }
 

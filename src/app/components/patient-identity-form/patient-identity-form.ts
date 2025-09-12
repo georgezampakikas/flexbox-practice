@@ -2,15 +2,15 @@ import { CommonModule } from '@angular/common';
 import { Component, inject, Input, OnInit } from '@angular/core';
 import { FormBuilder, FormsModule, ReactiveFormsModule } from '@angular/forms';
 
+import { NzInputModule } from 'ng-zorro-antd/input';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { NzDividerModule } from 'ng-zorro-antd/divider';
-import { NzDrawerRef } from 'ng-zorro-antd/drawer';
+import { NZ_DRAWER_DATA, NzDrawerRef } from 'ng-zorro-antd/drawer';
 import { NzFormModule } from 'ng-zorro-antd/form';
-import { PatientDto } from '../../shared/patient-modal';
-import { UserService } from '../../shared/user-service';
-import { take } from 'rxjs';
 import { NzNotificationService } from 'ng-zorro-antd/notification';
-import { NzInputModule } from 'ng-zorro-antd/input';
+
+import { DemographicInfo, PatientIdentity } from '../../shared/patient-modal';
+import { UserService } from '../../shared/user-service';
 
 @Component({
   selector: 'app-patient-identity-form',
@@ -28,9 +28,9 @@ import { NzInputModule } from 'ng-zorro-antd/input';
   styleUrl: './patient-identity-form.scss'
 })
 export class PatientIdentityForm implements OnInit {
-  @Input() index!: number;
+  nzData: { patientIdentityData: PatientIdentity } = inject(NZ_DRAWER_DATA);
 
-  initialUserInfoValues!: PatientDto;
+  initialUserInfoValues!: DemographicInfo;
 
   private drawerRef = inject(NzDrawerRef);
   private formBuilder = inject(FormBuilder);
@@ -38,18 +38,11 @@ export class PatientIdentityForm implements OnInit {
   private notification = inject(NzNotificationService);
 
   ngOnInit(): void {
-    this.userService.getPatientData(this.index).pipe(take(1)).subscribe({
-      next: (res: PatientDto) => {
-        this.initialUserInfoValues = res;
-
-        this.patientIdentityForm.patchValue({
-          amka: this.initialUserInfoValues.patientIdentity?.amka,
-          code: this.initialUserInfoValues.patientIdentity.code,
-          firstName: this.initialUserInfoValues.patientIdentity.firstName,
-          lastName: this.initialUserInfoValues.patientIdentity.lastName,
-        });
-      },
-      error: err => this.notification.error('Error', err),
+    this.patientIdentityForm.patchValue({
+      amka: this.nzData.patientIdentityData.amka,
+      code: this.nzData.patientIdentityData.code,
+      firstName: this.nzData.patientIdentityData.firstName,
+      lastName: this.nzData.patientIdentityData.lastName,
     });
   }
 
@@ -74,17 +67,12 @@ export class PatientIdentityForm implements OnInit {
         amka: formValues.amka ?? '',
         firstName: formValues.firstName ?? '',
         lastName: formValues.lastName ?? '',
-        status: this.initialUserInfoValues.patientIdentity.status, 
+        status: this.nzData.patientIdentityData.status, 
       };
 
-      const updatedPatient: PatientDto = {
-        ...this.initialUserInfoValues,          
-        patientIdentity: updatedPatientIdentity
-      };
+      const updatedPatient: PatientIdentity = updatedPatientIdentity;
 
       this.drawerRef.close(updatedPatient);
-    } else {
-      this.patientIdentityForm.markAllAsTouched();
     }
   }
 
