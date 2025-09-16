@@ -182,7 +182,7 @@
                             }
                         </nz-radio-group>
 
-                        @if (isPhoneTypeOther1) {
+                        @if (stableElementsForm.get('phone1TypeId')?.value === 4) {
                             <input
                                 class="inputs"
                                 nz-input
@@ -216,7 +216,7 @@
                             }
                         </nz-radio-group>
 
-                        @if (isPhoneTypeOther2) {
+                        @if (stableElementsForm.get('phone2TypeId')?.value === 4) {
                             <input
                                 class="inputs"
                                 nz-input
@@ -250,7 +250,7 @@
                             }
                         </nz-radio-group>
 
-                        @if (isPhoneTypeOther3) {
+                        @if (stableElementsForm.get('phone3TypeId')?.value === 4) {
                             <input
                                 class="inputs"
                                 nz-input
@@ -284,7 +284,7 @@
                             }
                         </nz-radio-group>
 
-                        @if (isAddressTypeOther) {
+                        @if (stableElementsForm.get('addressTypeId')?.value === 4) {
                             <input
                                 class="inputs"
                                 nz-input

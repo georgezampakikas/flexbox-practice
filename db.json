@@ -40,14 +40,14 @@
         "phone1TypeId": 1,
         "phone1": "2410579060",
         "phone1Label": null,
-        "phone2TypeId": 3,
+        "phone2TypeId": 2,
         "phone2": "6900000000",
         "phone2Label": "Νεος αριθμος",
-        "phone3TypeId": 4,
+        "phone3TypeId": 3,
         "phone3": "2410579061",
         "phone3Label": "test",
-        "addressTypeId": 1,
-        "addressLabel": null,
+        "addressTypeId": 4,
+        "addressLabel": "test2",
         "address": "Φαρσάλων 15Α, Λάρισα, 41223",
         "email": "info@info-domain.com"
       }

@@ -141,32 +141,19 @@ export class StableElements implements OnInit{
               nationality: this.nzData.patientsData.demographicInfo.nationality.name,
               profession: this.nzData.patientsData.demographicInfo.profession.name,
               educationId: this.nzData.patientsData.demographicInfo.education.id,
-              // phone1TypeId: this.nzData.patientsData.contactInfo.phone1TypeId,
+              phone1TypeId: this.nzData.patientsData.contactInfo.phone1TypeId,
               phone1: this.nzData.patientsData.contactInfo.phone1,
               phone1Label: this.nzData.patientsData.contactInfo.phone1Label,
-              // phone2TypeId: this.nzData.patientsData.contactInfo.phone2TypeId,
+              phone2TypeId: this.nzData.patientsData.contactInfo.phone2TypeId,
               phone2: this.nzData.patientsData.contactInfo.phone2,
               phone2Label: this.nzData.patientsData.contactInfo.phone2Label,
-              // phone3TypeId: this.nzData.patientsData.contactInfo.phone3TypeId,
+              phone3TypeId: this.nzData.patientsData.contactInfo.phone3TypeId,
               phone3: this.nzData.patientsData.contactInfo.phone3,
               phone3Label: this.nzData.patientsData.contactInfo.phone3Label,
-              // addressTypeId: this.nzData.patientsData.contactInfo.addressTypeId,
+              addressTypeId: this.nzData.patientsData.contactInfo.addressTypeId,
               addressLabel: this.nzData.patientsData.contactInfo.addressLabel,
               address: this.nzData.patientsData.contactInfo.address,
               email: this.nzData.patientsData.contactInfo.email
-            });
-
-            this.stableElementsForm.get('phone1TypeId')?.valueChanges.subscribe(value => {
-              this.isPhoneTypeOther1 = value === 4;
-            });
-            this.stableElementsForm.get('phone2TypeId')?.valueChanges.subscribe(value => {
-              this.isPhoneTypeOther2 = value === 4;
-            });
-            this.stableElementsForm.get('phone3TypeId')?.valueChanges.subscribe(value => {
-              this.isPhoneTypeOther3 = value === 4;
-            });
-            this.stableElementsForm.get('addressTypeId')?.valueChanges.subscribe(value => {
-              this.isAddressTypeOther = value === 4;
             });
           },
           error: (err) => {
