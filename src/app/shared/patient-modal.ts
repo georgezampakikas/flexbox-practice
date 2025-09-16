@@ -27,9 +27,17 @@ export interface DemographicInfo {
 }
 
 export interface ContactInfo {
-  homePhone: string;
-  mobilePhone: string;
-  workPhone: string;
+  phone1TypeId: number;
+  phone1: string;  
+  phone1Label: string;
+  phone2TypeId: number;
+  phone2: string; 
+  phone2Label: string;
+  phone3TypeId: number;
+  phone3: string;  
+  phone3Label: string;
+  addressTypeId: number;
+  addressLabel: string;
   address: string;
   email: string;
 }
@@ -74,4 +82,14 @@ export interface ProfessionDto {
   name: string;
   category: string;
   isActive: boolean;
+}
+
+export interface PhoneTypeDto {
+  id: number;
+  name: string;
+}
+
+export interface AddressTypeDto {
+  id: number;
+  name: string;
 }

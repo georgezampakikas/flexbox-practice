@@ -4,12 +4,14 @@ import { inject, Injectable } from '@angular/core';
 import { map, Observable, switchMap, take } from 'rxjs';
 
 import { 
+  AddressTypeDto,
   EducationLevelDto, 
   GenderDto, 
   MaritalStatusDto, 
   NationalityDto, 
   PatientDto, 
   PatientIdentity, 
+  PhoneTypeDto, 
   ProfessionDto 
 } from './patient-modal';
 
@@ -67,5 +69,21 @@ export class UserService {
       ...profession,
       id: +profession.id
     }))));
+  }
+
+  getPhoneTypes(): Observable<PhoneTypeDto[]> {
+    return this.httpClient.get<PhoneTypeDto[]>(`${this.url}/phoneType`)
+    .pipe(map(phoneTypes => phoneTypes.map(phoneType => ({
+      ...phoneType,
+      id: +phoneType.id
+    }))))
+  }
+
+  getAddressTypes(): Observable<AddressTypeDto[]> {
+    return this.httpClient.get<AddressTypeDto[]>(`${this.url}/addressType`)
+    .pipe(map(addressTypes => addressTypes.map(addressType => ({
+      ...addressType,
+      id: +addressType.id
+    }))))
   }
 }

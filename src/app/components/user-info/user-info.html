@@ -13,7 +13,7 @@
     <ng-template #patientIdentity>
         <div class="title-container">
             <div class="title">Στοιχεία ταυτότητας</div>
-            <a class="edit-button" (click)="openPatientIdentityDrawer()">
+            <a class="edit-button" (click)="openStableElementsDrawer()">
                 <nz-icon nzType="edit" nzTheme="outline" />
             </a>
         </div>
@@ -37,7 +37,7 @@
     <ng-template #demographicInfo>
         <div class="title-container">
             <div class="title">Δημογραφικά Στοιχεία</div>
-            <a class="edit-button" (click)="openDemographicInfoDrawer()">
+            <a class="edit-button">
                 <nz-icon nzType="edit" nzTheme="outline" />
             </a>
         </div>
@@ -45,9 +45,9 @@
 
     <nz-card class="cards" [nzTitle]="contactInfo">
         <div class="labeled-text-container-contact">
-            <app-labeled-text-user-info [isUrl]="true" class="" label="Οικίας" [text]="patient?.contactInfo?.homePhone" />
-            <app-labeled-text-user-info [isUrl]="true" label="Κινητό" [text]="patient?.contactInfo?.mobilePhone" />
-            <app-labeled-text-user-info [isUrl]="true" label="Εργασίας" [text]="patient?.contactInfo?.workPhone" />
+            <app-labeled-text-user-info [isUrl]="true" class="" label="Οικίας" [text]="patient?.contactInfo?.phone1" />
+            <app-labeled-text-user-info [isUrl]="true" label="Κινητό" [text]="patient?.contactInfo?.phone2" />
+            <app-labeled-text-user-info [isUrl]="true" label="Εργασίας" [text]="patient?.contactInfo?.phone3" />
             <app-labeled-text-user-info [isUrl]="true" class="span-2" label="Διεύθυνση" [text]="patient?.contactInfo?.address" />
             <app-labeled-text-user-info [isUrl]="true" label="Email" [text]="patient?.contactInfo?.email" />  
         </div>

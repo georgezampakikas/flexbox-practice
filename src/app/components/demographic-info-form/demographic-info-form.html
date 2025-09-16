@@ -4,7 +4,7 @@
         <div class="grid-item">
           <nz-form-label class="label" nzFor="language">Ημερομηνία Γέννησης</nz-form-label>
           <nz-form-control>
-            <nz-date-picker class="inputs"></nz-date-picker>
+            <nz-date-picker formControlName="birthDate" class="inputs"></nz-date-picker>
          </nz-form-control>
         </div>
 
@@ -12,7 +12,14 @@
           <nz-form-label class="label" nzFor="birthPlace">Τόπος Γέννησης</nz-form-label>
           <nz-form-control>
             <nz-input-group class="input-groups">
-              <input class="inputs" nz-input id="birthPlace" name="birthPlace" type="text" formControlName="birthPlace" />
+              <input 
+                class="inputs" 
+                nz-input 
+                id="birthPlace" 
+                name="birthPlace" 
+                type="text" 
+                formControlName="birthPlace" 
+              />
             </nz-input-group>
           </nz-form-control>
         </div>
@@ -50,14 +57,28 @@
         <div class="grid-item">
           <nz-form-label class="label" nzFor="fatherName">Όνομα Πατρός</nz-form-label>
           <nz-form-control>
-            <input class="inputs" nz-input id="fatherName" type="text" name="fatherName"  formControlName="fatherName" />
+            <input 
+              class="inputs" 
+              nz-input 
+              id="fatherName" 
+              type="text" 
+              name="fatherName" 
+              formControlName="fatherName" 
+            />
           </nz-form-control>
         </div>
 
         <div class="grid-item">
           <nz-form-label class="label" nzFor="motherName">Όνομα Μητρός</nz-form-label>
           <nz-form-control>
-            <input class="inputs" nz-input id="motherName" name="motherName" type="text" formControlName="motherName" />
+            <input 
+              class="inputs" 
+              nz-input 
+              id="motherName" 
+              name="motherName" 
+              type="text" 
+              formControlName="motherName" 
+            />
           </nz-form-control>
         </div>
       </div>
@@ -85,7 +106,14 @@
           <nz-form-label class="label" nzFor="nationality">Εθνικότητα</nz-form-label>
           <nz-form-control>
             <nz-input-group class="input-groups">
-              <input class="inputs" nz-input id="nationality" name="nationality" type="text" formControlName="nationality" />
+              <input 
+                class="inputs" 
+                nz-input 
+                id="nationality" 
+                name="nationality" 
+                type="text" 
+                formControlName="nationality" 
+              />
             </nz-input-group>
           </nz-form-control>
         </div>
@@ -98,7 +126,14 @@
           <nz-form-label class="label" nzFor="profession">Επάγγελμα</nz-form-label>
           <nz-form-control>
             <nz-input-group class="input-groups">
-              <input class="inputs" nz-input id="profession" type="text" name="profession"  formControlName="profession" />      
+              <input 
+                class="inputs" 
+                nz-input 
+                id="profession" 
+                type="text" 
+                name="profession"  
+                formControlName="profession" 
+              />      
             </nz-input-group>
           </nz-form-control>
         </div>

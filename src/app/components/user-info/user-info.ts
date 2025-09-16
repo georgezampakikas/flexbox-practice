@@ -15,6 +15,8 @@ import { PatientDto, PatientIdentity } from '../../shared/patient-modal';
 import { LabeledTextUserInfo } from "../labeled-text-user-info/labeled-text-user-info";
 import { PatientIdentityForm } from '../patient-identity-form/patient-identity-form';
 import { DemographicInfoForm } from '../demographic-info-form/demographic-info-form';
+import { ContactInfoForm } from '../contact-info-form/contact-info-form';
+import { StableElements } from '../stable-elements/stable-elements';
 
 @Component({
   selector: 'app-user-info',
@@ -34,6 +36,7 @@ export class UserInfo implements OnInit {
   @ViewChild('drawerTitle', { static: true }) drawerTitle!: TemplateRef<any>;
 
   patient?: PatientDto | null;
+  drawerWidth = window.innerWidth * 0.75;
 
   private userService = inject(UserService);
   private drawerService = inject(NzDrawerService);
@@ -62,57 +65,30 @@ export class UserInfo implements OnInit {
       });
   }
 
-  openPatientIdentityDrawer(): void {
+  openStableElementsDrawer(): void {
     const drawerRef = this.drawerService.create({
-      nzTitle: this.drawerTitle,
-      nzContent: PatientIdentityForm,
-      nzData: { patientIdentityData: this.patient?.patientIdentity },
+      nzTitle: 'Σταθερά Στοιχεία',
+      nzContent: StableElements,
+      nzData: { patientsData: this.patient },
       nzMaskClosable: false,
       nzClosable: false,
+      nzWidth: this.drawerWidth
     });
 
-    drawerRef.afterClose.subscribe((updatedPatientIdentity) => {
-      if (updatedPatientIdentity) {
-        const updatedPatient: PatientDto = {
-          id: this.patient!.id,
-          patientIdentity: updatedPatientIdentity,
-          demographicInfo: this.patient!.demographicInfo,
-          contactInfo: this.patient!.contactInfo
-        };
-
-        this.userService.putPatient(this.patientId, updatedPatient).pipe(take(1)).subscribe({
-          next: (res: PatientDto) => {this.loadLabeledText();},
-          error: err => this.notification.error('Error:', 'put Patient error'),
-        });     
-      }
-    });
-  }
-
-  openDemographicInfoDrawer(): void {
-    const drawerRef = this.drawerService.create({
-      nzTitle: 'Επεξεργασία Δημογραφικών Στοιχείων',
-      nzContent: DemographicInfoForm,
-      nzData: {demographicInfo: this.patient?.demographicInfo},
-      nzMaskClosable: false,
-      nzClosable: false,
-      nzWidth: 530,
-    });
-
-    drawerRef.afterClose.subscribe((updatedDemographicInfo) => {
-      if (updatedDemographicInfo) {
-        const updatedPatient: PatientDto = {
-          id: this.patient!.id,
-          patientIdentity: this.patient!.patientIdentity,
-          demographicInfo: updatedDemographicInfo,
-          contactInfo: this.patient!.contactInfo
-        };
-
-        this.userService.putPatient(this.patientId, updatedPatient).pipe(take(1)).subscribe({
-          next: (res: PatientDto | null) => {
+    drawerRef.afterClose.subscribe((updatedPatient) => {
+      if (updatedPatient) {
+        this.userService.putPatient(this.patientId, updatedPatient)
+        .pipe(take(1))
+        .subscribe({
+          next: () => {
+            this.notification.success('Successfully', 'put patients data');
             this.loadLabeledText();
           },
-          error: err => this.notification.error('Error:', 'put Patient error'),
-        });   
+          error: err => {
+            this.notification.error('Error:', 'put method failed');
+            console.log(err);
+          }
+        });
       }
     });
   }

@@ -107,6 +107,9 @@ export class DemographicInfoForm implements OnInit {
       const selectedGender = this.genders.find(g =>  g.id === +formValues.genderId!)!;
       const selectedMaritalStatus = this.maritalStatuses.find(g => g.id === +formValues.maritalStatusId!)!;
       const selectedEducation = this.educationLevels.find(g => g.id === +formValues.educationId!)!;
+      const selectedNationality = this.nationalities.find(g => g.name === formValues.nationality)!;
+      const selectedProfession = this.professions.find(g => g.name === formValues.profession)!;
+
 
       const updatedDemographicInfo = {
           birthDate: formValues.birthDate!,
@@ -116,8 +119,8 @@ export class DemographicInfoForm implements OnInit {
           fatherName: formValues.fatherName!,
           motherName: formValues.motherName!,
           language: formValues.language!,
-          nationality: { id: this.nzData.demographicInfo.nationality.id, name:  formValues.nationality },
-          profession: { id: this.nzData.demographicInfo.profession.id, name: formValues.profession },
+          nationality: { id: selectedNationality.id, name:  selectedNationality.name },
+          profession: { id: selectedProfession.id, name: selectedProfession.name },
           education: { id: selectedEducation.id, name: selectedEducation.name},
       };
 
