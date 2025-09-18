@@ -890,6 +890,28 @@
   resolved "https://registry.yarnpkg.com/@lmdb/lmdb-win32-x64/-/lmdb-win32-x64-3.4.2.tgz#99caf114bb74d39c9e1baca99b907353ad8bf461"
   integrity sha512-IY+r3bxKW6Q6sIPiMC0L533DEfRJSXibjSI3Ft/w9Q8KQBNqEIvUFXt+09wV8S5BRk0a8uSF19YWxuRwEfI90g==
 
+"@maskito/angular@^3.10.3":
+  version "3.10.3"
+  resolved "https://registry.yarnpkg.com/@maskito/angular/-/angular-3.10.3.tgz#30414b623c9d4a84a7ead7aadd967536770ab38e"
+  integrity sha512-Wu64iLuuMZH/3fXgQSj15i/XRDcGdxIYY1eoq+zEUX0JkN+f1DLYzS4QVUMz/APNb7mnpnmNP0omr0feEWj+Kg==
+  dependencies:
+    tslib "2.8.1"
+
+"@maskito/core@^3.10.3":
+  version "3.10.3"
+  resolved "https://registry.yarnpkg.com/@maskito/core/-/core-3.10.3.tgz#f40dc6a006b585384394fa9f730b1fec327ebd4f"
+  integrity sha512-4SZeEF6PjDHC+J5ADrJaSrFmgqmGkqfE5Yi6BrNXze9TGvVRy9aHJCizShFvheqCEu6MsK0XprZot28wH9AhjQ==
+
+"@maskito/kit@^3.10.3":
+  version "3.10.3"
+  resolved "https://registry.yarnpkg.com/@maskito/kit/-/kit-3.10.3.tgz#df55b63bbb450b0935382cd3ea327b0f6c98d1c4"
+  integrity sha512-4IAL5WPlz4zi6vCMp8KbSAVh67WT+o0PzQ56dU4E7crN1jzBm1cN7MIbGawefOIXwAiqCb8zOSyTv/qqSL0xGQ==
+
+"@maskito/phone@^3.10.3":
+  version "3.10.3"
+  resolved "https://registry.yarnpkg.com/@maskito/phone/-/phone-3.10.3.tgz#5ce39feff8995ac03d08dc9e16fb80154a95443f"
+  integrity sha512-xt0WLrzLbxiS+0j5QoR6lBjU+FvtqfUL3BOEAKcopgUa8lrswZr3g6fRy0BCcvrzpf4Jdpj3FsZcBRd6ljiEkg==
+
 "@modelcontextprotocol/sdk@1.17.3":
   version "1.17.3"
   resolved "https://registry.yarnpkg.com/@modelcontextprotocol/sdk/-/sdk-1.17.3.tgz#cf92354220f0183d28179e96a9bf3a8f6d3211ae"
@@ -4605,7 +4627,7 @@ totalist@^3.0.0:
   resolved "https://registry.yarnpkg.com/totalist/-/totalist-3.0.1.tgz#ba3a3d600c915b1a97872348f79c127475f6acf8"
   integrity sha512-sf4i37nQ2LBx4m3wB74y+ubopq6W/dIzXg0FDGjsYnZHVa1Da8FH853wlL2gtUhg+xJXjfk3kUZS3BRoQeoQBQ==
 
-tslib@^2.0.0, tslib@^2.1.0, tslib@^2.3.0, tslib@^2.4.0:
+tslib@2.8.1, tslib@^2.0.0, tslib@^2.1.0, tslib@^2.3.0, tslib@^2.4.0:
   version "2.8.1"
   resolved "https://registry.yarnpkg.com/tslib/-/tslib-2.8.1.tgz#612efe4ed235d567e8aba5f2a5fab70280ade83f"
   integrity sha512-oJFu94HQb+KVduSUQL7wnpmqnfmLsOA/nAh6b6EH0wCEoK0/mPeXU6c3wKDV83MkOuHPRHtSXKKU99IBazS/2w==

@@ -13,9 +13,9 @@
     </div>
 
     <ul nz-menu nzTheme="dark" nzMode="inline">
-      <li nz-menu-item>
+      <li nz-menu-item nzMatchRouter>
         <a
-          routerLink="/patients"
+          routerLink="/patients/"
           routerLinkActive="is-active"
           [routerLinkActiveOptions]="{ exact: true }"
           class="sidebar__link"
@@ -24,7 +24,7 @@
           <span>Ασθενείς</span>
         </a>        
       </li>
-      <li nz-menu-item>
+      <li nz-menu-item nzMatchRouter>
         <a
           [routerLink]="['/patient-details', 1]"
           routerLinkActive="is-active"
@@ -34,11 +34,10 @@
           <span>Στοιχεία Ασθενή</span>
         </a>        
       </li>
-      <li nz-menu-item>
+      <li nz-menu-item nzMatchRouter>
         <a
           routerLink="/new-patients"
           routerLinkActive="is-active"
-          [routerLinkActiveOptions]="{ exact: true }"
           class="sidebar__link"
         >
           <nz-icon nzType="ordered-list" nzTheme="outline"></nz-icon>

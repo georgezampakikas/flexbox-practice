@@ -1,6 +1,9 @@
 import { CommonModule } from '@angular/common';
 import { Component, inject, OnInit } from '@angular/core';
-import { FormBuilder, FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormBuilder, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
+
+import { MaskitoDirective } from '@maskito/angular';
+import { MaskitoOptions } from '@maskito/core';
 
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { NzDividerModule } from 'ng-zorro-antd/divider';
@@ -28,7 +31,6 @@ import {
   ProfessionDto 
 } from '../../shared/patient-modal';
 import { UserService } from '../../shared/user-service';
-import { ActivatedRoute } from '@angular/router';
 
 
 @Component({
@@ -38,6 +40,7 @@ import { ActivatedRoute } from '@angular/router';
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
+    MaskitoDirective,
     NzFormModule,
     NzDividerModule,
     NzButtonModule,
@@ -50,11 +53,6 @@ import { ActivatedRoute } from '@angular/router';
   styleUrl: './stable-elements.scss'
 })
 export class StableElements implements OnInit{
-  isPhoneTypeOther1: boolean= false;
-  isPhoneTypeOther2: boolean = false;
-  isPhoneTypeOther3: boolean = false;
-  isAddressTypeOther: boolean = false;
-
   genders: GenderDto[] = [];
   maritalStatuses: MaritalStatusDto[] = [];
   educationLevels: EducationLevelDto[] = [];
@@ -85,19 +83,55 @@ export class StableElements implements OnInit{
     profession: this.formBuilder.control<string | null>(null),
     educationId: this.formBuilder.control<number | null>(null),
     phone1TypeId: this.formBuilder.control<number | null>(1),
-    phone1: this.formBuilder.control<string | null>(null),
+    phone1: this.formBuilder.control<string | null>(
+      null,
+      [
+        Validators.minLength(10),
+        Validators.maxLength(10),
+      ]
+    ),
     phone1Label: this.formBuilder.control<string | null>(null),
     phone2TypeId: this.formBuilder.control<number | null>(1),
-    phone2: this.formBuilder.control<string | null>(null),
+    phone2: this.formBuilder.control<string | null>(
+      null,
+      [
+        Validators.minLength(10),
+        Validators.maxLength(10),
+      ]
+    ),
     phone2Label: this.formBuilder.control<string | null>(null),
     phone3TypeId: this.formBuilder.control<number | null>(1),
-    phone3: this.formBuilder.control<string | null>(null),
+    phone3: this.formBuilder.control<string | null>(
+      null,
+      [
+        Validators.minLength(10),
+        Validators.maxLength(10),
+      ]
+    ),
     phone3Label: this.formBuilder.control<string | null>(null),
     addressTypeId: this.formBuilder.control<number | null>(1),
     addressLabel: this.formBuilder.control<string | null>(null),
     address: this.formBuilder.control<string | null>(null),
-    email: this.formBuilder.control<string | null>(null)
+    email: this.formBuilder.control<string | null>(
+      null, 
+      [Validators.email]
+    )
   });
+
+  phone2Mask: MaskitoOptions = {
+    mask: [
+      '6', '9',
+      /\d/, /\d/, /\d/, /\d/, /\d/, /\d/, /\d/, /\d/
+    ],
+  };
+
+  phoneMask: MaskitoOptions = {
+      mask: [
+      /\d/, /\d/,
+      /\d/, /\d/, /\d/, /\d/, /\d/, /\d/, /\d/, /\d/
+    ],
+  };
+
 
   ngOnInit(): void {
     forkJoin({
@@ -169,6 +203,7 @@ export class StableElements implements OnInit{
   }
 
   submitForm(): void {
+    if (this.stableElementsForm.valid) {
     const formValues = this.stableElementsForm.value;
 
     const updatedPatientIdentity: PatientIdentity = {
@@ -222,5 +257,6 @@ export class StableElements implements OnInit{
     };
 
     this.drawerRef.close(updatedPatient);
+    }
   }
 }

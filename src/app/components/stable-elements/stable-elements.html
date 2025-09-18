@@ -192,13 +192,33 @@
                             />
                         }
 
-                        <input 
-                            class="inputs" 
-                            nz-input 
-                            id="phone1" 
-                            type="text" 
-                            formControlName="phone1"
-                        />                
+                        @if (stableElementsForm.get('phone1TypeId')?.value === 2) {
+                            <input 
+                                class="inputs" 
+                                nz-input 
+                                id="phone1" 
+                                [maskito]="phone2Mask"
+                                type="text" 
+                                [class.error]="stableElementsForm.get('phone1')?.invalid"
+                                formControlName="phone1"
+                            />                                            
+                        } @else {
+                            <input 
+                                class="inputs" 
+                                nz-input 
+                                [maskito]="phoneMask"
+                                id="phone1" 
+                                type="text" 
+                                [class.error]="stableElementsForm.get('phone1')?.invalid"
+                                formControlName="phone1"
+                            />                                            
+                        }         
+                        @if (
+                            stableElementsForm.get('phone1')?.errors?.['minlength'] || 
+                            stableElementsForm.get('phone1')?.errors?.['maxlength']
+                        ) {
+                            <em>The phone number has to be 10 digits long</em>
+                        }   
                     </div>
                 </nz-form-control>
             </nz-form-item>
@@ -225,14 +245,33 @@
                                 formControlName="phone2Label" 
                             />
                         }
-
-                        <input 
-                            class="inputs" 
-                            nz-input 
-                            id="phone2" 
-                            type="text" 
-                            formControlName="phone2"
-                        />                
+                        @if (stableElementsForm.get('phone2TypeId')?.value === 2) {
+                            <input 
+                                class="inputs" 
+                                nz-input 
+                                id="phone2" 
+                                [maskito]="phone2Mask"
+                                type="text"
+                                [class.error]="stableElementsForm.get('phone2')?.invalid" 
+                                formControlName="phone2"
+                            />                                            
+                        } @else {
+                            <input 
+                                class="inputs" 
+                                nz-input 
+                                id="phone2" 
+                                [maskito]="phoneMask"
+                                type="text" 
+                                [class.error]="stableElementsForm.get('phone2')?.invalid"
+                                formControlName="phone2"
+                            />                                            
+                        }
+                        @if (
+                            stableElementsForm.get('phone2')?.errors?.['minlength'] || 
+                            stableElementsForm.get('phone2')?.errors?.['maxlength']
+                        ) {
+                            <em>The phone number has to be 10 digits long</em>
+                        }
                     </div>
                 </nz-form-control>
             </nz-form-item>
@@ -260,13 +299,33 @@
                             />
                         }
 
-                        <input 
-                            class="inputs" 
-                            nz-input 
-                            id="phone3" 
-                            type="text" 
-                            formControlName="phone3" 
-                        />                
+                        @if (stableElementsForm.get('phone3TypeId')?.value === 2) {
+                            <input 
+                                class="inputs" 
+                                nz-input 
+                                id="phone3" 
+                                [maskito]="phone2Mask"
+                                type="text" 
+                                [class.error]="stableElementsForm.get('phone3')?.invalid"
+                                formControlName="phone3"
+                            />                                            
+                        } @else {
+                            <input 
+                                class="inputs" 
+                                nz-input 
+                                id="phone3" 
+                                [maskito]="phoneMask"
+                                type="text" 
+                                [class.error]="stableElementsForm.get('phone3')?.invalid"
+                                formControlName="phone3"
+                            />                                            
+                        }   
+                        @if (
+                            stableElementsForm.get('phone3')?.errors?.['minlength'] || 
+                            stableElementsForm.get('phone3')?.errors?.['maxlength']
+                        ) {
+                            <em>The phone number has to be 10 digits long</em>
+                        }           
                     </div>
                 </nz-form-control>
             </nz-form-item>

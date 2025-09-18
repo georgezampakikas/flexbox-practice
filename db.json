@@ -3,10 +3,10 @@
     {
       "id": "1",
       "patientIdentity": {
-        "amka": "2910300000",
+        "amka": "2910300002",
         "code": "000001",
         "firstName": "Κωνσταντίνos Κωνσταντίνου",
-        "lastName": "Κωνσταντίνα Κωνσταντίνου",
+        "lastName": "Κωνσταντίνos Κωνσταντίνου",
         "status": "Ενεργός"
       },
       "demographicInfo": {
@@ -20,7 +20,7 @@
           "id": 5,
           "name": "Σε συμβίωση"
         },
-        "fatherName": "Αθανάσιος",
+        "fatherName": "Αθανάσιοss",
         "motherName": "Κατερίνα",
         "language": "Ελληνική",
         "nationality": {
@@ -40,13 +40,13 @@
         "phone1TypeId": 1,
         "phone1": "2410579060",
         "phone1Label": null,
-        "phone2TypeId": 2,
+        "phone2TypeId": 1,
         "phone2": "6900000000",
         "phone2Label": "Νεος αριθμος",
         "phone3TypeId": 3,
         "phone3": "2410579061",
         "phone3Label": "test",
-        "addressTypeId": 4,
+        "addressTypeId": 1,
         "addressLabel": "test2",
         "address": "Φαρσάλων 15Α, Λάρισα, 41223",
         "email": "info@info-domain.com"
@@ -421,37 +421,37 @@
   ],
   "phoneType": [
     {
-      "id": 1,
+      "id": "1",
       "name": "Οικίας"
     },
     {
-      "id": 2,
+      "id": "2",
       "name": "Κινητό"
     },
     {
-      "id": 3,
+      "id": "3",
       "name": "Εργασίας"
     },
     {
-      "id": 4,
+      "id": "4",
       "name": "Άλλο"
     }
   ],
   "addressType": [
     {
-      "id": 1,
+      "id": "1",
       "name": "Οικίας"
     },
     {
-      "id": 2,
+      "id": "2",
       "name": "Εργασίας"
     },
     {
-      "id": 3,
+      "id": "3",
       "name": "Προσωρινή"
     },
     {
-      "id": 4,
+      "id": "4",
       "name": "Άλλο"
     }
   ]

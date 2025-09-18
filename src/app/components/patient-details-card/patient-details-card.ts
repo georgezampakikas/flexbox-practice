@@ -1,14 +1,21 @@
-import { Component } from '@angular/core';
+import { Component, computed, effect, inject, input, OnInit, resource } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+
 import { NzImageModule } from 'ng-zorro-antd/image';
 import { NzAvatarModule } from 'ng-zorro-antd/avatar';
 import { NzButtonModule } from "ng-zorro-antd/button";
 import { NzIconModule } from 'ng-zorro-antd/icon';
 import { NzDividerModule } from 'ng-zorro-antd/divider';
 import { NzTagModule } from 'ng-zorro-antd/tag';
+import { NzNotificationService } from 'ng-zorro-antd/notification';
 
+import { take } from 'rxjs';
 
 import { LabeledTextDetails } from "../labeled-text-details/labeled-text-details";
 import { LabeledTextInput } from '../labeled-text-details/labeled-text-input.modal';
+import { UserService } from '../../shared/user-service';
+import { PatientDto } from '../../shared/patient-modal';
+import { ReloadPatientDetailsCardService } from '../../shared/reload-patient-details-card-service';
 
 
 
@@ -26,63 +33,60 @@ import { LabeledTextInput } from '../labeled-text-details/labeled-text-input.mod
   templateUrl: './patient-details-card.html',
   styleUrl: './patient-details-card.scss'
 })
-export class PatientDetailsCard {
+export class PatientDetailsCard implements OnInit {
+  patientId = input.required<number>();
+  
+  private reloadService = inject(ReloadPatientDetailsCardService);
 
-  personalInfo: LabeledTextInput = {
+  patientData = this.reloadService.patientData;
+
+  ngOnInit(): void {
+    this.reloadService.reloadPatientDetailsCard(this.patientId());
+  }
+
+  personalInfo = computed<LabeledTextInput>(() => ({
     label: 'AMKA',
-    text: '2910300000',
+    text:  this.patientData()!.patientIdentity.amka,
     icon: 'idcard',
-    type: 'text',
-  };
+    type: 'text',    
+  })); 
 
-  fathersName: LabeledTextInput = {
+  fathersName = computed<LabeledTextInput>(() => ({
     label: 'Όνομα Πατρός:',
-    text: 'Αθανάσιος',
+    text:  this.patientData()!.demographicInfo.fatherName,
     icon: 'user',
-    type: 'text',
-  };
+    type: 'text', 
+  })); 
 
-  emergencyCall: LabeledTextInput = {
-    label: 'Επαφή Άμεσης Ανάγκης:',
-    text: 'Aθανάσιος Κωνσταντίνος',
+  emergencyCall = computed<LabeledTextInput>(() => ({
+    label:  'Επαφή Άμεσης Ανάγκης:',
+    text: this.patientData()!.demographicInfo.fatherName,
     icon: 'star',
-    type: 'text',
-  };
+    type: 'text',   
+  })); 
 
-  contact: LabeledTextInput = {
+
+  contact = computed<LabeledTextInput>(() => ({
     label: 'Οικίας',
-    text: '2410579060',
+    text:  this.patientData()!.contactInfo.phone1,
     icon: 'phone',
     type: 'telephone',
-  };
+  })); 
 
-  email: LabeledTextInput = {
+
+  email = computed<LabeledTextInput>(() => ({
     label: 'Email:',
-    text: 'info@info-domain.com',
+    text:  this.patientData()!.contactInfo.email,
     icon: 'mail',
     type: 'url',
-  };
+  })); 
 
-  address: LabeledTextInput = {
+
+  address = computed<LabeledTextInput>(() => ({
     label: 'Διεύθυνση:',
-    text: 'Φαρσάλων 15Α, Λάρισα, 41223',
+    text:  this.patientData()!.contactInfo.address,
     icon: 'environment',
-    type: 'url',
-  };
+    type: 'url',  
+  })); 
 
-  // readonly userInfo = {
-  //   amka: '2910300000',
-  //   number: '69000000',
-  //   fathersName: 'Αθανάσιος',
-  //   emergencyContact: 'Αθανάσιος Κωνσταντίνος',
-  //   phoneCall: '2410579060',
-  //   email: 'info@info-domain.com',
-  //   address: 'Φαρσάλων 15Α, Λάρισα, 41223',
-  //   user: 'user',
-  //   star: 'star',
-  //   idcard: 'idcard',
-  //   environment: 'environment',
-  //   mail: 'mail',
-  //   phone: 'phone'
-  // };
 }

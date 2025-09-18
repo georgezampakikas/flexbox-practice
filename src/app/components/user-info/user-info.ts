@@ -17,6 +17,8 @@ import { PatientIdentityForm } from '../patient-identity-form/patient-identity-f
 import { DemographicInfoForm } from '../demographic-info-form/demographic-info-form';
 import { ContactInfoForm } from '../contact-info-form/contact-info-form';
 import { StableElements } from '../stable-elements/stable-elements';
+import { PatientDetailsCard } from '../patient-details-card/patient-details-card';
+import { ReloadPatientDetailsCardService } from '../../shared/reload-patient-details-card-service';
 
 @Component({
   selector: 'app-user-info',
@@ -42,6 +44,7 @@ export class UserInfo implements OnInit {
   private drawerService = inject(NzDrawerService);
   private notification = inject(NzNotificationService);
   private route = inject(ActivatedRoute);
+  reloadService = inject(ReloadPatientDetailsCardService);
   
   readonly patientId = Number(this.route.snapshot.paramMap.get('id'));
 
@@ -83,6 +86,8 @@ export class UserInfo implements OnInit {
           next: () => {
             this.notification.success('Successfully', 'put patients data');
             this.loadLabeledText();
+            this.reloadService.reloadPatientDetailsCard(this.patientId);
+
           },
           error: err => {
             this.notification.error('Error:', 'put method failed');
