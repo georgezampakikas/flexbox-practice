@@ -189,6 +189,17 @@ export class StableElements implements OnInit{
               address: this.nzData.patientsData.contactInfo.address,
               email: this.nzData.patientsData.contactInfo.email
             });
+
+            this.stableElementsForm.controls.birthPlace.valueChanges.subscribe(value => {
+              if (value?.includes('Ελλάδα')) {
+                this.stableElementsForm.controls.language.setValue('Ελληνική');
+                this.stableElementsForm.controls.language.disable();
+              } else {
+                this.stableElementsForm.controls.language.enable();
+              }
+            });
+
+  
           },
           error: (err) => {
             this.notification.error('Error', 'Failed to load dropdown data');
