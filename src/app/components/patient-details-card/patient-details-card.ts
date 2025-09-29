@@ -35,7 +35,7 @@ import { ReloadPatientDetailsCardService } from '../../shared/reload-patient-det
 })
 export class PatientDetailsCard implements OnInit {
   patientId = input.required<number>();
-  
+
   private reloadService = inject(ReloadPatientDetailsCardService);
 
   patientData = this.reloadService.patientData;
@@ -46,21 +46,21 @@ export class PatientDetailsCard implements OnInit {
 
   personalInfo = computed<LabeledTextInput>(() => ({
     label: 'AMKA',
-    text:  this.patientData()!.patientIdentity.amka,
+    text:  this.patientData()?.patientIdentity.amka ?? '',
     icon: 'idcard',
     type: 'text',    
   })); 
 
   fathersName = computed<LabeledTextInput>(() => ({
     label: 'Όνομα Πατρός:',
-    text:  this.patientData()!.demographicInfo.fatherName,
+    text:  this.patientData()?.demographicInfo.fatherName ?? '',
     icon: 'user',
     type: 'text', 
   })); 
 
   emergencyCall = computed<LabeledTextInput>(() => ({
     label:  'Επαφή Άμεσης Ανάγκης:',
-    text: this.patientData()!.demographicInfo.fatherName,
+    text: this.patientData()?.demographicInfo.fatherName ?? '',
     icon: 'star',
     type: 'text',   
   })); 
@@ -68,7 +68,7 @@ export class PatientDetailsCard implements OnInit {
 
   contact = computed<LabeledTextInput>(() => ({
     label: 'Οικίας',
-    text:  this.patientData()!.contactInfo.phone1,
+    text:  this.patientData()?.contactInfo.phone1 ?? '',
     icon: 'phone',
     type: 'telephone',
   })); 
@@ -76,7 +76,7 @@ export class PatientDetailsCard implements OnInit {
 
   email = computed<LabeledTextInput>(() => ({
     label: 'Email:',
-    text:  this.patientData()!.contactInfo.email,
+    text:  this.patientData()?.contactInfo.email ?? '',
     icon: 'mail',
     type: 'url',
   })); 
@@ -84,7 +84,7 @@ export class PatientDetailsCard implements OnInit {
 
   address = computed<LabeledTextInput>(() => ({
     label: 'Διεύθυνση:',
-    text:  this.patientData()!.contactInfo.address,
+    text:  this.patientData()?.contactInfo.address ?? '',
     icon: 'environment',
     type: 'url',  
   })); 

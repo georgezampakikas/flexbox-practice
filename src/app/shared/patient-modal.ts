@@ -93,3 +93,28 @@ export interface AddressTypeDto {
   id: number;
   name: string;
 }
+
+export interface LabTestDto {
+  id: number;
+  name: string;
+  unit: string;
+  normalRange: string;
+}
+
+export interface PatientTestResultDto {
+  patientId: number;
+  issueDate: string;
+  testId: number;
+  result: number;
+}
+
+export interface PatientResultTableDto {
+  id: number;
+  name: string;
+  unit: string;
+  normalRange: string;
+  testId?: number;
+  result?: number;
+  patientId?: number;
+  issueDate?: string;
+}

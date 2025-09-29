@@ -7,10 +7,12 @@ import {
   AddressTypeDto,
   EducationLevelDto, 
   GenderDto, 
+  LabTestDto, 
   MaritalStatusDto, 
   NationalityDto, 
   PatientDto, 
   PatientIdentity, 
+  PatientTestResultDto, 
   PhoneTypeDto, 
   ProfessionDto 
 } from './patient-modal';
@@ -76,7 +78,7 @@ export class UserService {
     .pipe(map(phoneTypes => phoneTypes.map(phoneType => ({
       ...phoneType,
       id: +phoneType.id
-    }))))
+    }))));
   }
 
   getAddressTypes(): Observable<AddressTypeDto[]> {
@@ -84,6 +86,14 @@ export class UserService {
     .pipe(map(addressTypes => addressTypes.map(addressType => ({
       ...addressType,
       id: +addressType.id
-    }))))
+    }))));
   }
+
+  getLabTests(): Observable<LabTestDto[]>{
+    return this.httpClient.get<LabTestDto[]>(`${this.url}/labTests`);
+  };
+
+  getPatientTestResults(): Observable<PatientTestResultDto[]>{
+    return this.httpClient.get<PatientTestResultDto[]>(`${this.url}/patientTestResults`);
+  };
 }

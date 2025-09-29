@@ -1,0 +1,28 @@
+<nz-table 
+    class="table"
+    [nzData]="filteredResults"
+    [appNsAutoHeightTable]=""
+    nzShowPagination="false"
+    nzSize="middle"
+>
+    <thead>
+        <tr>
+            <th>IssueDate</th>
+            <th>Name</th>
+            <th>Result</th>
+            <th>Unit</th>
+            <th>NormalRange</th>
+        </tr>
+    </thead>
+    <tbody>
+        @for(patientTestResult of filteredResults; track patientTestResult.patientId) {
+            <tr>
+                <td>{{ patientTestResult.issueDate }}</td>
+                <td>{{ patientTestResult.name }}</td>
+                <td>{{ patientTestResult.result }}</td>
+                <td>{{ patientTestResult.unit }}</td>
+                <td>{{ patientTestResult.normalRange }}</td>
+            </tr>
+        }
+    </tbody>
+</nz-table>

@@ -26,37 +26,43 @@
     </div>
 
     <nz-divider nzSize="large"></nz-divider>
-    
-    <div class="labeled-text-container">
-        <div class="custom-header-2">Προσωπικά Στοιχεία</div>
+        @if(
+            personalInfo() &&
+            fathersName() &&
+            emergencyCall() &&
+            contact() &&
+            email() &&
+            address()
+        ) {
+            <div class="labeled-text-container">
+                <div class="custom-header-2">Προσωπικά Στοιχεία</div>
+                <app-labeled-text-details 
+                    [patientData]="personalInfo()" 
+                />
+                <app-labeled-text-details 
+                    [patientData]="fathersName()" 
+                />
+                <app-labeled-text-details 
+                    [patientData]="emergencyCall()" 
+                />        
+            </div>
 
-        <app-labeled-text-details 
-            [patientData]="personalInfo()" 
-        />
-        <app-labeled-text-details 
-            [patientData]="fathersName()" 
-        />
-        <app-labeled-text-details 
-            [patientData]="emergencyCall()" 
-        />        
-    </div>
+            <nz-divider></nz-divider>
 
-    <nz-divider></nz-divider>
-
-    <div class="labeled-text-container">
-        <div class="custom-header-2">Στοιχεία Επικοινωνίας</div>
-        
-        <app-labeled-text-details 
-            [patientData]="contact()" 
-        />
-        <app-labeled-text-details 
-            [patientData]="email()" 
-        />
-        <app-labeled-text-details 
-            [patientData]="address()" 
-        />        
-    </div>
-
+            <div class="labeled-text-container">
+                <div class="custom-header-2">Στοιχεία Επικοινωνίας</div>
+                
+                <app-labeled-text-details 
+                    [patientData]="contact()" 
+                />
+                <app-labeled-text-details 
+                    [patientData]="email()" 
+                />
+                <app-labeled-text-details 
+                    [patientData]="address()" 
+                />        
+            </div>
+        }
     <nz-divider></nz-divider>
     
     <div class="tags-container">

@@ -3,13 +3,15 @@ import { PatientDetailsCard } from "../patient-details-card/patient-details-card
 import { NzTabsModule } from "ng-zorro-antd/tabs";
 import { UserInfo } from "../user-info/user-info";
 import { ActivatedRoute } from '@angular/router';
+import { PatientLabResultsTable } from "../patient-lab-results-table/patient-lab-results-table";
 
 @Component({
   selector: 'app-patient-details',
   imports: [
     PatientDetailsCard,
     NzTabsModule,
-    UserInfo
+    UserInfo,
+    PatientLabResultsTable,
 ],
   templateUrl: './patient-details.html',
   styleUrl: './patient-details.scss'

@@ -454,5 +454,225 @@
       "id": "4",
       "name": "Άλλο"
     }
+  ],
+  "labTests": [
+    {
+      "id": 1,
+      "name": "Hemoglobin",
+      "unit": "g/dL",
+      "normalRange": "12-16"
+    },
+    {
+      "id": 2,
+      "name": "Glucose",
+      "unit": "mg/dL",
+      "normalRange": "70-100"
+    },
+    {
+      "id": 3,
+      "name": "Total Cholesterol",
+      "unit": "mg/dL",
+      "normalRange": "<200"
+    },
+    {
+      "id": 4,
+      "name": "Thyroid Stimulating Hormone (TSH)",
+      "unit": "mIU/L",
+      "normalRange": "0.4-4.0"
+    },
+    {
+      "id": 5,
+      "name": "Hemoglobin A1C",
+      "unit": "%",
+      "normalRange": "<5.7"
+    },
+    {
+      "id": 6,
+      "name": "ALT (Alanine Aminotransferase)",
+      "unit": "U/L",
+      "normalRange": "7-40"
+    },
+    {
+      "id": 7,
+      "name": "Creatinine",
+      "unit": "mg/dL",
+      "normalRange": "0.6-1.2"
+    },
+    {
+      "id": 8,
+      "name": "Vitamin D",
+      "unit": "ng/mL",
+      "normalRange": "30-100"
+    },
+    {
+      "id": 9,
+      "name": "C-Reactive Protein (CRP)",
+      "unit": "mg/L",
+      "normalRange": "<3.0"
+    },
+    {
+      "id": 10,
+      "name": "White Blood Cell Count",
+      "unit": "K/uL",
+      "normalRange": "4.5-11.0"
+    }
+  ],
+  "patientTestResults": [
+    {
+      "patientId": 1,
+      "issueDate": "2024-09-15",
+      "testId": 1,
+      "result": 14.2
+    },
+    {
+      "patientId": 1,
+      "issueDate": "2024-09-15",
+      "testId": 2,
+      "result": 88
+    },
+    {
+      "patientId": 1,
+      "issueDate": "2024-09-15",
+      "testId": 3,
+      "result": 198
+    },
+    {
+      "patientId": 1,
+      "issueDate": "2024-08-15",
+      "testId": 1,
+      "result": 13.9
+    },
+    {
+      "patientId": 1,
+      "issueDate": "2024-08-15",
+      "testId": 2,
+      "result": 92
+    },
+    {
+      "patientId": 1,
+      "issueDate": "2024-08-15",
+      "testId": 3,
+      "result": 205
+    },
+    {
+      "patientId": 1,
+      "issueDate": "2024-07-15",
+      "testId": 1,
+      "result": 14.0
+    },
+    {
+      "patientId": 1,
+      "issueDate": "2024-07-15",
+      "testId": 2,
+      "result": 95
+    },
+    {
+      "patientId": 1,
+      "issueDate": "2024-07-15",
+      "testId": 3,
+      "result": 212
+    },
+    {
+      "patientId": 1,
+      "issueDate": "2024-06-15",
+      "testId": 1,
+      "result": 13.7
+    },
+    {
+      "patientId": 1,
+      "issueDate": "2024-06-15",
+      "testId": 2,
+      "result": 98
+    },
+    {
+      "patientId": 1,
+      "issueDate": "2024-06-15",
+      "testId": 3,
+      "result": 220
+    },
+    {
+      "patientId": 1,
+      "issueDate": "2024-08-22",
+      "testId": 5,
+      "result": 5.8
+    },
+    {
+      "patientId": 1,
+      "issueDate": "2024-07-22",
+      "testId": 5,
+      "result": 6.1
+    },
+    {
+      "patientId": 1,
+      "issueDate": "2024-06-22",
+      "testId": 5,
+      "result": 6.4
+    },
+    {
+      "patientId": 2,
+      "issueDate": "2024-09-10",
+      "testId": 2,
+      "result": 95
+    },
+    {
+      "patientId": 2,
+      "issueDate": "2024-09-10",
+      "testId": 4,
+      "result": 2.1
+    },
+    {
+      "patientId": 2,
+      "issueDate": "2024-09-08",
+      "testId": 7,
+      "result": 1.0
+    },
+    {
+      "patientId": 2,
+      "issueDate": "2024-08-28",
+      "testId": 8,
+      "result": 32
+    },
+    {
+      "patientId": 2,
+      "issueDate": "2024-07-20",
+      "testId": 1,
+      "result": 13.8
+    },
+    {
+      "patientId": 2,
+      "issueDate": "2024-06-10",
+      "testId": 5,
+      "result": 6.1
+    },    
+    {
+      "patientId": 3,
+      "issueDate": "2024-09-12",
+      "testId": 6,
+      "result": 28
+    },
+    {
+      "patientId": 3,
+      "issueDate": "2024-09-12",
+      "testId": 9,
+      "result": 1.2
+    },
+    {
+      "patientId": 3,
+      "issueDate": "2024-08-30",
+      "testId": 10,
+      "result": 7.5
+    },
+    {
+      "patientId": 3,
+      "issueDate": "2024-07-20",
+      "testId": 1,
+      "result": 13.9
+    },
+    {
+      "patientId": 3,
+      "issueDate": "2024-06-05",
+      "testId": 4,
+      "result": 3.2
+    }
   ]
 }
