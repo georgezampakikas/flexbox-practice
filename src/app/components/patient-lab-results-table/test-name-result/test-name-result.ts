@@ -5,6 +5,7 @@ import { PatientResultTableDto } from '../../../shared/patient-modal';
 import { NZ_MODAL_DATA } from 'ng-zorro-antd/modal';
 import { CommonModule, formatDate } from '@angular/common';
 import { NgxChartsModule } from '@swimlane/ngx-charts';
+import { NzStatisticModule } from 'ng-zorro-antd/statistic';
 
 
 @Component({
@@ -14,6 +15,7 @@ import { NgxChartsModule } from '@swimlane/ngx-charts';
     CommonModule,
     NgxChartsModule,
     NzTableModule,
+    NzStatisticModule,
     NsAutoHeightTableDirective
   ],
   templateUrl: './test-name-result.html',
@@ -28,7 +30,7 @@ export class TestNameResult implements OnInit{
   // ngx-chart
   view: [number, number] = [700, 400];
   
-  ngxObj: {
+  assayChart: {
     scheme: string;
     showLabels: boolean;
     animations: boolean;
