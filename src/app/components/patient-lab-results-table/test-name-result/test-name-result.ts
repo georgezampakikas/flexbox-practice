@@ -3,7 +3,7 @@ import { NzTableModule } from "ng-zorro-antd/table";
 import { NsAutoHeightTableDirective } from '../../../directives/ns-auto-height-table';
 import { PatientResultTableDto } from '../../../shared/patient-modal';
 import { NZ_MODAL_DATA } from 'ng-zorro-antd/modal';
-import { CommonModule, formatDate } from '@angular/common';
+import { CommonModule } from '@angular/common';
 import { NgxChartsModule } from '@swimlane/ngx-charts';
 import { NzStatisticModule } from 'ng-zorro-antd/statistic';
 
@@ -29,6 +29,7 @@ export class TestNameResult implements OnInit{
 
   // ngx-chart
   view: [number, number] = [700, 400];
+
   
   assayChart: {
     scheme: string;

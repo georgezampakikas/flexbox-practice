@@ -1,20 +1,27 @@
 <div class="modal-container">
-    <nz-statistic [nzValue]="lastTestResult!.result" nzTitle="Τελευταία Μέτρηση" [nzSuffix]="sufixTemplate"></nz-statistic>    
-    <ng-template #sufixTemplate><span class="statistic-suffix"> {{ lastTestResult!.issueDate| date: 'shortDate' }} </span></ng-template>
-   
     <div class="modal-item">
-        <ngx-charts-line-chart
-            [view]="view"
-            [scheme]="assayChart.scheme"
-            [results]="multi"
-            [xAxis]="assayChart.xAxis"
-            [yAxis]="assayChart.yAxis"
-            [showXAxisLabel]="assayChart.showLabels"
-            [showYAxisLabel]="assayChart.showLabels"
-            xAxisLabel="Ημερομηνία"
-            [timeline]="assayChart.timeline"
-        >
-        </ngx-charts-line-chart>    
+        <nz-statistic [nzValue]="lastTestResult!.result" nzTitle="Τελευταία Μέτρηση" [nzSuffix]="sufixTemplate"></nz-statistic>    
+        <ng-template #sufixTemplate>
+            <span class="statistic-suffix"> {{ lastTestResult!.issueDate| date: 'shortDate' }} </span>
+        </ng-template>
+    </div>
+   
+    <div class="flex-grow">
+        <div class="chart-container">
+            <ngx-charts-line-chart
+                class="line-chart"
+                [scheme]="assayChart.scheme"
+                [results]="multi"
+                [xAxis]="assayChart.xAxis"
+                [yAxis]="assayChart.yAxis"
+                [showXAxisLabel]="assayChart.showLabels"
+                [showYAxisLabel]="assayChart.showLabels"
+                xAxisLabel="Ημερομηνία"
+                [timeline]="assayChart.timeline"
+            >
+            </ngx-charts-line-chart>              
+        </div>
+  
     </div>
 
     <div class="modal-item">
