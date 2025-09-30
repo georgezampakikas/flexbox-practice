@@ -80,7 +80,7 @@ export class PatientLabResultsTable implements OnInit {
         filteredResults: this.filteredResults
       },
       nzFooter: null,
-      nzWidth: 1300,
+      nzWidth: 1400,
     });
   }
 }

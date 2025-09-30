@@ -1,15 +1,25 @@
 <div class="modal-container">
     <div class="modal-item">
+        <span>
+            Τελευταία Μέτρηση
+            {{ filteredResults[0].issueDate | date: 'shortDate' }}
+        </span>
+        <div style="font-weight: bold; font-size: 28px;">
+            {{ filteredResults[0].result }}
+        </div>
+    </div>
+    
+    <div class="modal-item">
         <ngx-charts-line-chart
-        [view]="view"
-        [scheme]="scheme"
-        [results]="multi"
-        [xAxis]="xAxis"
-        [yAxis]="yAxis"
-        [showXAxisLabel]="showLabels"
-        [showYAxisLabel]="showLabels"
-        xAxisLabel="Ημερομηνία"
-        [timeline]="timeline"
+            [view]="view"
+            [scheme]="scheme"
+            [results]="multi"
+            [xAxis]="xAxis"
+            [yAxis]="yAxis"
+            [showXAxisLabel]="showLabels"
+            [showYAxisLabel]="showLabels"
+            xAxisLabel="Ημερομηνία"
+            [timeline]="timeline"
         >
         </ngx-charts-line-chart>    
     </div>
