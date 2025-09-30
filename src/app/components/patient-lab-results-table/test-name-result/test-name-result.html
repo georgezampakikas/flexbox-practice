@@ -1,25 +1,18 @@
 <div class="modal-container">
-    <div class="modal-item">
-        <span>
-            Τελευταία Μέτρηση
-            {{ lastTestResult!.issueDate| date: 'shortDate' }}
-        </span>
-        <div style="font-weight: bold; font-size: 28px;">
-            {{ lastTestResult!.result }}
-        </div>
-    </div>
-    
+    <nz-statistic [nzValue]="lastTestResult!.result" nzTitle="Τελευταία Μέτρηση" [nzSuffix]="sufixTemplate"></nz-statistic>    
+    <ng-template #sufixTemplate><span class="statistic-suffix"> {{ lastTestResult!.issueDate| date: 'shortDate' }} </span></ng-template>
+   
     <div class="modal-item">
         <ngx-charts-line-chart
             [view]="view"
-            [scheme]="ngxObj.scheme"
+            [scheme]="assayChart.scheme"
             [results]="multi"
-            [xAxis]="ngxObj.xAxis"
-            [yAxis]="ngxObj.yAxis"
-            [showXAxisLabel]="ngxObj.showLabels"
-            [showYAxisLabel]="ngxObj.showLabels"
+            [xAxis]="assayChart.xAxis"
+            [yAxis]="assayChart.yAxis"
+            [showXAxisLabel]="assayChart.showLabels"
+            [showYAxisLabel]="assayChart.showLabels"
             xAxisLabel="Ημερομηνία"
-            [timeline]="ngxObj.timeline"
+            [timeline]="assayChart.timeline"
         >
         </ngx-charts-line-chart>    
     </div>
@@ -35,20 +28,14 @@
             <thead>
                 <tr>
                     <th>IssueDate</th>
-                    <th>Name</th>
                     <th>Result</th>
-                    <th>Unit</th>
-                    <th>NormalRange</th>
                 </tr>
             </thead>
             <tbody>
                 @for(patientTestResult of filteredResults; track patientTestResult) {
                     <tr>
                         <td>{{ patientTestResult.issueDate | date: 'shortDate' }}</td>
-                        <td>{{ patientTestResult.name }}</td>
-                        <td>{{ patientTestResult.result }}</td>
-                        <td>{{ patientTestResult.unit }}</td>
-                        <td>{{ patientTestResult.normalRange }}</td>
+                        <td>{{ patientTestResult.result }} {{patientTestResult.unit}}</td>
                     </tr>
                 }
             </tbody>

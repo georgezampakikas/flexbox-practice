@@ -91,7 +91,7 @@ export class PatientLabResultsTable implements OnInit {
         multi
       },
       nzFooter: null,
-      nzWidth: 1400,
+      nzWidth: '80%',
     });
   }
 }
