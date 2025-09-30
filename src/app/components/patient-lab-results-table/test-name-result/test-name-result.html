@@ -1,28 +1,48 @@
-<nz-table 
-    class="table"
-    [nzData]="filteredResults"
-    [appNsAutoHeightTable]=""
-    nzShowPagination="false"
-    nzSize="middle"
->
-    <thead>
-        <tr>
-            <th>IssueDate</th>
-            <th>Name</th>
-            <th>Result</th>
-            <th>Unit</th>
-            <th>NormalRange</th>
-        </tr>
-    </thead>
-    <tbody>
-        @for(patientTestResult of filteredResults; track patientTestResult.patientId) {
-            <tr>
-                <td>{{ patientTestResult.issueDate }}</td>
-                <td>{{ patientTestResult.name }}</td>
-                <td>{{ patientTestResult.result }}</td>
-                <td>{{ patientTestResult.unit }}</td>
-                <td>{{ patientTestResult.normalRange }}</td>
-            </tr>
-        }
-    </tbody>
-</nz-table>
+<div class="modal-container">
+    <div class="modal-item">
+        <ngx-charts-line-chart
+        [view]="view"
+        [scheme]="scheme"
+        [results]="multi"
+        [xAxis]="xAxis"
+        [yAxis]="yAxis"
+        [showXAxisLabel]="showLabels"
+        [showYAxisLabel]="showLabels"
+        xAxisLabel="Ημερομηνία"
+        [timeline]="timeline"
+        >
+        </ngx-charts-line-chart>    
+    </div>
+
+    <div class="modal-item">
+        <nz-table 
+            class="table"
+            [nzData]="filteredResults"
+            [appNsAutoHeightTable]=""
+            nzShowPagination="false"
+            nzSize="middle"
+        >
+            <thead>
+                <tr>
+                    <th>IssueDate</th>
+                    <th>Name</th>
+                    <th>Result</th>
+                    <th>Unit</th>
+                    <th>NormalRange</th>
+                </tr>
+            </thead>
+            <tbody>
+                @for(patientTestResult of filteredResults; track patientTestResult) {
+                    <tr>
+                        <td>{{ patientTestResult.issueDate | date: 'shortDate' }}</td>
+                        <td>{{ patientTestResult.name }}</td>
+                        <td>{{ patientTestResult.result }}</td>
+                        <td>{{ patientTestResult.unit }}</td>
+                        <td>{{ patientTestResult.normalRange }}</td>
+                    </tr>
+                }
+            </tbody>
+        </nz-table>    
+    </div>    
+</div>
+

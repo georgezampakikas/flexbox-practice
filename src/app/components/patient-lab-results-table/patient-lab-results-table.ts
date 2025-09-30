@@ -7,11 +7,13 @@ import { PatientResultTableDto } from '../../shared/patient-modal';
 import { NsAutoHeightTableDirective } from '../../directives/ns-auto-height-table';
 import { NzModalModule, NzModalService } from 'ng-zorro-antd/modal';
 import { TestNameResult } from './test-name-result/test-name-result';
+import { CommonModule } from '@angular/common';
 
 
 @Component({
   selector: 'app-patient-lab-results-table',
   imports: [
+    CommonModule,
     NzTableModule, 
     NsAutoHeightTableDirective,
     NzModalModule,
@@ -21,6 +23,7 @@ import { TestNameResult } from './test-name-result/test-name-result';
 })
 export class PatientLabResultsTable implements OnInit {
   patientTestResults: PatientResultTableDto[] = [];
+  filteredResults: PatientResultTableDto[] = [];
 
   private userService = inject(UserService);
   private route = inject(ActivatedRoute);
@@ -49,7 +52,7 @@ export class PatientLabResultsTable implements OnInit {
               testId: test.testId,
               result: test.result,
               patientId: test.patientId,
-              issueDate: test.issueDate,
+              issueDate: new Date(test.issueDate),
             };              
           })
          .sort((a, b) => {
@@ -66,16 +69,18 @@ export class PatientLabResultsTable implements OnInit {
   }
 
   testNameResultModal(selectedPatientTestResult: PatientResultTableDto): void {
+    this.filteredResults = this.patientTestResults.filter(patientTestResult => 
+      patientTestResult.testId === selectedPatientTestResult.testId);
+      
     this.modalService.create({
       nzTitle: `${selectedPatientTestResult.name} - Details`,
       nzContent: TestNameResult,
       nzMaskClosable: false,
       nzData: {
-        patientTestResults: this.patientTestResults,
-        selectedPatientTestResultTestId: selectedPatientTestResult.testId,
+        filteredResults: this.filteredResults
       },
       nzFooter: null,
-      nzWidth: 720,
+      nzWidth: 1300,
     });
   }
 }

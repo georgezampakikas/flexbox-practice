@@ -1,37 +1,51 @@
-import { Component, inject, OnInit } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { NzTableModule } from "ng-zorro-antd/table";
 import { NsAutoHeightTableDirective } from '../../../directives/ns-auto-height-table';
-import { PatientResultTableDto, PatientTestResultDto } from '../../../shared/patient-modal';
+import { PatientResultTableDto } from '../../../shared/patient-modal';
 import { NZ_MODAL_DATA } from 'ng-zorro-antd/modal';
+import { CommonModule, formatDate } from '@angular/common';
+import { NgxChartsModule } from '@swimlane/ngx-charts';
+
 
 @Component({
   selector: 'app-test-name-result',
   standalone: true,
   imports: [
+    CommonModule,
+    NgxChartsModule,
     NzTableModule,
     NsAutoHeightTableDirective
   ],
   templateUrl: './test-name-result.html',
   styleUrl: './test-name-result.scss'
 })
-export class TestNameResult implements OnInit {
-  nzData: { 
-    patientTestResults: PatientResultTableDto[],
-    selectedPatientTestResultTestId: number 
-  } = inject(NZ_MODAL_DATA);
+export class TestNameResult {
+  nzData: { filteredResults: PatientResultTableDto[] } = inject(NZ_MODAL_DATA);
 
-  filteredResults: PatientResultTableDto[] = [];
-
-  get patientTestResults(): PatientResultTableDto[] {
-    return this.nzData.patientTestResults;
+  get filteredResults(): PatientResultTableDto[] {
+    return this.nzData.filteredResults;
   }
 
-  get selectedPatientTestResultTestId(): number {
-    return this.nzData.selectedPatientTestResultTestId;
-  }
+  // ngx-chart
+  multi = [
+    {
+      name: this.filteredResults[0].name,
+      series: this.filteredResults.map(result => ({
+        name: formatDate(result.issueDate!, 'dd/MM/yy', 'el-GR'),
+        value: result.result
+      }))
+    },
+  ]
 
-  ngOnInit(): void {
-    this.filteredResults = this.patientTestResults.filter(patientTestResult => 
-      patientTestResult.testId === this.selectedPatientTestResultTestId);
-  }
+
+
+  view: [number, number] = [700, 400];
+
+  scheme = 'ocean';
+
+  showLabels = true;
+  animations = true;
+  xAxis = true;
+  yAxis = true;
+  timeline = true;
 }

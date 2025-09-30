@@ -116,5 +116,5 @@ export interface PatientResultTableDto {
   testId?: number;
   result?: number;
   patientId?: number;
-  issueDate?: string;
+  issueDate?: Date;
 }

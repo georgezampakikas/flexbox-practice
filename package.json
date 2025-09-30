@@ -33,6 +33,7 @@
     "@maskito/core": "^3.10.3",
     "@maskito/kit": "^3.10.3",
     "@maskito/phone": "^3.10.3",
+    "@swimlane/ngx-charts": "^23.0.1",
     "ng-zorro-antd": "^20.2.1",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",

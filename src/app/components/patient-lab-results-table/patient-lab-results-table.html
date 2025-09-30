@@ -17,7 +17,7 @@
     <tbody>
         @for(patientTestResult of patientTestResults; track patientTestResult) {
             <tr>
-                <td>{{ patientTestResult.issueDate }}</td>
+                <td>{{ patientTestResult.issueDate | date: 'shortDate' }}</td>
                 <td>
                     <a (click)="testNameResultModal(patientTestResult)">{{ patientTestResult.name }}</a>
                 </td>
