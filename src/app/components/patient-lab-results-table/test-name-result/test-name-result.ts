@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { NzTableModule } from "ng-zorro-antd/table";
 import { NsAutoHeightTableDirective } from '../../../directives/ns-auto-height-table';
 import { PatientResultTableDto } from '../../../shared/patient-modal';
@@ -19,33 +19,41 @@ import { NgxChartsModule } from '@swimlane/ngx-charts';
   templateUrl: './test-name-result.html',
   styleUrl: './test-name-result.scss'
 })
-export class TestNameResult {
-  nzData: { filteredResults: PatientResultTableDto[] } = inject(NZ_MODAL_DATA);
-
-  get filteredResults(): PatientResultTableDto[] {
-    return this.nzData.filteredResults;
-  }
+export class TestNameResult implements OnInit{
+  lastTestResult: PatientResultTableDto | null = null;
+  nzData: { filteredResults: PatientResultTableDto[], multi: [] } = inject(NZ_MODAL_DATA);
+  filteredResults: PatientResultTableDto[] = this.nzData.filteredResults;
+  multi = this.nzData.multi;
 
   // ngx-chart
-  multi = [
-    {
-      name: this.filteredResults[0].name,
-      series: this.filteredResults.map(result => ({
-        name: formatDate(result.issueDate!, 'dd/MM/yy', 'el-GR'),
-        value: result.result
-      }))
-    },
-  ]
-
-
-
   view: [number, number] = [700, 400];
+  
+  ngxObj: {
+    scheme: string;
+    showLabels: boolean;
+    animations: boolean;
+    xAxis: boolean;
+    yAxis: boolean;
+    timeline: boolean;
+  } = {
+    scheme: 'ocean',
+    showLabels: true,
+    animations: true,
+    xAxis: true,
+    yAxis: true,
+    timeline: true
+  };
 
-  scheme = 'ocean';
+  ngOnInit(): void {
+    this.lastTestResult = this.findLastTestResult();
+  }
 
-  showLabels = true;
-  animations = true;
-  xAxis = true;
-  yAxis = true;
-  timeline = true;
+  findLastTestResult(): PatientResultTableDto {
+    return this.filteredResults.reduce((latest, current) => {
+        const latestDate = new Date(latest.issueDate!);
+        const currentDate = new Date(current.issueDate!);
+      return (currentDate > latestDate) ? current : latest;
+    });
+  }
+
 }

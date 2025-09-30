@@ -2,24 +2,24 @@
     <div class="modal-item">
         <span>
             Τελευταία Μέτρηση
-            {{ filteredResults[0].issueDate | date: 'shortDate' }}
+            {{ lastTestResult!.issueDate| date: 'shortDate' }}
         </span>
         <div style="font-weight: bold; font-size: 28px;">
-            {{ filteredResults[0].result }}
+            {{ lastTestResult!.result }}
         </div>
     </div>
     
     <div class="modal-item">
         <ngx-charts-line-chart
             [view]="view"
-            [scheme]="scheme"
+            [scheme]="ngxObj.scheme"
             [results]="multi"
-            [xAxis]="xAxis"
-            [yAxis]="yAxis"
-            [showXAxisLabel]="showLabels"
-            [showYAxisLabel]="showLabels"
+            [xAxis]="ngxObj.xAxis"
+            [yAxis]="ngxObj.yAxis"
+            [showXAxisLabel]="ngxObj.showLabels"
+            [showYAxisLabel]="ngxObj.showLabels"
             xAxisLabel="Ημερομηνία"
-            [timeline]="timeline"
+            [timeline]="ngxObj.timeline"
         >
         </ngx-charts-line-chart>    
     </div>

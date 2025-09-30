@@ -7,7 +7,7 @@ import { PatientResultTableDto } from '../../shared/patient-modal';
 import { NsAutoHeightTableDirective } from '../../directives/ns-auto-height-table';
 import { NzModalModule, NzModalService } from 'ng-zorro-antd/modal';
 import { TestNameResult } from './test-name-result/test-name-result';
-import { CommonModule } from '@angular/common';
+import { CommonModule, formatDate } from '@angular/common';
 
 
 @Component({
@@ -71,13 +71,24 @@ export class PatientLabResultsTable implements OnInit {
   testNameResultModal(selectedPatientTestResult: PatientResultTableDto): void {
     this.filteredResults = this.patientTestResults.filter(patientTestResult => 
       patientTestResult.testId === selectedPatientTestResult.testId);
+    
+    const  multi = [
+    {
+      name: selectedPatientTestResult.name,
+      series: this.filteredResults.map(result => ({
+        name: formatDate(result.issueDate!, 'dd/MM/yy', 'el-GR'),
+        value: result.result
+      }))
+    },
+  ]
       
     this.modalService.create({
       nzTitle: `${selectedPatientTestResult.name} - Details`,
       nzContent: TestNameResult,
       nzMaskClosable: false,
       nzData: {
-        filteredResults: this.filteredResults
+        filteredResults: this.filteredResults,
+        multi
       },
       nzFooter: null,
       nzWidth: 1400,
