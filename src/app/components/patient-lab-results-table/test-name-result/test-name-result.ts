@@ -1,4 +1,4 @@
-import { Component, inject, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component, ElementRef, HostListener, inject, OnInit, ViewChild } from '@angular/core';
 import { NzTableModule } from "ng-zorro-antd/table";
 import { NsAutoHeightTableDirective } from '../../../directives/ns-auto-height-table';
 import { PatientResultTableDto } from '../../../shared/patient-modal';
@@ -21,15 +21,18 @@ import { NzStatisticModule } from 'ng-zorro-antd/statistic';
   templateUrl: './test-name-result.html',
   styleUrl: './test-name-result.scss'
 })
-export class TestNameResult implements OnInit{
+export class TestNameResult implements OnInit
+{
+  @ViewChild('chartContainerDiv') chartContainerDiv!: ElementRef;
+
   lastTestResult: PatientResultTableDto | null = null;
   nzData: { filteredResults: PatientResultTableDto[], multi: [] } = inject(NZ_MODAL_DATA);
   filteredResults: PatientResultTableDto[] = this.nzData.filteredResults;
   multi = this.nzData.multi;
 
-  // ngx-chart
-  view: [number, number] = [700, 400];
+  private cd = inject(ChangeDetectorRef);
 
+  // ngx-chart
   
   assayChart: {
     scheme: string;
@@ -49,6 +52,15 @@ export class TestNameResult implements OnInit{
 
   ngOnInit(): void {
     this.lastTestResult = this.findLastTestResult();
+  }
+
+  getCalculatedWidth(): number {
+    if(!this.chartContainerDiv) {
+      return 700;
+    }
+
+    const sourceDivWidth = this.chartContainerDiv.nativeElement.clientWidth;
+    return sourceDivWidth;
   }
 
   findLastTestResult(): PatientResultTableDto {

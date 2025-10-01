@@ -7,9 +7,10 @@
     </div>
    
     <div class="flex-grow">
-        <div class="chart-container">
+        <div class="chart-container" #chartContainerDiv>
             <ngx-charts-line-chart
                 class="line-chart"
+                [view]="[getCalculatedWidth(), 400]"
                 [scheme]="assayChart.scheme"
                 [results]="multi"
                 [xAxis]="assayChart.xAxis"
