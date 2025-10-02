@@ -3,7 +3,11 @@
       @for (group of labTestsByCategory; track group;) {
         <div class="lab-section">
           <h2 class="custom-header-3">{{ group.category }}</h2>
-            <nz-checkbox-group class="checkbox-flexbox" [(ngModel)]="selectedValues" name="selectedValues">
+            <nz-checkbox-group 
+              class="checkbox-flexbox" 
+              [(ngModel)]="selectedValues" 
+              name="selectedValues"
+            >
               @for (test of group.tests; track test.id) {
                 <label nz-checkbox [nzValue]="test">{{ test.name }}</label>
               }
@@ -16,7 +20,7 @@
 
     <div class="right-content">
       <div class="custom-header-3">Εξετάσεις που έχουν προστεθεί</div>
-        @for(value of selectedValues; track value) {
+        @for(value of selectedValues; track value.id) {
             <div class="tests-container">
               <div>{{ value.name }}</div> 
               <nz-icon 
@@ -36,6 +40,6 @@
 
     <div class="footer-btns">
       <button class="button" nz-button nzType="default" type="button" (click)="closeDrawer()">Ακύρωση</button>
-      <button class="button" nz-button nzType="primary" type="submit">Καταχώρηση</button>
+      <button class="button" nz-button nzType="primary" type="submit" (click)="onSubmit()">Καταχώρηση</button>
     </div>    
   </div>

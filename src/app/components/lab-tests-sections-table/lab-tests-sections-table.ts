@@ -1,8 +1,8 @@
-import { Component, inject, OnInit } from '@angular/core';
+import { Component, inject, OnInit, signal } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { NzDividerModule } from "ng-zorro-antd/divider";
-import { NzDrawerRef } from 'ng-zorro-antd/drawer';
+import { NZ_DRAWER_DATA, NzDrawerRef } from 'ng-zorro-antd/drawer';
 import { NzFormModule } from "ng-zorro-antd/form";
 import { NzCheckboxModule } from 'ng-zorro-antd/checkbox';
 import { UserService } from '../../shared/user-service';
@@ -26,6 +26,10 @@ import { NzIconModule } from 'ng-zorro-antd/icon';
 export class LabTestsSectionsTable implements OnInit {
   labTestsByCategory: LabTestGroup[] = [];
   selectedValues: LabTestV2Dto[] = [];
+
+  nzData: {selectedData: LabTestV2Dto[]} = inject(NZ_DRAWER_DATA);
+
+  selectedData = this.nzData.selectedData;
 
   private drawerRef = inject(NzDrawerRef);
   private userService = inject(UserService);
@@ -62,6 +66,6 @@ export class LabTestsSectionsTable implements OnInit {
   }
 
   onSubmit(): void {
-
+    this.drawerRef.close(this.selectedValues);
   }
 }
