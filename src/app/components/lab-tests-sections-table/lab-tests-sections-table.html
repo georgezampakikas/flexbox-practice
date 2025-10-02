@@ -5,11 +5,12 @@
           <h2 class="custom-header-3">{{ group.category }}</h2>
             <nz-checkbox-group 
               class="checkbox-flexbox" 
-              [(ngModel)]="selectedValues" 
+              [(ngModel)]="selectedIds" 
+              (ngModelChange)="updateSelectedValues()"
               name="selectedValues"
             >
               @for (test of group.tests; track test.id) {
-                <label nz-checkbox [nzValue]="test">{{ test.name }}</label>
+                <label nz-checkbox [nzValue]="test.id">{{ test.name }}</label>
               }
             </nz-checkbox-group>
         </div>

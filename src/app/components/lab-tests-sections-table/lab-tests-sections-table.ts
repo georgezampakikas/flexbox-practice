@@ -24,12 +24,13 @@ import { NzIconModule } from 'ng-zorro-antd/icon';
   styleUrl: './lab-tests-sections-table.scss'
 })
 export class LabTestsSectionsTable implements OnInit {
+  allTests: LabTestV2Dto[] = [];
   labTestsByCategory: LabTestGroup[] = [];
-  selectedValues: LabTestV2Dto[] = [];
+  selectedIds: number[] = [];
 
-  nzData: {selectedData: LabTestV2Dto[]} = inject(NZ_DRAWER_DATA);
+  nzData: {selectedValues: LabTestV2Dto[]} = inject(NZ_DRAWER_DATA);
 
-  selectedData = this.nzData.selectedData;
+  selectedValues = this.nzData.selectedValues;
 
   private drawerRef = inject(NzDrawerRef);
   private userService = inject(UserService);
@@ -38,11 +39,19 @@ export class LabTestsSectionsTable implements OnInit {
     this.userService.getLabTestV2()
       .pipe(take(1))
       .subscribe(labTests => {
+        this.allTests = labTests;
         this.labTestsByCategory = this.groupByCategory(labTests);
+        this.selectedIds = this.selectedValues.map(v => v.id);
       });
   }
 
-  private groupByCategory(tests: LabTestV2Dto[]): LabTestGroup[] {
+  updateSelectedValues() {
+    this.selectedValues = this.allTests.filter(test => {
+      return this.selectedIds.includes(test.id);
+    });
+  }
+
+  groupByCategory(tests: LabTestV2Dto[]): LabTestGroup[] {
     const grouped = tests.reduce((acc, test) => {
       if (!acc[test.category]) {
         acc[test.category] = [];
@@ -59,7 +68,9 @@ export class LabTestsSectionsTable implements OnInit {
 
   deleteSelectedValue(id: number) {
     this.selectedValues = this.selectedValues.filter(value => value.id !== id);
+    this.selectedIds = this.selectedIds.filter(selectedId => selectedId !== id);
   }
+
 
   closeDrawer(): void {
     this.drawerRef.close();
