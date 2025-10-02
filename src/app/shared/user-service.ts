@@ -8,6 +8,7 @@ import {
   EducationLevelDto, 
   GenderDto, 
   LabTestDto, 
+  LabTestV2Dto, 
   MaritalStatusDto, 
   NationalityDto, 
   PatientDto, 
@@ -96,4 +97,12 @@ export class UserService {
   getPatientTestResults(): Observable<PatientTestResultDto[]>{
     return this.httpClient.get<PatientTestResultDto[]>(`${this.url}/patientTestResults`);
   };
+
+  getLabTestV2(): Observable<LabTestV2Dto[]>{
+    return this.httpClient.get<LabTestV2Dto[]>(`${this.url}/labTestsV2`)
+    .pipe(map(labTests => labTests.map(labTest => ({
+      ...labTest,
+      id: +labTest.id
+    }))));
+  }
 }

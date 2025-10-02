@@ -118,3 +118,17 @@ export interface PatientResultTableDto {
   patientId?: number;
   issueDate?: Date;
 }
+
+export interface LabTestV2Dto {
+  id: number;
+  code: string;
+  name: string;
+  unit: string;
+  normalValues: string;
+  category: string;
+}
+
+export interface LabTestGroup {
+  category: string;
+  tests: LabTestV2Dto[];
+}

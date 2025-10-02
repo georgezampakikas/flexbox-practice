@@ -10,6 +10,13 @@
         <nz-tab nzTitle="Έγγραφα">Content</nz-tab>
         <nz-tab nzTitle="Εργαστηριακά">
             <app-patient-lab-results-table />
-        </nz-tab>      
+        </nz-tab>    
+        <nz-tab nzTitle="Παραγγελία Εργαστηριακών">
+            <button 
+                nz-button 
+                nzType="default"
+                (click)="labTestsDrawer()"
+            >Προσθήκη εξετάσεων</button>
+        </nz-tab>  
     </nz-tabs>
 </div>

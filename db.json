@@ -674,5 +674,327 @@
       "testId": 4,
       "result": 3.2
     }
+  ],
+  "labTestsV2": [
+    {
+      "id": "1",
+      "code": "CBC-WBC",
+      "name": "White Blood Cell Count",
+      "unit": "10^9/L",
+      "normalValues": "4.5-11.0",
+      "category": "Complete Blood Count"
+    },
+    {
+      "id": "2",
+      "code": "CBC-RBC",
+      "name": "Red Blood Cell Count",
+      "unit": "10^12/L",
+      "normalValues": "4.5-5.9 (M), 4.0-5.2 (F)",
+      "category": "Complete Blood Count"
+    },
+    {
+      "id": "3",
+      "code": "CBC-HGB",
+      "name": "Hemoglobin",
+      "unit": "g/dL",
+      "normalValues": "13.5-17.5 (M), 12.0-15.5 (F)",
+      "category": "Complete Blood Count"
+    },
+    {
+      "id": "4",
+      "code": "CBC-HCT",
+      "name": "Hematocrit",
+      "unit": "%",
+      "normalValues": "38.8-50.0 (M), 34.9-44.5 (F)",
+      "category": "Complete Blood Count"
+    },
+    {
+      "id": "5",
+      "code": "CBC-PLT",
+      "name": "Platelet Count",
+      "unit": "10^9/L",
+      "normalValues": "150-400",
+      "category": "Complete Blood Count"
+    },
+    {
+      "id": "6",
+      "code": "BMP-GLU",
+      "name": "Glucose",
+      "unit": "mg/dL",
+      "normalValues": "70-100 (fasting)",
+      "category": "Basic Metabolic Panel"
+    },
+    {
+      "id": "7",
+      "code": "BMP-NA",
+      "name": "Sodium",
+      "unit": "mmol/L",
+      "normalValues": "136-145",
+      "category": "Basic Metabolic Panel"
+    },
+    {
+      "id": "8",
+      "code": "BMP-K",
+      "name": "Potassium",
+      "unit": "mmol/L",
+      "normalValues": "3.5-5.0",
+      "category": "Basic Metabolic Panel"
+    },
+    {
+      "id": "9",
+      "code": "BMP-CL",
+      "name": "Chloride",
+      "unit": "mmol/L",
+      "normalValues": "98-107",
+      "category": "Basic Metabolic Panel"
+    },
+    {
+      "id": "10",
+      "code": "BMP-CO2",
+      "name": "Carbon Dioxide",
+      "unit": "mmol/L",
+      "normalValues": "23-29",
+      "category": "Basic Metabolic Panel"
+    },
+    {
+      "id": "11",
+      "code": "BMP-BUN",
+      "name": "Blood Urea Nitrogen",
+      "unit": "mg/dL",
+      "normalValues": "7-20",
+      "category": "Basic Metabolic Panel"
+    },
+    {
+      "id": "12",
+      "code": "BMP-CREAT",
+      "name": "Creatinine",
+      "unit": "mg/dL",
+      "normalValues": "0.7-1.3 (M), 0.6-1.1 (F)",
+      "category": "Basic Metabolic Panel"
+    },
+    {
+      "id": "13",
+      "code": "BMP-CA",
+      "name": "Calcium",
+      "unit": "mg/dL",
+      "normalValues": "8.5-10.5",
+      "category": "Basic Metabolic Panel"
+    },
+    {
+      "id": "14",
+      "code": "LFT-ALT",
+      "name": "Alanine Aminotransferase",
+      "unit": "U/L",
+      "normalValues": "7-56",
+      "category": "Liver Function Tests"
+    },
+    {
+      "id": "15",
+      "code": "LFT-AST",
+      "name": "Aspartate Aminotransferase",
+      "unit": "U/L",
+      "normalValues": "10-40",
+      "category": "Liver Function Tests"
+    },
+    {
+      "id": "16",
+      "code": "LFT-ALP",
+      "name": "Alkaline Phosphatase",
+      "unit": "U/L",
+      "normalValues": "44-147",
+      "category": "Liver Function Tests"
+    },
+    {
+      "id": "17",
+      "code": "LFT-TBIL",
+      "name": "Total Bilirubin",
+      "unit": "mg/dL",
+      "normalValues": "0.1-1.2",
+      "category": "Liver Function Tests"
+    },
+    {
+      "id": "18",
+      "code": "LFT-ALB",
+      "name": "Albumin",
+      "unit": "g/dL",
+      "normalValues": "3.5-5.5",
+      "category": "Liver Function Tests"
+    },
+    {
+      "id": "19",
+      "code": "LFT-TP",
+      "name": "Total Protein",
+      "unit": "g/dL",
+      "normalValues": "6.0-8.3",
+      "category": "Liver Function Tests"
+    },
+    {
+      "id": "20",
+      "code": "LIPID-TC",
+      "name": "Total Cholesterol",
+      "unit": "mg/dL",
+      "normalValues": "<200",
+      "category": "Lipid Panel"
+    },
+    {
+      "id": "21",
+      "code": "LIPID-HDL",
+      "name": "HDL Cholesterol",
+      "unit": "mg/dL",
+      "normalValues": ">40 (M), >50 (F)",
+      "category": "Lipid Panel"
+    },
+    {
+      "id": "22",
+      "code": "LIPID-LDL",
+      "name": "LDL Cholesterol",
+      "unit": "mg/dL",
+      "normalValues": "<100",
+      "category": "Lipid Panel"
+    },
+    {
+      "id": "23",
+      "code": "LIPID-TG",
+      "name": "Triglycerides",
+      "unit": "mg/dL",
+      "normalValues": "<150",
+      "category": "Lipid Panel"
+    },
+    {
+      "id": "24",
+      "code": "THYROID-TSH",
+      "name": "Thyroid Stimulating Hormone",
+      "unit": "mIU/L",
+      "normalValues": "0.4-4.0",
+      "category": "Thyroid Function"
+    },
+    {
+      "id": "25",
+      "code": "THYROID-T4",
+      "name": "Free T4",
+      "unit": "ng/dL",
+      "normalValues": "0.8-1.8",
+      "category": "Thyroid Function"
+    },
+    {
+      "id": "26",
+      "code": "THYROID-T3",
+      "name": "Free T3",
+      "unit": "pg/mL",
+      "normalValues": "2.3-4.2",
+      "category": "Thyroid Function"
+    },
+    {
+      "id": "27",
+      "code": "HBA1C",
+      "name": "Hemoglobin A1C",
+      "unit": "%",
+      "normalValues": "<5.7",
+      "category": "Diabetes Monitoring"
+    },
+    {
+      "id": "28",
+      "code": "COAG-PT",
+      "name": "Prothrombin Time",
+      "unit": "seconds",
+      "normalValues": "11-13.5",
+      "category": "Coagulation Studies"
+    },
+    {
+      "id": "29",
+      "code": "COAG-INR",
+      "name": "International Normalized Ratio",
+      "unit": "ratio",
+      "normalValues": "0.8-1.2",
+      "category": "Coagulation Studies"
+    },
+    {
+      "id": "30",
+      "code": "COAG-PTT",
+      "name": "Partial Thromboplastin Time",
+      "unit": "seconds",
+      "normalValues": "25-35",
+      "category": "Coagulation Studies"
+    },
+    {
+      "id": "31",
+      "code": "IRON-FE",
+      "name": "Serum Iron",
+      "unit": "mcg/dL",
+      "normalValues": "60-170",
+      "category": "Iron Studies"
+    },
+    {
+      "id": "32",
+      "code": "IRON-TIBC",
+      "name": "Total Iron Binding Capacity",
+      "unit": "mcg/dL",
+      "normalValues": "240-450",
+      "category": "Iron Studies"
+    },
+    {
+      "id": "33",
+      "code": "IRON-FERR",
+      "name": "Ferritin",
+      "unit": "ng/mL",
+      "normalValues": "12-300 (M), 12-150 (F)",
+      "category": "Iron Studies"
+    },
+    {
+      "id": "34",
+      "code": "VIT-D",
+      "name": "Vitamin D (25-OH)",
+      "unit": "ng/mL",
+      "normalValues": "30-100",
+      "category": "Vitamins"
+    },
+    {
+      "id": "35",
+      "code": "VIT-B12",
+      "name": "Vitamin B12",
+      "unit": "pg/mL",
+      "normalValues": "200-900",
+      "category": "Vitamins"
+    },
+    {
+      "id": "36",
+      "code": "CRP",
+      "name": "C-Reactive Protein",
+      "unit": "mg/L",
+      "normalValues": "<3.0",
+      "category": "Inflammatory Markers"
+    },
+    {
+      "id": "37",
+      "code": "ESR",
+      "name": "Erythrocyte Sedimentation Rate",
+      "unit": "mm/hr",
+      "normalValues": "0-15 (M), 0-20 (F)",
+      "category": "Inflammatory Markers"
+    },
+    {
+      "id": "38",
+      "code": "URIC",
+      "name": "Uric Acid",
+      "unit": "mg/dL",
+      "normalValues": "3.5-7.2 (M), 2.6-6.0 (F)",
+      "category": "Metabolic Panel"
+    },
+    {
+      "id": "39",
+      "code": "MG",
+      "name": "Magnesium",
+      "unit": "mg/dL",
+      "normalValues": "1.7-2.2",
+      "category": "Electrolytes"
+    },
+    {
+      "id": "40",
+      "code": "PHOS",
+      "name": "Phosphorus",
+      "unit": "mg/dL",
+      "normalValues": "2.5-4.5",
+      "category": "Electrolytes"
+    }
   ]
 }
