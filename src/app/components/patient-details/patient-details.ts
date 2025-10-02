@@ -32,7 +32,8 @@ export class PatientDetails {
       nzClosable: false,
       nzMaskClosable: false,
       nzContent: LabTestsSectionsTable, 
-      nzWidth: '90%'
+      nzWidth: '90%',
+      nzHeight: '100%',
     });
   }
 }
