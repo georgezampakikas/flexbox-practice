@@ -46,8 +46,12 @@ export class LabTestsSectionsTable implements OnInit {
   }
 
   updateSelectedValues() {
-    this.selectedValues = this.allTests.filter(test => {
+    this.selectedValues = this.allTests
+    .filter(test => {
       return this.selectedIds.includes(test.id);
+    })
+    .sort((a, b) => {
+      return a.name.localeCompare(b.name);
     });
   }
 
