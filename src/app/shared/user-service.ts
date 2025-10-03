@@ -14,6 +14,7 @@ import {
   PatientDto, 
   PatientIdentity, 
   PatientTestResultDto, 
+  PatientV2Dto, 
   PhoneTypeDto, 
   ProfessionDto 
 } from './patient-modal';
@@ -104,5 +105,9 @@ export class UserService {
       ...labTest,
       id: +labTest.id
     }))));
+  }
+
+  getPatientsV2(): Observable<PatientV2Dto[]>{
+    return this.httpClient.get<PatientV2Dto[]>(`${this.url}/patientsV2`);
   }
 }

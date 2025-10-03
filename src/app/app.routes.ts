@@ -3,7 +3,7 @@ import { Routes } from '@angular/router';
 export const routes: Routes = [
     { 
         path: 'patients', 
-        loadComponent: () => import('./components/page/page').then(m => m.Page), 
+        loadComponent: () => import('./components/patients/patients').then(m => m.Patients), 
     },
     {
         path: 'patient-details/:id',
@@ -11,7 +11,7 @@ export const routes: Routes = [
     },
     { 
         path: 'new-patients', 
-        loadComponent: () => import('./components/new-patients/new-patients').then(m => m.NewPatients), 
+        loadComponent: () => import('./components/page/page').then(m => m.Page), 
     },
     {
         path: 'settings',

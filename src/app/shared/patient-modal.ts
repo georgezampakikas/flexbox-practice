@@ -132,3 +132,22 @@ export interface LabTestGroup {
   category: string;
   tests: LabTestV2Dto[];
 }
+
+export interface PatientV2Dto {
+  id: number;
+  patientIdentity: PatientIdentity;
+  demographicInfo: DemographicInfoV2;
+  contactInfo: ContactInfoV2;
+}
+
+export interface DemographicInfoV2 {
+  birthDate: string;
+  birthPlace: string;
+  gender: NamedEntity;
+  maritalStatus: NamedEntity;
+}
+
+export interface ContactInfoV2 {
+  mobilePhone: number;
+  email: string;
+}

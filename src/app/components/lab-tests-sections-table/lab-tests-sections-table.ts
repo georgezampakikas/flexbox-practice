@@ -1,14 +1,17 @@
-import { Component, inject, OnInit, signal } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { NzDividerModule } from "ng-zorro-antd/divider";
 import { NZ_DRAWER_DATA, NzDrawerRef } from 'ng-zorro-antd/drawer';
 import { NzFormModule } from "ng-zorro-antd/form";
-import { NzCheckboxModule } from 'ng-zorro-antd/checkbox';
-import { UserService } from '../../shared/user-service';
-import { take } from 'rxjs';
-import { LabTestGroup, LabTestV2Dto } from '../../shared/patient-modal';
 import { NzIconModule } from 'ng-zorro-antd/icon';
+import { NzCheckboxModule } from 'ng-zorro-antd/checkbox';
+
+import { take } from 'rxjs';
+
+import { UserService } from '../../shared/user-service';
+import { LabTestGroup, LabTestV2Dto } from '../../shared/patient-modal';
 
 @Component({
   selector: 'app-lab-tests-sections-table',
@@ -45,7 +48,7 @@ export class LabTestsSectionsTable implements OnInit {
       });
   }
 
-  updateSelectedValues() {
+  updateSelectedValues(): void {
     this.selectedValues = this.allTests
     .filter(test => {
       return this.selectedIds.includes(test.id);
@@ -70,7 +73,7 @@ export class LabTestsSectionsTable implements OnInit {
     }));
   }
 
-  deleteSelectedValue(id: number) {
+  deleteSelectedValue(id: number): void {
     this.selectedValues = this.selectedValues.filter(value => value.id !== id);
     this.selectedIds = this.selectedIds.filter(selectedId => selectedId !== id);
   }
