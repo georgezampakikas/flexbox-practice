@@ -1,13 +1,15 @@
-import { Component, inject, OnInit } from '@angular/core';
+import { Component, computed, inject, OnInit, signal } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { NzIconModule } from 'ng-zorro-antd/icon';
 import { NzInputModule } from 'ng-zorro-antd/input';
 import { NzAutocompleteModule } from 'ng-zorro-antd/auto-complete';
 import { UserService } from '../../shared/user-service';
-import { take } from 'rxjs';
+import { debounceTime, distinctUntilChanged, filter, switchMap, take } from 'rxjs';
 import { PatientDto, PatientV2Dto } from '../../shared/patient-modal';
 import { RouterLink, RouterLinkActive } from '@angular/router';
+import { toObservable, toSignal } from '@angular/core/rxjs-interop';
+
 
 
 
@@ -25,31 +27,34 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
   templateUrl: './patients.html',
   styleUrl: './patients.scss'
 })
-export class Patients implements OnInit {
-  patientsData: PatientDto[] = [];
-  selectedPatient: string = '';
+export class Patients {
+  selectedPatient = signal<string>('');
   
-
   private userService = inject(UserService);
 
-  ngOnInit(): void {
-    this.userService.getPatientsDto()
-      .pipe(take(1))
-      .subscribe(patients => {
-        this.patientsData = patients;
-     });
-   }
+  private selectedPatient$ = toObservable(this.selectedPatient);
 
-  get filteredPatients() {
-    if (this.selectedPatient && this.selectedPatient.trim().length > 3) {
-      const search = this.selectedPatient.toLowerCase().trim();
-      return this.patientsData.filter(p =>
-        p.patientIdentity.firstName.toLowerCase().includes(search) ||
-        p.patientIdentity.lastName.toLowerCase().includes(search)
+  patientData = toSignal(
+    this.selectedPatient$.pipe(
+      debounceTime(600),
+      distinctUntilChanged(),
+      filter(term => term.trim().length > 3),
+      switchMap(term => this.userService.getPatientsByName(term)),
+    ),
+    { initialValue: [] as PatientDto[] }
+  );
+
+  filteredPatients = computed(() => {
+    const term = this.selectedPatient().toLowerCase().trim();
+    const patients = this.patientData();
+    if (term.length > 3) {
+      return patients.filter(
+        p =>
+          p.patientIdentity.firstName.toLowerCase().includes(term) ||
+          p.patientIdentity.lastName.toLowerCase().includes(term)
       );
     }
     return [];
-  }
-
+  });
 
 }

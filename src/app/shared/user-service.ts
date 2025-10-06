@@ -110,4 +110,9 @@ export class UserService {
       id: +labTest.id
     }))));
   }
+
+  getPatientsByName(term: string) {
+    return this.httpClient.get<PatientDto[]>(`${this.url}/patients?q=${encodeURIComponent(term)}`);
+  }
+
 }

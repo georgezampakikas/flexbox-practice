@@ -4,8 +4,9 @@
             <input 
                 id="selected-input"
                 class="input"
-                nz-input 
-                [(ngModel)]="selectedPatient"
+                nz-input
+                [ngModel]="selectedPatient()"
+                (ngModelChange)="selectedPatient.set($event)" 
                 [nzAutocomplete]="auto"
             />
         </nz-input-group>
@@ -17,7 +18,7 @@
                 <div>Κωδικός</div>
                 <div>Κατάσταση</div>
             </div>
-            @for(patient of filteredPatients; track patient.id) {
+            @for(patient of filteredPatients(); track patient.id) {
                 <nz-auto-option 
                     [routerLink]="['/patient-details', patient.id]" 
                     routerLinkActive="is-active"
