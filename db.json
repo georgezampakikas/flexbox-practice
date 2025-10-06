@@ -3,77 +3,25 @@
     {
       "id": "1",
       "patientIdentity": {
-        "amka": "2910300002",
+        "amka": "2910930002",
         "code": "000001",
-        "firstName": "Κωνσταντίνos Κωνσταντίνου",
-        "lastName": "Κωνσταντίνos Κωνσταντίνου",
+        "firstName": "Νικόλαοςs",
+        "lastName": "Παπαδόπουλος",
         "status": "Ενεργός"
       },
       "demographicInfo": {
-        "birthDate": "29/10/93 (27 ετων)",
-        "birthPlace": "Καρδίτσα",
-        "gender": {
-          "id": 1,
-          "name": "Άρρεν"
-        },
-        "maritalStatus": {
-          "id": 5,
-          "name": "Σε συμβίωση"
-        },
-        "fatherName": "Αθανάσιοss",
-        "motherName": "Κατερίνα",
-        "language": "Ελληνική",
-        "nationality": {
-          "id": 4,
-          "name": "Γερμανική"
-        },
-        "profession": {
-          "id": 999,
-          "name": "Μή διαθέσιμο"
-        },
-        "education": {
-          "id": 7,
-          "name": "Διδακτορικό"
-        }
-      },
-      "contactInfo": {
-        "phone1TypeId": 1,
-        "phone1": "2410579060",
-        "phone1Label": null,
-        "phone2TypeId": 1,
-        "phone2": "6900000000",
-        "phone2Label": "Νεος αριθμος",
-        "phone3TypeId": 3,
-        "phone3": "2410579061",
-        "phone3Label": "test",
-        "addressTypeId": 1,
-        "addressLabel": "test2",
-        "address": "Φαρσάλων 15Α, Λάρισα, 41223",
-        "email": "info@info-domain.com"
-      }
-    },
-    {
-      "id": "2",
-      "patientIdentity": {
-        "code": "000002",
-        "amka": "1908851234",
-        "lastName": "Παπαδόπουλος Γεώργιος",
-        "firstName": "Γεώργιος Παπαδόπουλος",
-        "status": "Ενεργός"
-      },
-      "demographicInfo": {
-        "birthDate": "15/03/85 (38 ετων)",
+        "birthDate": "29/10/93 (31 ετων)",
         "birthPlace": "Αθήνα",
         "gender": {
           "id": 1,
           "name": "Άρρεν"
         },
         "maritalStatus": {
-          "id": 2,
-          "name": "Έγγαμος/η"
+          "id": 1,
+          "name": "Άγαμος/η"
         },
-        "fatherName": "Δημήτριος",
-        "motherName": "Μαρία",
+        "fatherName": "Γεώργιος",
+        "motherName": "Ελένη",
         "language": "Ελληνική",
         "nationality": {
           "id": 1,
@@ -89,43 +37,147 @@
         }
       },
       "contactInfo": {
-        "phone1TypeId": 1,
+        "phone1TypeId": 3,
         "phone1": "2101234567",
         "phone1Label": null,
-        "phone2TypeId": 2,
-        "phone2": "6971234567",
-        "phone2Label": null,
+        "phone2TypeId": 1,
+        "phone2": "6901234501",
+        "phone2Label": "Κινητό",
         "phone3TypeId": 3,
         "phone3": "2101234568",
+        "phone3Label": "Εργασία",
+        "addressTypeId": 1,
+        "addressLabel": "Κατοικία",
+        "address": "Πατησίων 45, Αθήνα, 10682",
+        "email": "n.papadopoulos@email.gr"
+      }
+    },
+    {
+      "id": "2",
+      "patientIdentity": {
+        "code": "000002",
+        "amka": "1508881234",
+        "lastName": "Παπαδοπούλου",
+        "firstName": "Μαρία",
+        "status": "Ενεργός"
+      },
+      "demographicInfo": {
+        "birthDate": "15/08/88 (36 ετων)",
+        "birthPlace": "Πάτρα",
+        "gender": {
+          "id": 2,
+          "name": "Θήλυ"
+        },
+        "maritalStatus": {
+          "id": 2,
+          "name": "Έγγαμος/η"
+        },
+        "fatherName": "Κωνσταντίνος",
+        "motherName": "Σοφία",
+        "language": "Ελληνική",
+        "nationality": {
+          "id": 1,
+          "name": "Ελληνική"
+        },
+        "profession": {
+          "id": 2,
+          "name": "Δάσκαλος"
+        },
+        "education": {
+          "id": 5,
+          "name": "Ανώτατη"
+        }
+      },
+      "contactInfo": {
+        "phone1TypeId": 1,
+        "phone1": "2610123456",
+        "phone1Label": null,
+        "phone2TypeId": 1,
+        "phone2": "6901234502",
+        "phone2Label": null,
+        "phone3TypeId": 3,
+        "phone3": "2610123457",
         "phone3Label": null,
         "addressTypeId": 1,
         "addressLabel": null,
-        "address": "Πατησίων 123, Αθήνα, 10682",
-        "email": "g.papadopoulos@email.com"
+        "address": "Κορίνθου 78, Πάτρα, 26221",
+        "email": "m.papadopoulou@email.gr"
       }
     },
     {
       "id": "3",
       "patientIdentity": {
         "code": "000003",
-        "amka": "0507925678",
-        "lastName": "Ιωάννου Ελένη",
-        "firstName": "Ελένη Ιωάννου",
+        "amka": "0307925678",
+        "lastName": "Παπαδόπουλος",
+        "firstName": "Δημήτριος",
         "status": "Ενεργός"
       },
       "demographicInfo": {
-        "birthDate": "05/07/92 (31 ετων)",
+        "birthDate": "03/07/92 (32 ετων)",
         "birthPlace": "Θεσσαλονίκη",
         "gender": {
-          "id": 2,
-          "name": "Θήλυ"
+          "id": 1,
+          "name": "Άρρεν"
         },
         "maritalStatus": {
           "id": 1,
           "name": "Άγαμος/η"
         },
+        "fatherName": "Παναγιώτης",
+        "motherName": "Μαρία",
+        "language": "Ελληνική",
+        "nationality": {
+          "id": 1,
+          "name": "Ελληνική"
+        },
+        "profession": {
+          "id": 4,
+          "name": "Λογιστής"
+        },
+        "education": {
+          "id": 5,
+          "name": "Ανώτατη"
+        }
+      },
+      "contactInfo": {
+        "phone1TypeId": 1,
+        "phone1": "2310234567",
+        "phone1Label": "Σταθερό",
+        "phone2TypeId": 1,
+        "phone2": "6901234503",
+        "phone2Label": "Προσωπικό",
+        "phone3TypeId": 3,
+        "phone3": "2310234568",
+        "phone3Label": "Γραφείο",
+        "addressTypeId": 1,
+        "addressLabel": "Οικία",
+        "address": "Τσιμισκή 120, Θεσσαλονίκη, 54621",
+        "email": "d.papadopoulos@email.gr"
+      }
+    },
+    {
+      "id": "4",
+      "patientIdentity": {
+        "code": "000004",
+        "amka": "2201851111",
+        "lastName": "Γεωργίου",
+        "firstName": "Ελένη",
+        "status": "Ενεργός"
+      },
+      "demographicInfo": {
+        "birthDate": "22/01/85 (39 ετων)",
+        "birthPlace": "Λάρισα",
+        "gender": {
+          "id": 2,
+          "name": "Θήλυ"
+        },
+        "maritalStatus": {
+          "id": 2,
+          "name": "Έγγαμος/η"
+        },
         "fatherName": "Νικόλαος",
-        "motherName": "Σοφία",
+        "motherName": "Αικατερίνη",
         "language": "Ελληνική",
         "nationality": {
           "id": 1,
@@ -142,18 +194,850 @@
       },
       "contactInfo": {
         "phone1TypeId": 1,
-        "phone1": "2310987654",
+        "phone1": "2410345678",
         "phone1Label": null,
-        "phone2TypeId": 2,
-        "phone2": "6945678901",
+        "phone2TypeId": 1,
+        "phone2": "6901234504",
+        "phone2Label": "Κινητό τηλέφωνο",
+        "phone3TypeId": 3,
+        "phone3": "2410345679",
+        "phone3Label": "Νοσοκομείο",
+        "addressTypeId": 1,
+        "addressLabel": "Μόνιμη διεύθυνση",
+        "address": "Παπαναστασίου 56, Λάρισα, 41222",
+        "email": "e.georgiou@email.gr"
+      }
+    },
+    {
+      "id": "5",
+      "patientIdentity": {
+        "code": "000005",
+        "amka": "1112901122",
+        "lastName": "Γεωργίου",
+        "firstName": "Κωνσταντίνος",
+        "status": "Ενεργός"
+      },
+      "demographicInfo": {
+        "birthDate": "11/12/90 (33 ετων)",
+        "birthPlace": "Ηράκλειο",
+        "gender": {
+          "id": 1,
+          "name": "Άρρεν"
+        },
+        "maritalStatus": {
+          "id": 1,
+          "name": "Άγαμος/η"
+        },
+        "fatherName": "Ανδρέας",
+        "motherName": "Δέσποινα",
+        "language": "Ελληνική",
+        "nationality": {
+          "id": 1,
+          "name": "Ελληνική"
+        },
+        "profession": {
+          "id": 12,
+          "name": "Ηλεκτρολόγος"
+        },
+        "education": {
+          "id": 4,
+          "name": "Ανώτερη"
+        }
+      },
+      "contactInfo": {
+        "phone1TypeId": 1,
+        "phone1": "2810456789",
+        "phone1Label": null,
+        "phone2TypeId": 1,
+        "phone2": "6901234505",
         "phone2Label": null,
         "phone3TypeId": 3,
-        "phone3": "2310987655",
+        "phone3": "2810456790",
         "phone3Label": null,
         "addressTypeId": 1,
         "addressLabel": null,
-        "address": "Εγνατία 45, Θεσσαλονίκη, 54630",
-        "email": "e.ioannou@hospital.gr"
+        "address": "Δικαιοσύνης 23, Ηράκλειο, 71202",
+        "email": "k.georgiou@email.gr"
+      }
+    },
+    {
+      "id": "6",
+      "patientIdentity": {
+        "code": "000006",
+        "amka": "0809872233",
+        "lastName": "Κωνσταντίνου",
+        "firstName": "Σοφία",
+        "status": "Ενεργός"
+      },
+      "demographicInfo": {
+        "birthDate": "08/09/87 (37 ετων)",
+        "birthPlace": "Βόλος",
+        "gender": {
+          "id": 2,
+          "name": "Θήλυ"
+        },
+        "maritalStatus": {
+          "id": 2,
+          "name": "Έγγαμος/η"
+        },
+        "fatherName": "Σπυρίδων",
+        "motherName": "Βασιλική",
+        "language": "Ελληνική",
+        "nationality": {
+          "id": 1,
+          "name": "Ελληνική"
+        },
+        "profession": {
+          "id": 8,
+          "name": "Φαρμακοποιός"
+        },
+        "education": {
+          "id": 5,
+          "name": "Ανώτατη"
+        }
+      },
+      "contactInfo": {
+        "phone1TypeId": 1,
+        "phone1": "2421567890",
+        "phone1Label": "Οικία",
+        "phone2TypeId": 1,
+        "phone2": "6901234506",
+        "phone2Label": "Κινητό",
+        "phone3TypeId": 3,
+        "phone3": "2421567891",
+        "phone3Label": "Φαρμακείο",
+        "addressTypeId": 1,
+        "addressLabel": "Κατοικία",
+        "address": "Ιάσονος 34, Βόλος, 38221",
+        "email": "s.konstantinou@email.gr"
+      }
+    },
+    {
+      "id": "7",
+      "patientIdentity": {
+        "code": "000007",
+        "amka": "1705913344",
+        "lastName": "Κωνσταντίνου",
+        "firstName": "Ανδρέας",
+        "status": "Ενεργός"
+      },
+      "demographicInfo": {
+        "birthDate": "17/05/91 (33 ετων)",
+        "birthPlace": "Καβάλα",
+        "gender": {
+          "id": 1,
+          "name": "Άρρεν"
+        },
+        "maritalStatus": {
+          "id": 1,
+          "name": "Άγαμος/η"
+        },
+        "fatherName": "Χρήστος",
+        "motherName": "Αναστασία",
+        "language": "Ελληνική",
+        "nationality": {
+          "id": 1,
+          "name": "Ελληνική"
+        },
+        "profession": {
+          "id": 11,
+          "name": "Πολιτικός Μηχανικός"
+        },
+        "education": {
+          "id": 5,
+          "name": "Ανώτατη"
+        }
+      },
+      "contactInfo": {
+        "phone1TypeId": 1,
+        "phone1": "2510678901",
+        "phone1Label": null,
+        "phone2TypeId": 1,
+        "phone2": "6901234507",
+        "phone2Label": "Προσωπικό",
+        "phone3TypeId": 3,
+        "phone3": "2510678902",
+        "phone3Label": "Εργασία",
+        "addressTypeId": 1,
+        "addressLabel": null,
+        "address": "Ερυθρού Σταυρού 67, Καβάλα, 65403",
+        "email": "a.konstantinou@email.gr"
+      }
+    },
+    {
+      "id": "8",
+      "patientIdentity": {
+        "code": "000008",
+        "amka": "2403894455",
+        "lastName": "Ιωάννου",
+        "firstName": "Κατερίνα",
+        "status": "Ενεργός"
+      },
+      "demographicInfo": {
+        "birthDate": "24/03/89 (35 ετων)",
+        "birthPlace": "Ιωάννινα",
+        "gender": {
+          "id": 2,
+          "name": "Θήλυ"
+        },
+        "maritalStatus": {
+          "id": 2,
+          "name": "Έγγαμος/η"
+        },
+        "fatherName": "Θεόδωρος",
+        "motherName": "Χριστίνα",
+        "language": "Ελληνική",
+        "nationality": {
+          "id": 1,
+          "name": "Ελληνική"
+        },
+        "profession": {
+          "id": 1,
+          "name": "Γιατρός"
+        },
+        "education": {
+          "id": 5,
+          "name": "Ανώτατη"
+        }
+      },
+      "contactInfo": {
+        "phone1TypeId": 1,
+        "phone1": "2651789012",
+        "phone1Label": "Σπίτι",
+        "phone2TypeId": 1,
+        "phone2": "6901234508",
+        "phone2Label": "Κινητό",
+        "phone3TypeId": 3,
+        "phone3": "2651789013",
+        "phone3Label": "Ιατρείο",
+        "addressTypeId": 1,
+        "addressLabel": "Κατοικία",
+        "address": "Δωδώνης 89, Ιωάννινα, 45221",
+        "email": "k.ioannou@email.gr"
+      }
+    },
+    {
+      "id": "9",
+      "patientIdentity": {
+        "code": "000009",
+        "amka": "3011865566",
+        "lastName": "Ιωάννου",
+        "firstName": "Παναγιώτης",
+        "status": "Ενεργός"
+      },
+      "demographicInfo": {
+        "birthDate": "30/11/86 (37 ετων)",
+        "birthPlace": "Χανιά",
+        "gender": {
+          "id": 1,
+          "name": "Άρρεν"
+        },
+        "maritalStatus": {
+          "id": 2,
+          "name": "Έγγαμος/η"
+        },
+        "fatherName": "Μιχαήλ",
+        "motherName": "Ελένη",
+        "language": "Ελληνική",
+        "nationality": {
+          "id": 1,
+          "name": "Ελληνική"
+        },
+        "profession": {
+          "id": 5,
+          "name": "Δικηγόρος"
+        },
+        "education": {
+          "id": 5,
+          "name": "Ανώτατη"
+        }
+      },
+      "contactInfo": {
+        "phone1TypeId": 1,
+        "phone1": "2821890123",
+        "phone1Label": null,
+        "phone2TypeId": 1,
+        "phone2": "6901234509",
+        "phone2Label": "Κινητό",
+        "phone3TypeId": 3,
+        "phone3": "2821890124",
+        "phone3Label": "Δικηγορικό γραφείο",
+        "addressTypeId": 1,
+        "addressLabel": "Διεύθυνση κατοικίας",
+        "address": "Χαλιδών 45, Χανιά, 73134",
+        "email": "p.ioannou@email.gr"
+      }
+    },
+    {
+      "id": "10",
+      "patientIdentity": {
+        "code": "000010",
+        "amka": "1402946677",
+        "lastName": "Δημητρίου",
+        "firstName": "Αναστασία",
+        "status": "Ενεργός"
+      },
+      "demographicInfo": {
+        "birthDate": "14/02/94 (30 ετων)",
+        "birthPlace": "Ρόδος",
+        "gender": {
+          "id": 2,
+          "name": "Θήλυ"
+        },
+        "maritalStatus": {
+          "id": 1,
+          "name": "Άγαμος/η"
+        },
+        "fatherName": "Ιωάννης",
+        "motherName": "Κατερίνα",
+        "language": "Ελληνική",
+        "nationality": {
+          "id": 1,
+          "name": "Ελληνική"
+        },
+        "profession": {
+          "id": 9,
+          "name": "Αρχιτέκτονας"
+        },
+        "education": {
+          "id": 5,
+          "name": "Ανώτατη"
+        }
+      },
+      "contactInfo": {
+        "phone1TypeId": 1,
+        "phone1": "2241901234",
+        "phone1Label": null,
+        "phone2TypeId": 1,
+        "phone2": "6901234510",
+        "phone2Label": null,
+        "phone3TypeId": 3,
+        "phone3": "2241901235",
+        "phone3Label": null,
+        "addressTypeId": 1,
+        "addressLabel": null,
+        "address": "28ης Οκτωβρίου 56, Ρόδος, 85100",
+        "email": "a.dimitriou@email.gr"
+      }
+    },
+    {
+      "id": "11",
+      "patientIdentity": {
+        "code": "000011",
+        "amka": "0606887788",
+        "lastName": "Δημητρίου",
+        "firstName": "Χρήστος",
+        "status": "Ενεργός"
+      },
+      "demographicInfo": {
+        "birthDate": "06/06/88 (36 ετων)",
+        "birthPlace": "Κέρκυρα",
+        "gender": {
+          "id": 1,
+          "name": "Άρρεν"
+        },
+        "maritalStatus": {
+          "id": 2,
+          "name": "Έγγαμος/η"
+        },
+        "fatherName": "Γεώργιος",
+        "motherName": "Μαρία",
+        "language": "Ελληνική",
+        "nationality": {
+          "id": 1,
+          "name": "Ελληνική"
+        },
+        "profession": {
+          "id": 6,
+          "name": "Πωλητής"
+        },
+        "education": {
+          "id": 3,
+          "name": "Λύκειο"
+        }
+      },
+      "contactInfo": {
+        "phone1TypeId": 1,
+        "phone1": "2661012345",
+        "phone1Label": "Οικία",
+        "phone2TypeId": 1,
+        "phone2": "6901234511",
+        "phone2Label": "Κινητό",
+        "phone3TypeId": 3,
+        "phone3": "2661012346",
+        "phone3Label": "Κατάστημα",
+        "addressTypeId": 1,
+        "addressLabel": "Μόνιμη κατοικία",
+        "address": "Ν. Θεοτόκη 78, Κέρκυρα, 49100",
+        "email": "c.dimitriou@email.gr"
+      }
+    },
+    {
+      "id": "12",
+      "patientIdentity": {
+        "code": "000012",
+        "amka": "1909958899",
+        "lastName": "Νικολάου",
+        "firstName": "Βασιλική",
+        "status": "Ενεργός"
+      },
+      "demographicInfo": {
+        "birthDate": "19/09/95 (29 ετων)",
+        "birthPlace": "Αλεξανδρούπολη",
+        "gender": {
+          "id": 2,
+          "name": "Θήλυ"
+        },
+        "maritalStatus": {
+          "id": 1,
+          "name": "Άγαμος/η"
+        },
+        "fatherName": "Δημήτριος",
+        "motherName": "Σοφία",
+        "language": "Ελληνική",
+        "nationality": {
+          "id": 1,
+          "name": "Ελληνική"
+        },
+        "profession": {
+          "id": 10,
+          "name": "Δημοσιογράφος"
+        },
+        "education": {
+          "id": 5,
+          "name": "Ανώτατη"
+        }
+      },
+      "contactInfo": {
+        "phone1TypeId": 1,
+        "phone1": "2551123456",
+        "phone1Label": null,
+        "phone2TypeId": 1,
+        "phone2": "6901234512",
+        "phone2Label": "Προσωπικό",
+        "phone3TypeId": 3,
+        "phone3": "2551123457",
+        "phone3Label": "Εργασία",
+        "addressTypeId": 1,
+        "addressLabel": null,
+        "address": "Λ. Δημοκρατίας 34, Αλεξανδρούπολη, 68100",
+        "email": "v.nikolaou@email.gr"
+      }
+    },
+    {
+      "id": "13",
+      "patientIdentity": {
+        "code": "000013",
+        "amka": "2808839900",
+        "lastName": "Νικολάου",
+        "firstName": "Σπυρίδων",
+        "status": "Ενεργός"
+      },
+      "demographicInfo": {
+        "birthDate": "28/08/83 (41 ετων)",
+        "birthPlace": "Τρίκαλα",
+        "gender": {
+          "id": 1,
+          "name": "Άρρεν"
+        },
+        "maritalStatus": {
+          "id": 2,
+          "name": "Έγγαμος/η"
+        },
+        "fatherName": "Κωνσταντίνος",
+        "motherName": "Ελένη",
+        "language": "Ελληνική",
+        "nationality": {
+          "id": 1,
+          "name": "Ελληνική"
+        },
+        "profession": {
+          "id": 13,
+          "name": "Οδοντίατρος"
+        },
+        "education": {
+          "id": 5,
+          "name": "Ανώτατη"
+        }
+      },
+      "contactInfo": {
+        "phone1TypeId": 1,
+        "phone1": "2431234567",
+        "phone1Label": "Σπίτι",
+        "phone2TypeId": 1,
+        "phone2": "6901234513",
+        "phone2Label": "Κινητό",
+        "phone3TypeId": 3,
+        "phone3": "2431234568",
+        "phone3Label": "Οδοντιατρείο",
+        "addressTypeId": 1,
+        "addressLabel": "Κατοικία",
+        "address": "Ασκληπιού 90, Τρίκαλα, 42100",
+        "email": "s.nikolaou@email.gr"
+      }
+    },
+    {
+      "id": "14",
+      "patientIdentity": {
+        "code": "000014",
+        "amka": "0104920011",
+        "lastName": "Αθανασίου",
+        "firstName": "Δέσποινα",
+        "status": "Ενεργός"
+      },
+      "demographicInfo": {
+        "birthDate": "01/04/92 (32 ετων)",
+        "birthPlace": "Καλαμάτα",
+        "gender": {
+          "id": 2,
+          "name": "Θήλυ"
+        },
+        "maritalStatus": {
+          "id": 1,
+          "name": "Άγαμος/η"
+        },
+        "fatherName": "Παναγιώτης",
+        "motherName": "Αικατερίνη",
+        "language": "Ελληνική",
+        "nationality": {
+          "id": 1,
+          "name": "Ελληνική"
+        },
+        "profession": {
+          "id": 7,
+          "name": "Νοσηλεύτρια"
+        },
+        "education": {
+          "id": 4,
+          "name": "Ανώτερη"
+        }
+      },
+      "contactInfo": {
+        "phone1TypeId": 1,
+        "phone1": "2721345678",
+        "phone1Label": null,
+        "phone2TypeId": 1,
+        "phone2": "6901234514",
+        "phone2Label": "Κινητό",
+        "phone3TypeId": 3,
+        "phone3": "2721345679",
+        "phone3Label": "Νοσοκομείο",
+        "addressTypeId": 1,
+        "addressLabel": "Διεύθυνση",
+        "address": "Φάρων 123, Καλαμάτα, 24100",
+        "email": "d.athanasiou@email.gr"
+      }
+    },
+    {
+      "id": "15",
+      "patientIdentity": {
+        "code": "000015",
+        "amka": "1207901122",
+        "lastName": "Αθανασίου",
+        "firstName": "Θεόδωρος",
+        "status": "Ενεργός"
+      },
+      "demographicInfo": {
+        "birthDate": "12/07/90 (34 ετων)",
+        "birthPlace": "Κομοτηνή",
+        "gender": {
+          "id": 1,
+          "name": "Άρρεν"
+        },
+        "maritalStatus": {
+          "id": 2,
+          "name": "Έγγαμος/η"
+        },
+        "fatherName": "Ανδρέας",
+        "motherName": "Μαρία",
+        "language": "Ελληνική",
+        "nationality": {
+          "id": 1,
+          "name": "Ελληνική"
+        },
+        "profession": {
+          "id": 14,
+          "name": "Κτηνίατρος"
+        },
+        "education": {
+          "id": 5,
+          "name": "Ανώτατη"
+        }
+      },
+      "contactInfo": {
+        "phone1TypeId": 1,
+        "phone1": "2531456789",
+        "phone1Label": null,
+        "phone2TypeId": 1,
+        "phone2": "6901234515",
+        "phone2Label": null,
+        "phone3TypeId": 3,
+        "phone3": "2531456790",
+        "phone3Label": "Κτηνιατρείο",
+        "addressTypeId": 1,
+        "addressLabel": null,
+        "address": "Ορφέως 67, Κομοτηνή, 69100",
+        "email": "t.athanasiou@email.gr"
+      }
+    },
+    {
+      "id": "16",
+      "patientIdentity": {
+        "code": "000016",
+        "amka": "2510962233",
+        "lastName": "Παπαγιάννης",
+        "firstName": "Ιωάννης",
+        "status": "Ενεργός"
+      },
+      "demographicInfo": {
+        "birthDate": "25/10/96 (28 ετων)",
+        "birthPlace": "Χαλκίδα",
+        "gender": {
+          "id": 1,
+          "name": "Άρρεν"
+        },
+        "maritalStatus": {
+          "id": 1,
+          "name": "Άγαμος/η"
+        },
+        "fatherName": "Νικόλαος",
+        "motherName": "Χριστίνα",
+        "language": "Ελληνική",
+        "nationality": {
+          "id": 1,
+          "name": "Ελληνική"
+        },
+        "profession": {
+          "id": 12,
+          "name": "Ηλεκτρολόγος"
+        },
+        "education": {
+          "id": 4,
+          "name": "Ανώτερη"
+        }
+      },
+      "contactInfo": {
+        "phone1TypeId": 1,
+        "phone1": "2221567890",
+        "phone1Label": "Οικία",
+        "phone2TypeId": 1,
+        "phone2": "6901234516",
+        "phone2Label": "Κινητό",
+        "phone3TypeId": 3,
+        "phone3": "2221567891",
+        "phone3Label": "Εργασία",
+        "addressTypeId": 1,
+        "addressLabel": "Κατοικία",
+        "address": "Βενιζέλου 45, Χαλκίδα, 34100",
+        "email": "i.papagiannis@email.gr"
+      }
+    },
+    {
+      "id": "17",
+      "patientIdentity": {
+        "code": "000017",
+        "amka": "0301873344",
+        "lastName": "Παπαγιάννη",
+        "firstName": "Χριστίνα",
+        "status": "Ενεργός"
+      },
+      "demographicInfo": {
+        "birthDate": "03/01/87 (37 ετων)",
+        "birthPlace": "Σέρρες",
+        "gender": {
+          "id": 2,
+          "name": "Θήλυ"
+        },
+        "maritalStatus": {
+          "id": 2,
+          "name": "Έγγαμος/η"
+        },
+        "fatherName": "Γεώργιος",
+        "motherName": "Ελένη",
+        "language": "Ελληνική",
+        "nationality": {
+          "id": 1,
+          "name": "Ελληνική"
+        },
+        "profession": {
+          "id": 8,
+          "name": "Φαρμακοποιός"
+        },
+        "education": {
+          "id": 5,
+          "name": "Ανώτατη"
+        }
+      },
+      "contactInfo": {
+        "phone1TypeId": 1,
+        "phone1": "2321678901",
+        "phone1Label": null,
+        "phone2TypeId": 1,
+        "phone2": "6901234517",
+        "phone2Label": "Κινητό",
+        "phone3TypeId": 3,
+        "phone3": "2321678902",
+        "phone3Label": "Φαρμακείο",
+        "addressTypeId": 1,
+        "addressLabel": "Κατοικία",
+        "address": "Μεραρχίας 78, Σέρρες, 62100",
+        "email": "c.papagianni@email.gr"
+      }
+    },
+    {
+      "id": "18",
+      "patientIdentity": {
+        "code": "000018",
+        "amka": "1611914455",
+        "lastName": "Βασιλείου",
+        "firstName": "Γεώργιος",
+        "status": "Ενεργός"
+      },
+      "demographicInfo": {
+        "birthDate": "16/11/91 (33 ετων)",
+        "birthPlace": "Δράμα",
+        "gender": {
+          "id": 1,
+          "name": "Άρρεν"
+        },
+        "maritalStatus": {
+          "id": 1,
+          "name": "Άγαμος/η"
+        },
+        "fatherName": "Δημήτριος",
+        "motherName": "Σοφία",
+        "language": "Ελληνική",
+        "nationality": {
+          "id": 1,
+          "name": "Ελληνική"
+        },
+        "profession": {
+          "id": 3,
+          "name": "Μηχανικός"
+        },
+        "education": {
+          "id": 5,
+          "name": "Ανώτατη"
+        }
+      },
+      "contactInfo": {
+        "phone1TypeId": 1,
+        "phone1": "2521789012",
+        "phone1Label": "Σπίτι",
+        "phone2TypeId": 1,
+        "phone2": "6901234518",
+        "phone2Label": "Κινητό",
+        "phone3TypeId": 3,
+        "phone3": "2521789013",
+        "phone3Label": "Εργασία",
+        "addressTypeId": 1,
+        "addressLabel": null,
+        "address": "1ης Ιουλίου 34, Δράμα, 66100",
+        "email": "g.vasileiou@email.gr"
+      }
+    },
+    {
+      "id": "19",
+      "patientIdentity": {
+        "code": "000019",
+        "amka": "2012845566",
+        "lastName": "Βασιλείου",
+        "firstName": "Αικατερίνη",
+        "status": "Ενεργός"
+      },
+      "demographicInfo": {
+        "birthDate": "20/12/84 (39 ετων)",
+        "birthPlace": "Κιλκίς",
+        "gender": {
+          "id": 2,
+          "name": "Θήλυ"
+        },
+        "maritalStatus": {
+          "id": 2,
+          "name": "Έγγαμος/η"
+        },
+        "fatherName": "Ιωάννης",
+        "motherName": "Βασιλική",
+        "language": "Ελληνική",
+        "nationality": {
+          "id": 1,
+          "name": "Ελληνική"
+        },
+        "profession": {
+          "id": 2,
+          "name": "Δάσκαλος"
+        },
+        "education": {
+          "id": 5,
+          "name": "Ανώτατη"
+        }
+      },
+      "contactInfo": {
+        "phone1TypeId": 1,
+        "phone1": "2341890123",
+        "phone1Label": null,
+        "phone2TypeId": 1,
+        "phone2": "6901234519",
+        "phone2Label": "Κινητό",
+        "phone3TypeId": 3,
+        "phone3": "2341890124",
+        "phone3Label": "Σχολείο",
+        "addressTypeId": 1,
+        "addressLabel": "Μόνιμη κατοικία",
+        "address": "Καπέτα Γεωργίου 56, Κιλκίς, 61100",
+        "email": "a.vasileiou@email.gr"
+      }
+    },
+    {
+      "id": "20",
+      "patientIdentity": {
+        "code": "000020",
+        "amka": "0905936677",
+        "lastName": "Αντωνίου",
+        "firstName": "Μιχαήλ",
+        "status": "Ενεργός"
+      },
+      "demographicInfo": {
+        "birthDate": "09/05/93 (31 ετων)",
+        "birthPlace": "Ξάνθη",
+        "gender": {
+          "id": 1,
+          "name": "Άρρεν"
+        },
+        "maritalStatus": {
+          "id": 1,
+          "name": "Άγαμος/η"
+        },
+        "fatherName": "Αθανάσιος",
+        "motherName": "Δέσποινα",
+        "language": "Ελληνική",
+        "nationality": {
+          "id": 1,
+          "name": "Ελληνική"
+        },
+        "profession": {
+          "id": 4,
+          "name": "Λογιστής"
+        },
+        "education": {
+          "id": 5,
+          "name": "Ανώτατη"
+        }
+      },
+      "contactInfo": {
+        "phone1TypeId": 1,
+        "phone1": "2541901234",
+        "phone1Label": null,
+        "phone2TypeId": 1,
+        "phone2": "6901234520",
+        "phone2Label": null,
+        "phone3TypeId": 3,
+        "phone3": "2541901235",
+        "phone3Label": "Γραφείο",
+        "addressTypeId": 1,
+        "addressLabel": null,
+        "address": "Βασ. Γεωργίου 89, Ξάνθη, 67100",
+        "email": "m.antoniou@email.gr"
       }
     }
   ],
@@ -558,7 +1442,7 @@
       "patientId": 1,
       "issueDate": "2024-07-15",
       "testId": 1,
-      "result": 14.0
+      "result": 14
     },
     {
       "patientId": 1,
@@ -624,7 +1508,7 @@
       "patientId": 2,
       "issueDate": "2024-09-08",
       "testId": 7,
-      "result": 1.0
+      "result": 1
     },
     {
       "patientId": 2,
@@ -643,7 +1527,7 @@
       "issueDate": "2024-06-10",
       "testId": 5,
       "result": 6.1
-    },    
+    },
     {
       "patientId": 3,
       "issueDate": "2024-09-12",
@@ -995,408 +1879,6 @@
       "unit": "mg/dL",
       "normalValues": "2.5-4.5",
       "category": "Electrolytes"
-    }
-  ],
-   "patientsV2": [
-    {
-      "id": 1,
-      "patientIdentity": {
-        "code": "000001",
-        "amka": "2910930001",
-        "lastName": "Παπαδόπουλος",
-        "firstName": "Νικόλαος",
-        "status": "Ενεργός"
-      },
-      "demographicInfo": {
-        "birthDate": "29/10/93 (31 ετων)",
-        "birthPlace": "Αθήνα",
-        "gender": { "id": 1, "name": "Άρρεν" },
-        "maritalStatus": { "id": 1, "name": "Άγαμος/η" }
-      },
-      "contactInfo": {
-        "mobilePhone": "6901234501",
-        "email": "n.papadopoulos@email.gr"
-      }
-    },
-    {
-      "id": 2,
-      "patientIdentity": {
-        "code": "000002",
-        "amka": "1508881234",
-        "lastName": "Παπαδοπούλου",
-        "firstName": "Μαρία",
-        "status": "Ενεργός"
-      },
-      "demographicInfo": {
-        "birthDate": "15/08/88 (36 ετων)",
-        "birthPlace": "Πάτρα",
-        "gender": { "id": 2, "name": "Θήλυ" },
-        "maritalStatus": { "id": 2, "name": "Έγγαμος/η" }
-      },
-      "contactInfo": {
-        "mobilePhone": "6901234502",
-        "email": "m.papadopoulou@email.gr"
-      }
-    },
-    {
-      "id": 3,
-      "patientIdentity": {
-        "code": "000003",
-        "amka": "0307925678",
-        "lastName": "Παπαδόπουλος",
-        "firstName": "Δημήτριος",
-        "status": "Ενεργός"
-      },
-      "demographicInfo": {
-        "birthDate": "03/07/92 (32 ετων)",
-        "birthPlace": "Θεσσαλονίκη",
-        "gender": { "id": 1, "name": "Άρρεν" },
-        "maritalStatus": { "id": 1, "name": "Άγαμος/η" }
-      },
-      "contactInfo": {
-        "mobilePhone": "6901234503",
-        "email": "d.papadopoulos@email.gr"
-      }
-    },
-    {
-      "id": 4,
-      "patientIdentity": {
-        "code": "000004",
-        "amka": "2201851111",
-        "lastName": "Γεωργίου",
-        "firstName": "Ελένη",
-        "status": "Ενεργός"
-      },
-      "demographicInfo": {
-        "birthDate": "22/01/85 (39 ετων)",
-        "birthPlace": "Λάρισα",
-        "gender": { "id": 2, "name": "Θήλυ" },
-        "maritalStatus": { "id": 2, "name": "Έγγαμος/η" }
-      },
-      "contactInfo": {
-        "mobilePhone": "6901234504",
-        "email": "e.georgiou@email.gr"
-      }
-    },
-    {
-      "id": 5,
-      "patientIdentity": {
-        "code": "000005",
-        "amka": "1112901122",
-        "lastName": "Γεωργίου",
-        "firstName": "Κωνσταντίνος",
-        "status": "Ενεργός"
-      },
-      "demographicInfo": {
-        "birthDate": "11/12/90 (33 ετων)",
-        "birthPlace": "Ηράκλειο",
-        "gender": { "id": 1, "name": "Άρρεν" },
-        "maritalStatus": { "id": 1, "name": "Άγαμος/η" }
-      },
-      "contactInfo": {
-        "mobilePhone": "6901234505",
-        "email": "k.georgiou@email.gr"
-      }
-    },
-    {
-      "id": 6,
-      "patientIdentity": {
-        "code": "000006",
-        "amka": "0809872233",
-        "lastName": "Κωνσταντίνου",
-        "firstName": "Σοφία",
-        "status": "Ενεργός"
-      },
-      "demographicInfo": {
-        "birthDate": "08/09/87 (37 ετων)",
-        "birthPlace": "Βόλος",
-        "gender": { "id": 2, "name": "Θήλυ" },
-        "maritalStatus": { "id": 2, "name": "Έγγαμος/η" }
-      },
-      "contactInfo": {
-        "mobilePhone": "6901234506",
-        "email": "s.konstantinou@email.gr"
-      }
-    },
-    {
-      "id": 7,
-      "patientIdentity": {
-        "code": "000007",
-        "amka": "1705913344",
-        "lastName": "Κωνσταντίνου",
-        "firstName": "Ανδρέας",
-        "status": "Ενεργός"
-      },
-      "demographicInfo": {
-        "birthDate": "17/05/91 (33 ετων)",
-        "birthPlace": "Καβάλα",
-        "gender": { "id": 1, "name": "Άρρεν" },
-        "maritalStatus": { "id": 1, "name": "Άγαμος/η" }
-      },
-      "contactInfo": {
-        "mobilePhone": "6901234507",
-        "email": "a.konstantinou@email.gr"
-      }
-    },
-    {
-      "id": 8,
-      "patientIdentity": {
-        "code": "000008",
-        "amka": "2403894455",
-        "lastName": "Ιωάννου",
-        "firstName": "Κατερίνα",
-        "status": "Ενεργός"
-      },
-      "demographicInfo": {
-        "birthDate": "24/03/89 (35 ετων)",
-        "birthPlace": "Ιωάννινα",
-        "gender": { "id": 2, "name": "Θήλυ" },
-        "maritalStatus": { "id": 2, "name": "Έγγαμος/η" }
-      },
-      "contactInfo": {
-        "mobilePhone": "6901234508",
-        "email": "k.ioannou@email.gr"
-      }
-    },
-    {
-      "id": 9,
-      "patientIdentity": {
-        "code": "000009",
-        "amka": "3011865566",
-        "lastName": "Ιωάννου",
-        "firstName": "Παναγιώτης",
-        "status": "Ενεργός"
-      },
-      "demographicInfo": {
-        "birthDate": "30/11/86 (37 ετων)",
-        "birthPlace": "Χανιά",
-        "gender": { "id": 1, "name": "Άρρεν" },
-        "maritalStatus": { "id": 2, "name": "Έγγαμος/η" }
-      },
-      "contactInfo": {
-        "mobilePhone": "6901234509",
-        "email": "p.ioannou@email.gr"
-      }
-    },
-    {
-      "id": 10,
-      "patientIdentity": {
-        "code": "000010",
-        "amka": "1402946677",
-        "lastName": "Δημητρίου",
-        "firstName": "Αναστασία",
-        "status": "Ενεργός"
-      },
-      "demographicInfo": {
-        "birthDate": "14/02/94 (30 ετων)",
-        "birthPlace": "Ρόδος",
-        "gender": { "id": 2, "name": "Θήλυ" },
-        "maritalStatus": { "id": 1, "name": "Άγαμος/η" }
-      },
-      "contactInfo": {
-        "mobilePhone": "6901234510",
-        "email": "a.dimitriou@email.gr"
-      }
-    },
-    {
-      "id": 11,
-      "patientIdentity": {
-        "code": "000011",
-        "amka": "0606887788",
-        "lastName": "Δημητρίου",
-        "firstName": "Χρήστος",
-        "status": "Ενεργός"
-      },
-      "demographicInfo": {
-        "birthDate": "06/06/88 (36 ετων)",
-        "birthPlace": "Κέρκυρα",
-        "gender": { "id": 1, "name": "Άρρεν" },
-        "maritalStatus": { "id": 2, "name": "Έγγαμος/η" }
-      },
-      "contactInfo": {
-        "mobilePhone": "6901234511",
-        "email": "c.dimitriou@email.gr"
-      }
-    },
-    {
-      "id": 12,
-      "patientIdentity": {
-        "code": "000012",
-        "amka": "1909958899",
-        "lastName": "Νικολάου",
-        "firstName": "Βασιλική",
-        "status": "Ενεργός"
-      },
-      "demographicInfo": {
-        "birthDate": "19/09/95 (29 ετων)",
-        "birthPlace": "Αλεξανδρούπολη",
-        "gender": { "id": 2, "name": "Θήλυ" },
-        "maritalStatus": { "id": 1, "name": "Άγαμος/η" }
-      },
-      "contactInfo": {
-        "mobilePhone": "6901234512",
-        "email": "v.nikolaou@email.gr"
-      }
-    },
-    {
-      "id": 13,
-      "patientIdentity": {
-        "code": "000013",
-        "amka": "2808839900",
-        "lastName": "Νικολάου",
-        "firstName": "Σπυρίδων",
-        "status": "Ενεργός"
-      },
-      "demographicInfo": {
-        "birthDate": "28/08/83 (41 ετων)",
-        "birthPlace": "Τρίκαλα",
-        "gender": { "id": 1, "name": "Άρρεν" },
-        "maritalStatus": { "id": 2, "name": "Έγγαμος/η" }
-      },
-      "contactInfo": {
-        "mobilePhone": "6901234513",
-        "email": "s.nikolaou@email.gr"
-      }
-    },
-    {
-      "id": 14,
-      "patientIdentity": {
-        "code": "000014",
-        "amka": "0104920011",
-        "lastName": "Αθανασίου",
-        "firstName": "Δέσποινα",
-        "status": "Ενεργός"
-      },
-      "demographicInfo": {
-        "birthDate": "01/04/92 (32 ετων)",
-        "birthPlace": "Καλαμάτα",
-        "gender": { "id": 2, "name": "Θήλυ" },
-        "maritalStatus": { "id": 1, "name": "Άγαμος/η" }
-      },
-      "contactInfo": {
-        "mobilePhone": "6901234514",
-        "email": "d.athanasiou@email.gr"
-      }
-    },
-    {
-      "id": 15,
-      "patientIdentity": {
-        "code": "000015",
-        "amka": "1207901122",
-        "lastName": "Αθανασίου",
-        "firstName": "Θεόδωρος",
-        "status": "Ενεργός"
-      },
-      "demographicInfo": {
-        "birthDate": "12/07/90 (34 ετων)",
-        "birthPlace": "Κομοτηνή",
-        "gender": { "id": 1, "name": "Άρρεν" },
-        "maritalStatus": { "id": 2, "name": "Έγγαμος/η" }
-      },
-      "contactInfo": {
-        "mobilePhone": "6901234515",
-        "email": "t.athanasiou@email.gr"
-      }
-    },
-    {
-      "id": 16,
-      "patientIdentity": {
-        "code": "000016",
-        "amka": "2510962233",
-        "lastName": "Παπαγιάννης",
-        "firstName": "Ιωάννης",
-        "status": "Ενεργός"
-      },
-      "demographicInfo": {
-        "birthDate": "25/10/96 (28 ετων)",
-        "birthPlace": "Χαλκίδα",
-        "gender": { "id": 1, "name": "Άρρεν" },
-        "maritalStatus": { "id": 1, "name": "Άγαμος/η" }
-      },
-      "contactInfo": {
-        "mobilePhone": "6901234516",
-        "email": "i.papagiannis@email.gr"
-      }
-    },
-    {
-      "id": 17,
-      "patientIdentity": {
-        "code": "000017",
-        "amka": "0301873344",
-        "lastName": "Παπαγιάννη",
-        "firstName": "Χριστίνα",
-        "status": "Ενεργός"
-      },
-      "demographicInfo": {
-        "birthDate": "03/01/87 (37 ετων)",
-        "birthPlace": "Σέρρες",
-        "gender": { "id": 2, "name": "Θήλυ" },
-        "maritalStatus": { "id": 2, "name": "Έγγαμος/η" }
-      },
-      "contactInfo": {
-        "mobilePhone": "6901234517",
-        "email": "c.papagianni@email.gr"
-      }
-    },
-    {
-      "id": 18,
-      "patientIdentity": {
-        "code": "000018",
-        "amka": "1611914455",
-        "lastName": "Βασιλείου",
-        "firstName": "Γεώργιος",
-        "status": "Ενεργός"
-      },
-      "demographicInfo": {
-        "birthDate": "16/11/91 (33 ετων)",
-        "birthPlace": "Δράμα",
-        "gender": { "id": 1, "name": "Άρρεν" },
-        "maritalStatus": { "id": 1, "name": "Άγαμος/η" }
-      },
-      "contactInfo": {
-        "mobilePhone": "6901234518",
-        "email": "g.vasileiou@email.gr"
-      }
-    },
-    {
-      "id": 19,
-      "patientIdentity": {
-        "code": "000019",
-        "amka": "2012845566",
-        "lastName": "Βασιλείου",
-        "firstName": "Αικατερίνη",
-        "status": "Ενεργός"
-      },
-      "demographicInfo": {
-        "birthDate": "20/12/84 (39 ετων)",
-        "birthPlace": "Κιλκίς",
-        "gender": { "id": 2, "name": "Θήλυ" },
-        "maritalStatus": { "id": 2, "name": "Έγγαμος/η" }
-      },
-      "contactInfo": {
-        "mobilePhone": "6901234519",
-        "email": "a.vasileiou@email.gr"
-      }
-    },
-    {
-      "id": 20,
-      "patientIdentity": {
-        "code": "000020",
-        "amka": "0905936677",
-        "lastName": "Αντωνίου",
-        "firstName": "Μιχαήλ",
-        "status": "Ενεργός"
-      },
-      "demographicInfo": {
-        "birthDate": "09/05/93 (31 ετων)",
-        "birthPlace": "Ξάνθη",
-        "gender": { "id": 1, "name": "Άρρεν" },
-        "maritalStatus": { "id": 1, "name": "Άγαμος/η" }
-      },
-      "contactInfo": {
-        "mobilePhone": "6901234520",
-        "email": "m.antoniou@email.gr"
-      }
     }
   ]
 }

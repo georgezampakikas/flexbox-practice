@@ -31,6 +31,10 @@ export class UserService {
     return this.httpClient.get<PatientDto>(`${this.url}/patients/${id}`);
   }
 
+  getPatientsDto(): Observable<PatientDto[]> {
+    return this.httpClient.get<PatientDto[]>(`${this.url}/patients`);
+  }
+
   putPatient(id: number, updatedPatient: PatientDto): Observable<PatientDto> {
     return this.httpClient.put<PatientDto>(`${this.url}/patients/${id}`, updatedPatient);
   }
@@ -105,9 +109,5 @@ export class UserService {
       ...labTest,
       id: +labTest.id
     }))));
-  }
-
-  getPatientsV2(): Observable<PatientV2Dto[]>{
-    return this.httpClient.get<PatientV2Dto[]>(`${this.url}/patientsV2`);
   }
 }

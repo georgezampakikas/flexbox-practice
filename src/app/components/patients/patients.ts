@@ -6,7 +6,8 @@ import { NzInputModule } from 'ng-zorro-antd/input';
 import { NzAutocompleteModule } from 'ng-zorro-antd/auto-complete';
 import { UserService } from '../../shared/user-service';
 import { take } from 'rxjs';
-import { PatientV2Dto } from '../../shared/patient-modal';
+import { PatientDto, PatientV2Dto } from '../../shared/patient-modal';
+import { RouterLink, RouterLinkActive } from '@angular/router';
 
 
 
@@ -17,20 +18,22 @@ import { PatientV2Dto } from '../../shared/patient-modal';
     NzInputModule,
     NzIconModule,
     NzAutocompleteModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    RouterLink,
+    RouterLinkActive
 ],
   templateUrl: './patients.html',
   styleUrl: './patients.scss'
 })
 export class Patients implements OnInit {
-  patientsData: PatientV2Dto[] = [];
+  patientsData: PatientDto[] = [];
   selectedPatient: string = '';
   
 
   private userService = inject(UserService);
 
   ngOnInit(): void {
-    this.userService.getPatientsV2().pipe(take(1)).subscribe(patients => {
+    this.userService.getPatientsDto().pipe(take(1)).subscribe(patients => {
       this.patientsData = patients;
     });
   }
@@ -38,7 +41,7 @@ export class Patients implements OnInit {
   get filteredPatients() {
     if(this.selectedPatient.length > 3) {
       return this.patientsData.filter(p =>
-        p.patientIdentity.firstName.toLowerCase().includes(this.selectedPatient.toLowerCase())
+        p.patientIdentity.firstName.toLowerCase().includes(this.selectedPatient.toLowerCase().trim())
       );    
     } else return;
   }

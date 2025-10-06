@@ -2,6 +2,7 @@
     <div class="searchbar">
         <nz-input-group class="input-group">
             <input 
+                id="selected-input"
                 class="input"
                 nz-input 
                 [(ngModel)]="selectedPatient"
@@ -17,7 +18,12 @@
                 <div>Κατάσταση</div>
             </div>
             @for(patient of filteredPatients; track patient.id) {
-                <nz-auto-option [nzValue]="patient.patientIdentity.firstName">
+                <nz-auto-option 
+                    [routerLink]="['/patient-details', patient.id]" 
+                    [nzValue]="patient.patientIdentity.firstName"
+                    routerLinkActive="is-active"
+                    [routerLinkActiveOptions]="{ exact: true }"
+                >
                     <div class="content">
                         <div>{{ patient.patientIdentity.firstName }}</div>
                         <div>{{ patient.patientIdentity.lastName }}</div>
