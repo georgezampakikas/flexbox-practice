@@ -33,17 +33,23 @@ export class Patients implements OnInit {
   private userService = inject(UserService);
 
   ngOnInit(): void {
-    this.userService.getPatientsDto().pipe(take(1)).subscribe(patients => {
-      this.patientsData = patients;
-    });
-  }
+    this.userService.getPatientsDto()
+      .pipe(take(1))
+      .subscribe(patients => {
+        this.patientsData = patients;
+     });
+   }
 
   get filteredPatients() {
-    if(this.selectedPatient.length > 3) {
+    if (this.selectedPatient && this.selectedPatient.trim().length > 3) {
+      const search = this.selectedPatient.toLowerCase().trim();
       return this.patientsData.filter(p =>
-        p.patientIdentity.firstName.toLowerCase().includes(this.selectedPatient.toLowerCase().trim())
-      );    
-    } else return;
+        p.patientIdentity.firstName.toLowerCase().includes(search) ||
+        p.patientIdentity.lastName.toLowerCase().includes(search)
+      );
+    }
+    return [];
   }
+
 
 }

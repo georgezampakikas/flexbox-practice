@@ -20,7 +20,6 @@
             @for(patient of filteredPatients; track patient.id) {
                 <nz-auto-option 
                     [routerLink]="['/patient-details', patient.id]" 
-                    [nzValue]="patient.patientIdentity.firstName"
                     routerLinkActive="is-active"
                     [routerLinkActiveOptions]="{ exact: true }"
                 >
